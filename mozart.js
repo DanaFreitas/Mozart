@@ -39,18 +39,20 @@ else  {
 //let increasingopacity = fam.style.opacity = "0";
 
 
-
+/*
 let opa = document.getElementById("box").style.opacity;
-let opa2 = document.getElementById("Mozartfamily").style.opacity;
+let opa2 = parseFloat(document.getElementById("Mozartfamily").style.opacity);
 let opa3 = document.getElementById("Mozartfamily");
 
-//const styling = window.getComputedStyle(opa3);
-//console.log(`My opacity is ${styling.getPropertyValue("opacity")}`)
+const styling = window.getComputedStyle(opa3);
+console.log(`My opacity is ${styling.getPropertyValue("opacity")}`)
 
+console.log(opa2)
+console.log(typeof opa2)
+*/
 
-
-
-
+////Why didn't I use css to set up the animation and js to trigger it?
+//Try https://dev.to/jslim/fading-up-sections-using-intersection-observer-3fhj VERY IMPORTANT
 
 
 
@@ -59,32 +61,48 @@ let opa3 = document.getElementById("Mozartfamily");
 	const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
 
-      const intersecting = entry.isIntersecting
+     // const intersecting = entry.isIntersecting
      // entry.target.style.backgroundColor = intersecting ? "blue" : "orange"
      //console.log(`The revised opacity is ${opa}`)
      //console.log(`The revised color is ${blue}`)
 
 
-   if (intersecting == true){
+     if (entry.isIntersecting) {
+      entry.target.classList.add('Mozartimagetest');
+      observer.unobserve(entry.target);
+     // entry.target.classList.remove('Mozartimagetest');
 
-//opa3.style.opacity = ".95";
+
+  // if (intersecting == true){
+
+     }}
+   )})
+
+   //observer.observe(document.getElementById("Mozartfamily"));
+
+
+   window.addEventListener('DOMContentLoaded', (event) => { 
+
+    const sections  =Array.from(document.getElementsByClassName('Mozartimage'));
+    
+    for (let section of sections) {
+      observer.observe(section);
+    }
+    
+    });
+
+
+
+
+/*
+opa3.style.opacity = ".15";
 const sty = window.getComputedStyle(opa3);
 console.log(`My unadjusted opacity is ${sty.getPropertyValue("opacity")}`)
+*/
 
+ //   for (let i = 0; i < 10; i++) {
 
-    for (let i = 0; i < 10; i++) {
-
-      //opa3.style.opacity += parseFloat(.01)
-      /*let styling = window.getComputedStyle(opa3);
-      styling += parseFloat(.9)
-      opa3 == styling
-      console.log(`The computerstyle adjusted opacity is ${styling}`)
-      console.log(`My opacity is ${styling.getPropertyValue("opacity")}`) */
-
-
-      opa3 = parseFloat(".8")
-
-      
+     
       
 
      // project(i)
@@ -93,30 +111,16 @@ console.log(`My unadjusted opacity is ${sty.getPropertyValue("opacity")}`)
 
     //  testing(i)
 
-
+/*
     }
-
-    let styling = window.getComputedStyle(opa3);
-
-    console.log(`My opacity is ${styling.getPropertyValue("opacity")}`)
-  console.log(`${opa3} is it here?`)
-
-
-
-
-  //console.log(`The second revised color is ${blue}`)
-
-  //console.log(`The second revised opacity is ${opa}`)
-
 
    function project(i){
 
-    setTimeout(() => {opa += parseFloat(.2)
-      //entry.target.style.opacity  += parseFloat(0.1); 
-      //parseFloat(entry.target.style.opacity) + 0.1 
-      console.log(opa)
-       //parseFloat(entry.target.style.opacity) + 0.1 
-    //parseFloat(.1)
+    setTimeout(() => {(opa2 +=  parseFloat(.2))
+      console.log(opa2)
+      console.log(typeof parseFloat(.2))
+      console.log(typeof opa2)
+
     ;}, 2000 * i); }
 
 
@@ -142,9 +146,8 @@ function testing(i){
 }}
   )})
 
+*/
 
-
-observer.observe(document.getElementById("box"));
 
 
 
