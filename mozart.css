@@ -4,41 +4,43 @@ body {margin:0;padding:0; background-color: GREY;}
 
 #topelements {display:flex; flex-direction: row; justify-content: space-evenly;}
 
-#title {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  margin-right: 9%;
-  font-size: 2.5rem;
-  margin-top: .25rem;
-}
-
-/*
-#hamburger {
-  margin-left: 0.15rem;
-}*/
-
-
-
 
 .show #hamburger-bit-1 {
-    transform: translate(0, 1em) rotate(-45deg);
+  transform: translate(0, 1em) rotate(-45deg);
 }
 
 .show #hamburger-bit-2 {
-   opacity:0;
+ opacity:0;
 }
 
 .show #hamburger-bit-3 {
-  transform: translate(0, -1em) rotate(45deg);
+transform: translate(0, -1em) rotate(45deg);
 }
 
 
 .hamburger-bit {
-  width: 3em;
-  height: 0.5em;
-  background-color: black;
-   margin: .5em 0; 
-  transition:.4s
+width: 3em;
+height: 0.5em;
+background-color: black;
+ margin: .5em 0; 
+transition:.4s
 }
+
+/* .fa-solid {width:4em; height: auto; margin-top: .75em;} */
+.fa-solid {margin-top: .85em}
+
+#title {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+   margin-right: 9%; 
+  font-size: 2.5rem;
+  margin-top: .25rem;
+}
+
+
+
+/*#hamburger {margin-left:9%}*/
+
+
 
 
 #menu {
@@ -55,8 +57,6 @@ body {margin:0;padding:0; background-color: GREY;}
  animation-duration: .5s;
 animation-direction: normal;
 } 
-
-
 
 
 @keyframes menuappear  { 
@@ -76,38 +76,14 @@ animation-direction: normal;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 left:0;
 font-size: 1.5em;
-display:flex; flex-direction: column; justify-content: space-evenly; padding:2em;
+display:flex; flex-direction: column; justify-content: space-between; padding:2em;
 }
 
 .menu-item:hover {
   color:white
 } 
 
- #Mozart  { height: auto; width:100%;
- 
-  animation-name: Mozartappear;
-  animation-duration: 2s;
- animation-direction: normal;}
 
-/*
- .Mozartimage {
-  height: auto; width:100%;
- 
-  animation-name: Mozartappear;
-  animation-duration: 2s;
- animation-direction: normal;
- }
-
- @keyframes Mozartappear  { 
-
-  0% {
-    opacity:0;
-  }
-  100% {
-    opacity:1;
-  }
-  }
-  */
 .paragraph {margin: 1rem;}
 
 .Mozartimage {margin:.5rem;}
@@ -116,12 +92,15 @@ h2  {text-align: center;}
 
 h3  {text-align: center;}
 
-#Mozartfamily {/*opacity: .25;*/  
+
+
+
+
+#Mozartfamily {
    height: auto; width:100%;
   color:blue;
 }
 
- /* #box {opacity:0;}  */
 
 #test {  height: 300px;
   width: 300px;
@@ -145,3 +124,10 @@ h3  {text-align: center;}
       opacity:1;
     }
   }
+
+  .complete {
+    transform: none;
+    opacity: 1;
+}
+
+img {width:100%}
