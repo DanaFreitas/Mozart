@@ -26,13 +26,13 @@ const music = document.getElementById("music");
 music.addEventListener("click", () => {
   
   let aud = new Audio("Eine-Kleine-Nachtmusik.mp3")
+  let audio = document.getElementById("audio");
 
+  audio.style.display = "absolute";
   aud.play();
   
 
-}
-
-)
+})
 
 
 

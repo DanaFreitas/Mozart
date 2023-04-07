@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" type="text/css" />
   </head>
   <body>
+       
+
     <div id="topelements">
       <div type="button" id="hamburger">
         <div class="hamburger-bit" id="hamburger-bit-1"></div>
@@ -24,14 +26,21 @@
       
     </div>
 
-    <nav>
+
+
+     <nav>
       <div id="menu" class="menuclass">
+        <div class="menu-item"></div>
         <div class="menu-item">Home</div>
         <div class="menu-item">History</div>
         <div class="menu-item">Legacy</div>
         <div class="menu-item">Preview</div>
       </div>
-    </nav>
+    </nav> 
+
+    <audio controls id="audio">
+      <source src="Eine-Kleine-Nachtmusik.mp3" type="audio/mpeg">
+    </audio>
 
     <img
       src="/Images/Mozart.webp"
@@ -39,6 +48,10 @@
       id="Mozart"
       class="Mozartimage complete"
     />
+
+    <!-- Have the element appear. have name of the sample page-->
+
+
 
     <p id="intro" class="paragraph">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec
@@ -104,6 +117,9 @@
 
     <div id="test"></div>
     
+
+
+
   </body>
   <script src="mozart.js"></script>
 </html>
