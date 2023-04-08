@@ -1,3 +1,39 @@
-html {color:pink;
-background-color: pink;
-font-size: 500px;}
+body {margin:0;padding:0; background-color: GREY;}
+
+
+#menu {
+    display: none;
+    z-index: 1;
+    position: fixed;
+     background-color: grey;
+    color:black; 
+    height:100%;
+    width:100%;
+   overflow-x: hidden;
+   margin: 0rem;
+   animation-name: menuappear;
+   animation-duration: .5s;
+  animation-direction: normal;
+  text-align: center;
+  } 
+  
+  
+  @keyframes menuappear  { 
+  
+  0% {
+    transform: translate(-500px, 0px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+  }
+  
+
+
+  .menu-item {
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  left:0;
+  font-size: 1.5em;
+  display:flex; flex-direction: column; justify-content: space-between; padding:2em;
+  }
+  
