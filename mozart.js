@@ -8,7 +8,7 @@ ham.addEventListener("click", () => {
     document.getElementById("menu").style.width = "0rem";
   } else {
     document.getElementById("menu").style.display = "block";
-    document.getElementById("menu").style.width = "10rem";
+    document.getElementById("menu").style.width = "100vw";
   }
   console.log("test");
 });
