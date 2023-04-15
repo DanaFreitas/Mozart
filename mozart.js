@@ -83,7 +83,7 @@ music.addEventListener("click", () => {
 //wrapping doesnt work. the button is doing something, but im not sure what the exaxt problem is
 //padding effects it, but even when set to block, the element just...dissappears 
 
-  } else if (test.style.display = "none")
+  } else if (test.style.display == "none")
 {    
 
 
