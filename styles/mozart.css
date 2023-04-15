@@ -47,12 +47,25 @@ body {
   margin-top: 0.25rem;
 }
 
-#audio {
-  position: fixed;
+#test {
+  display: none;
+}
+
+#audios {
   display: none;
   width: 100%;
-  z-index: 10;
-  bottom: 0%;
+  /*position:fixed;
+  width:100%;
+  z-index: 1;
+  top:77%;*/
+}
+
+source {
+  display: none;
+}
+
+.menuclass0 {
+  display: none;
 }
 
 .menuclass {
@@ -142,13 +155,6 @@ h3 {
   height: auto;
   width: 100%;
   color: blue;
-}
-
-#test {
-  height: 300px;
-  width: 300px;
-  border-radius: 50%;
-  display: inline-block;
 }
 
 .Mozartimagetest {

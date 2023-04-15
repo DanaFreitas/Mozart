@@ -42,20 +42,25 @@ transition:.4s
   margin-top: .25rem;
 }
 
-
-
-#audio {
-  position:fixed;
+#test {
   display:none;
-  width:100%;
-z-index: 10;
-bottom:0%}
+
+}
 
 
+#audios {
+display:none;
+width:100%;
+  /*position:fixed;
+width:100%;
+z-index: 1;
+top:77%;*/}
 
-@mixin menu($display, $animationname, ){
-  display:$display;
-  animation-name:$animation-name;
+source{display: none;}
+
+
+.menuclass0 {
+  display:none;
 }
 
 .menuclass  {
@@ -184,11 +189,6 @@ h3  {text-align: center;}
 }
 
 
-#test {  height: 300px;
-  width: 300px;
-  border-radius: 50%;
-  display: inline-block;
-}
 
 .Mozartimagetest { animation-name: fadein;
   animation-duration: 1.5s;
