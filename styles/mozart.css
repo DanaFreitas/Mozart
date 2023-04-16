@@ -4,11 +4,23 @@ body {
   background-color: grey;
 }
 
+#hamburger:hover {
+  color: white;
+}
+
+#musicbutton:hover {
+  color: white;
+}
+
+#hamburger:hover > .hamburger-bit {
+  background-color: white;
+}
+
 #topelements {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  z-index: 10;
+  z-index: 1;
 }
 
 .show #hamburger-bit-1 {
@@ -31,13 +43,12 @@ body {
   transition: 0.4s;
 }
 
-/* .fa-solid {width:4em; height: auto; margin-top: .75em;} */
 .fa-solid {
   margin-top: 0.85em;
 }
 
 .fasolid:hover {
-  background-color: white;
+  color: white;
 }
 
 #title {
@@ -47,17 +58,13 @@ body {
   margin-top: 0.25rem;
 }
 
-#test {
-  display: none;
-}
-
 #audios {
   display: none;
   width: 100%;
-  /*position:fixed;
-  width:100%;
+  position: fixed;
+  width: 100%;
   z-index: 1;
-  top:77%;*/
+  bottom: 10%;
 }
 
 source {
@@ -70,12 +77,14 @@ source {
 
 .menuclass {
   display: block;
-  z-index: 1;
+  z-index: 2;
   position: fixed;
   background-color: grey;
   color: black;
   height: 100%;
   width: 100%;
+  top: 0;
+  left: 0;
   overflow-x: hidden;
   margin: 0rem;
   animation-name: menudisappear;
@@ -84,6 +93,7 @@ source {
   text-align: center;
   transition: 1s;
   animation-fill-mode: forwards;
+  margin-top: 0rem;
 }
 
 /*
@@ -103,13 +113,15 @@ display:none;
 }
 .menuclass2 {
   display: block;
-  z-index: 1;
+  z-index: 2;
   position: fixed;
   background-color: grey;
   color: black;
   overflow-x: hidden;
   height: 100%;
   width: 100%;
+  top: 0;
+  left: 0;
   margin: 0rem;
   animation-name: menuappear;
   animation-direction: normal;
