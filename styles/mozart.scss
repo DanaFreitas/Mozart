@@ -12,26 +12,45 @@ body {margin:0;padding:0; background-color: grey;}
   }
 }
 
- 
-// .hamburger-bit {
-//   @include hoverstyles
-// }
+
+
+#burgerholder {display:flex; flex-direction: row; justify-content: space-evenly; z-index: 1; position:relative;}
+
+
 
  #hamburger {
-   @include hoverstyles
+   @include hoverstyles;
+  position:absolute;
+  left: 0px;
+  top: 0px;
 }
 
-#musicbutton {
-  @include hoverstyles
+#hamburger2 {
+  @include hoverstyles;
+  z-index: 3;
+  position:absolute;
+  left: 0px;
+  top: 0px;
 }
+
+
+
+
 
 #hamburger:hover > .hamburger-bit {
   background-color:white;
 } 
 
 
-#topelements {display:flex; flex-direction: row; justify-content: space-evenly; z-index: 1;}
 
+
+.hamburger-bit {
+  width: 3em;
+  height: 0.5em;
+  background-color: black;
+   margin: .5em 0; 
+  transition:.4s
+  }
 
 .show #hamburger-bit-1 {
   transform: translate(0, 1em) rotate(-45deg);
@@ -46,19 +65,17 @@ transform: translate(0, -1em) rotate(45deg);
 }
 
 
-.hamburger-bit {
-width: 3em;
-height: 0.5em;
-background-color: black;
- margin: .5em 0; 
-transition:.4s
-}
 
+#musicbutton {
+  @include hoverstyles
+}
+ 
 .fa-solid {margin-top: .85em}
 
 .fasolid{
   @include hoverstyles;
 }
+
 
 #title {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -86,7 +103,8 @@ source{display: none;}
   display:none;
 }
 
-.menuclass  {
+
+@mixin menumixin {
   display: block;
   z-index: 2;
   position: fixed;
@@ -94,25 +112,33 @@ source{display: none;}
   color:black; 
   height:100%;
   width:100%;
-  top:0;
-  left:0;
+ // top:0;
+ // left:0;
  overflow-x: hidden;
  margin: 0rem;
- animation-name: menudisappear;
 animation-direction: normal;
 animation-duration: .75s;
 text-align: center;
-transition: 1s;
-animation-fill-mode: forwards;
-margin-top: 0rem;
+
+}
+
+
+.menuclass  {
+ animation-name: menudisappear;
+ transition: 1s;
+ animation-fill-mode: forwards;
+@include menumixin
 
 } 
 
-/*
-.menuclass3{
-display:none;
-}
-*/
+
+
+.menuclass2  {
+ animation-name: menuappear;
+ @include menumixin
+
+} 
+
 
 @keyframes menudisappear  { 
   
@@ -136,24 +162,6 @@ display:none;
 
 
 
-.menuclass2  {
-    display: block;
-    z-index: 2;
-    position: fixed;
-     background-color: grey;
-    color:black; 
-   overflow-x: hidden;
-   height:100%;
-   width:100%; 
-   top:0;
-   left:0; 
-   margin: 0rem;
-   animation-name: menuappear;
-  animation-direction: normal;
-  animation-duration: .75s;
-  text-align: center;
-
-  } 
 
 
 

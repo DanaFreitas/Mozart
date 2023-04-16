@@ -1,6 +1,8 @@
 const ham = document.getElementById("hamburger");
 const menu = document.getElementById("menu");
 let menc = document.getElementsByClassName("menuclass0");
+const ham2 = document.getElementById("hamburger");
+
 
 ham.addEventListener("click", () => {
   document.getElementById("hamburger").classList.toggle("show");
@@ -17,9 +19,26 @@ ham.addEventListener("click", () => {
   } else if (menu.classList.contains("menuclass2")) {
     menu.classList.remove("menuclass2");
     menu.classList.add("menuclass");
-    //document.getElementsByClassName("menuclass").style.display="none";
   }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 const keyframesRule = `
   @keyframes myAnimation {

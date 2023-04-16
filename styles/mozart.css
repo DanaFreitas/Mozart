@@ -4,11 +4,30 @@ body {
   background-color: grey;
 }
 
+#burgerholder {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  z-index: 1;
+  position: relative;
+}
+
+#hamburger {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
 #hamburger:hover {
   color: white;
 }
 
-#musicbutton:hover {
+#hamburger2 {
+  z-index: 3;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
+#hamburger2:hover {
   color: white;
 }
 
@@ -16,11 +35,12 @@ body {
   background-color: white;
 }
 
-#topelements {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  z-index: 1;
+.hamburger-bit {
+  width: 3em;
+  height: 0.5em;
+  background-color: black;
+  margin: 0.5em 0;
+  transition: 0.4s;
 }
 
 .show #hamburger-bit-1 {
@@ -35,12 +55,8 @@ body {
   transform: translate(0, -1em) rotate(45deg);
 }
 
-.hamburger-bit {
-  width: 3em;
-  height: 0.5em;
-  background-color: black;
-  margin: 0.5em 0;
-  transition: 0.4s;
+#musicbutton:hover {
+  color: white;
 }
 
 .fa-solid {
@@ -76,6 +92,9 @@ source {
 }
 
 .menuclass {
+  animation-name: menudisappear;
+  transition: 1s;
+  animation-fill-mode: forwards;
   display: block;
   z-index: 2;
   position: fixed;
@@ -83,24 +102,29 @@ source {
   color: black;
   height: 100%;
   width: 100%;
-  top: 0;
-  left: 0;
   overflow-x: hidden;
   margin: 0rem;
-  animation-name: menudisappear;
   animation-direction: normal;
   animation-duration: 0.75s;
   text-align: center;
-  transition: 1s;
-  animation-fill-mode: forwards;
-  margin-top: 0rem;
 }
 
-/*
-.menuclass3{
-display:none;
+.menuclass2 {
+  animation-name: menuappear;
+  display: block;
+  z-index: 2;
+  position: fixed;
+  background-color: grey;
+  color: black;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0rem;
+  animation-direction: normal;
+  animation-duration: 0.75s;
+  text-align: center;
 }
-*/
+
 @keyframes menudisappear {
   0% {
     transform: translate(0px, 0px);
@@ -111,24 +135,6 @@ display:none;
     display: none;
   }
 }
-.menuclass2 {
-  display: block;
-  z-index: 2;
-  position: fixed;
-  background-color: grey;
-  color: black;
-  overflow-x: hidden;
-  height: 100%;
-  width: 100%;
-  top: 0;
-  left: 0;
-  margin: 0rem;
-  animation-name: menuappear;
-  animation-direction: normal;
-  animation-duration: 0.75s;
-  text-align: center;
-}
-
 @keyframes menuappear {
   0% {
     transform: translate(-500px, 0px);
