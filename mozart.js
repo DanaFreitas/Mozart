@@ -1,41 +1,48 @@
 const ham = document.getElementById("hamburger");
+const ham2 = document.getElementById("hamburger2");
 const menu = document.getElementById("menu");
 let menc = document.getElementsByClassName("menuclass0");
-const ham2 = document.getElementById("hamburger");
 
 
 ham.addEventListener("click", () => {
   document.getElementById("hamburger").classList.toggle("show");
+  document.getElementById("hamburger2").classList.toggle("show");
+
 });
 
 ham.addEventListener("click", () => {
+ // const ham2 = document.getElementById("hamburger2");
+
   if (
     menu.classList.contains("menuclass0") ||
     menu.classList.contains("menuclass")
   ) {
     menu.classList.remove("menuclass0");
-    menu.classList.remove("menuclass");
+    menu.classList.remove("menuclass");    
     menu.classList.add("menuclass2");
-  } else if (menu.classList.contains("menuclass2")) {
-    menu.classList.remove("menuclass2");
-    menu.classList.add("menuclass");
+    ham.style.display = "none";
+    ham2.style.display = "block";
+
+//ham.remove()
+//ham2.add()
+
   }
 });
 
+ham2.addEventListener("click", () => {
+  {
+    document.getElementById("hamburger").classList.toggle("show");
+    document.getElementById("hamburger2").classList.toggle("show");
+  
 
+    //ham2.remove()
+    //ham.add()
+    ham2.style.display = "none";
+    ham.style.display = "block";
 
-
-
-
-
-
-
-
-
-
-
-
-
+    menu.classList.remove("menuclass2");
+    menu.classList.add("menuclass");}
+});
 
 
 

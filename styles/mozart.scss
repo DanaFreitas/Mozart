@@ -23,7 +23,8 @@ body {margin:0;padding:0; background-color: grey;}
   position:absolute;
   left: 0px;
   top: 0px;
-}
+  display:block;  
+  transition-duration: 500ms;}
 
 #hamburger2 {
   @include hoverstyles;
@@ -31,6 +32,8 @@ body {margin:0;padding:0; background-color: grey;}
   position:absolute;
   left: 0px;
   top: 0px;
+  display:none;
+  transition-duration: 2s;
 }
 
 
@@ -41,7 +44,9 @@ body {margin:0;padding:0; background-color: grey;}
   background-color:white;
 } 
 
-
+#hamburger2:hover > .hamburger-bit {
+  background-color:white;
+} 
 
 
 .hamburger-bit {
@@ -52,17 +57,33 @@ body {margin:0;padding:0; background-color: grey;}
   transition:.4s
   }
 
+
+
 .show #hamburger-bit-1 {
   transform: translate(0, 1em) rotate(-45deg);
+  transition-duration: 500ms;
+}
+
+.show #hamburger-bit-4 {
+  transform: translate(0, 1em) rotate(-45deg);
+  transition-duration: 500ms;
 }
 
 .show #hamburger-bit-2 {
- opacity:0;
+ opacity:0; transition-duration: 500ms;
 }
 
-.show #hamburger-bit-3 {
-transform: translate(0, -1em) rotate(45deg);
+.show #hamburger-bit-5 {
+  opacity:0; transition-duration: 500ms;
+ }
+
+.show #hamburger-bit-3  {
+transform: translate(0, -1em) rotate(45deg); transition-duration: 500ms;
 }
+
+.show #hamburger-bit-6 {
+  transform: translate(0, -1em) rotate(45deg); transition-duration: 500ms;
+  }
 
 
 
