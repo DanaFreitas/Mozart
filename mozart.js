@@ -1,7 +1,7 @@
 const ham = document.getElementById("hamburger");
 const ham2 = document.getElementById("hamburger2");
 const menu = document.getElementById("menu");
-let menc = document.getElementsByClassName("menuclass0");
+let menc = document.getElementsByClassName("menuclassdefault");
 
 
 ham.addEventListener("click", () => {
@@ -14,12 +14,12 @@ ham.addEventListener("click", () => {
  // const ham2 = document.getElementById("hamburger2");
 
   if (
-    menu.classList.contains("menuclass0") ||
-    menu.classList.contains("menuclass")
+    menu.classList.contains("menuclassdefault") ||
+    menu.classList.contains("menuclassexit")
   ) {
-    menu.classList.remove("menuclass0");
-    menu.classList.remove("menuclass");    
-    menu.classList.add("menuclass2");
+    menu.classList.remove("menuclassdefault");
+    menu.classList.remove("menuclassexit");    
+    menu.classList.add("menuclassenter");
     ham.style.display = "none";
     ham2.style.display = "block";
 
@@ -40,8 +40,8 @@ ham2.addEventListener("click", () => {
     ham2.style.display = "none";
     ham.style.display = "block";
 
-    menu.classList.remove("menuclass2");
-    menu.classList.add("menuclass");}
+    menu.classList.remove("menuclassenter");
+    menu.classList.add("menuclassexit");}
 });
 
 
@@ -118,3 +118,4 @@ window.addEventListener(
 //increase threshhold
 //add music icon. secondary effect. should nudge the title and hamburger to right places
 //make animation for menu when selecting button
+
