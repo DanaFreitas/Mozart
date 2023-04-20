@@ -1,5 +1,11 @@
 body {margin:0;padding:0; background-color: grey;}
 
+#navbar{
+  z-index: 1;
+  position:relative;
+}
+
+
 @mixin hoverstyles {
   &:hover {
     color:white;
@@ -20,7 +26,7 @@ body {margin:0;padding:0; background-color: grey;}
 
  #hamburger {
    @include hoverstyles;
-  position:absolute;
+  //position:absolute;
   left: 0px;
   top: 0px;
   display:block;  
@@ -30,15 +36,14 @@ body {margin:0;padding:0; background-color: grey;}
   @include hoverstyles;
   z-index: 3;
   position:absolute;
-  left: 0px;
+  //left: 5rem;
   top: 0px;
   display:none;
   transition-duration: 2s;
 }
 
 
-
-
+//need to have the divs spaced well. use visibility:hidden
 
 #hamburger:hover > .hamburger-bit {
   background-color:white;
@@ -119,6 +124,7 @@ bottom:10%;}
 source{display: none;}
 
 
+
 .menuclassdefault {
   display:none;
 }
@@ -128,11 +134,12 @@ source{display: none;}
   display: block;
   z-index: 2;
   position: fixed;
+ //position: absolute;
    background-color: grey;
   color:black; 
   height:100%;
   width:100%;
- // top:0;
+  top:0;
  // left:0;
  overflow-x: hidden;
  margin: 0rem;
