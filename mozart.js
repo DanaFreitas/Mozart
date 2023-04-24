@@ -1,12 +1,10 @@
 const ham = document.getElementById("hamburger");
-const ham2 = document.getElementById("hamburger2");
 const menu = document.getElementById("menu");
 let menc = document.getElementsByClassName("menuclassdefault");
 
 
 ham.addEventListener("click", () => {
   document.getElementById("hamburger").classList.toggle("show");
-  document.getElementById("hamburger2").classList.toggle("show");
 
 });
 
