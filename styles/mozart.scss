@@ -1,8 +1,9 @@
 body {margin:0;padding:0; background-color: grey;}
 
 #navbar{
-  z-index: 1;
-  position:relative;
+  z-index: 10;
+ // position:relative;
+ position: fixed;
 }
 
 
@@ -18,29 +19,23 @@ body {margin:0;padding:0; background-color: grey;}
   }
 }
 
+$text-center:center;
 
 
-#burgerholder {display:flex; flex-direction: row; justify-content: space-evenly; z-index: 1; position:relative;}
+#burgerholder {display:flex; flex-direction: row; justify-content: space-evenly; //z-index: 1; 
+  position:relative;}
 
 
 
  #hamburger {
    @include hoverstyles;
   //position:absolute;
-  left: 0px;
-  top: 0px;
+  left: 0vw;
+  top: 0vw;
   display:block;  
-  transition-duration: 500ms;}
+  //transition-duration: 500ms;
+z-index: 5;}
 
-#hamburger2 {
-  @include hoverstyles;
-  z-index: 3;
-  position:absolute;
-  //left: 5rem;
-  top: 0px;
-  display:none;
-  transition-duration: 2s;
-}
 
 
 //need to have the divs spaced well. use visibility:hidden
@@ -69,26 +64,16 @@ body {margin:0;padding:0; background-color: grey;}
   transition-duration: 500ms;
 }
 
-.show #hamburger-bit-4 {
-  transform: translate(0, 1em) rotate(-45deg);
-  transition-duration: 500ms;
-}
 
 .show #hamburger-bit-2 {
  opacity:0; transition-duration: 500ms;
 }
 
-.show #hamburger-bit-5 {
-  opacity:0; transition-duration: 500ms;
- }
 
 .show #hamburger-bit-3  {
 transform: translate(0, -1em) rotate(45deg); transition-duration: 500ms;
 }
 
-.show #hamburger-bit-6 {
-  transform: translate(0, -1em) rotate(45deg); transition-duration: 500ms;
-  }
 
 
 
@@ -145,7 +130,7 @@ source{display: none;}
  margin: 0rem;
 animation-direction: normal;
 animation-duration: .75s;
-text-align: center;
+text-align:$text-center;
 
 }
 
@@ -238,9 +223,11 @@ text-align: center;
 .paragraph {margin: 1rem;}
 
 
-h2  {text-align: center;}
 
-h3  {text-align: center;}
+
+h2  {text-align:$text-center;}
+
+h3  {text-align:$text-center;}
 
 
 
@@ -276,3 +263,25 @@ h3  {text-align: center;}
 }
 
 img {width:100%}
+
+iframe {width:100%;padding:.5rem 0;}
+
+.animatemusic {
+  animation-name: musicfadein;
+  animation-duration: 5.5s;
+  transition-property: left;
+  left:-10rem;
+  //opacity: 0;
+  transition-timing-function: linear;
+}
+
+@keyframes musicfadein {
+
+  0% {
+    left:-10rem; 
+  opacity:0; }
+  100% {
+    left:20rem;
+    opacity:100;
+  }
+}

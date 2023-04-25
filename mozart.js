@@ -1,6 +1,7 @@
 const ham = document.getElementById("hamburger");
 const menu = document.getElementById("menu");
 let menc = document.getElementsByClassName("menuclassdefault");
+const holder = document.getElementById("burgerholder");
 
 
 ham.addEventListener("click", () => {
@@ -9,7 +10,6 @@ ham.addEventListener("click", () => {
 });
 
 ham.addEventListener("click", () => {
- // const ham2 = document.getElementById("hamburger2");
 
   if (
     menu.classList.contains("menuclassdefault") ||
@@ -18,30 +18,22 @@ ham.addEventListener("click", () => {
     menu.classList.remove("menuclassdefault");
     menu.classList.remove("menuclassexit");    
     menu.classList.add("menuclassenter");
-    ham.style.display = "none";
-    ham2.style.display = "block";
-
-//ham.remove()
-//ham2.add()
-
+    document.getElementById("hamburger").style.position="fixed";
+    document.getElementById("hamburger").style.left="14.3vw";
+    document.getElementById("navbar").style.position="relative";
   }
+    else if (menu.classList.contains("menuclassenter"))
+    {
+      menu.classList.add("menuclassexit");    
+      menu.classList.remove("menuclassenter");
+      document.getElementById("hamburger").style.position="relative";
+      document.getElementById("hamburger").style.width="";
+      document.getElementById("hamburger").style.left="0rem";
+      document.getElementById("navbar").style.position="fixed";
+
+    }
+
 });
-
-ham2.addEventListener("click", () => {
-  {
-    document.getElementById("hamburger").classList.toggle("show");
-    document.getElementById("hamburger2").classList.toggle("show");
-  
-
-    //ham2.remove()
-    //ham.add()
-    ham2.style.display = "none";
-    ham.style.display = "block";
-
-    menu.classList.remove("menuclassenter");
-    menu.classList.add("menuclassexit");}
-});
-
 
 
 
@@ -113,7 +105,25 @@ window.addEventListener(
   options
 );
 
-//increase threshhold
-//add music icon. secondary effect. should nudge the title and hamburger to right places
-//make animation for menu when selecting button
+const observer2 = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("animatemusic");
+      observer2.unobserve(entry.target);
+    } else {
+      entry.target.classList.remove("animatemusic");
+    }
+  });
+});
 
+window.addEventListener(
+  "DOMContentLoaded",
+  (event) => {
+    const sections = Array.from(document.getElementsByClassName("inspiredbyhim"));
+
+    for (let section of sections) {
+      observer2.observe(section);
+    }
+  },
+  options
+);

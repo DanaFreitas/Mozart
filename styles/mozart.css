@@ -5,36 +5,24 @@ body {
 }
 
 #navbar {
-  z-index: 1;
-  position: relative;
+  z-index: 10;
+  position: fixed;
 }
 
 #burgerholder {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  z-index: 1;
   position: relative;
 }
 
 #hamburger {
-  left: 0px;
-  top: 0px;
+  left: 0vw;
+  top: 0vw;
   display: block;
-  transition-duration: 500ms;
+  z-index: 5;
 }
 #hamburger:hover {
-  color: white;
-}
-
-#hamburger2 {
-  z-index: 3;
-  position: absolute;
-  top: 0px;
-  display: none;
-  transition-duration: 2s;
-}
-#hamburger2:hover {
   color: white;
 }
 
@@ -228,4 +216,28 @@ h3 {
 
 img {
   width: 100%;
+}
+
+iframe {
+  width: 100%;
+  padding: 0.5rem 0;
+}
+
+.animatemusic {
+  animation-name: musicfadein;
+  animation-duration: 5.5s;
+  transition-property: left;
+  left: -10rem;
+  transition-timing-function: linear;
+}
+
+@keyframes musicfadein {
+  0% {
+    left: -10rem;
+    opacity: 0;
+  }
+  100% {
+    left: 20rem;
+    opacity: 100;
+  }
 }/*# sourceMappingURL=mozart.css.map */
