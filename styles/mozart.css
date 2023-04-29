@@ -1,40 +1,52 @@
+/*Table of contents
+Body
+Navbar
+Menu
+Biography
+Music
+Contact
+*/
+/*Body*/
 body {
   margin: 0;
   padding: 0;
   background-color: grey;
 }
 
-#navbar {
+/*Navbar*/
+.navbar {
   z-index: 10;
   position: fixed;
+  background-color: grey;
+  width: 100%;
 }
 
-#burgerholder {
+.navbar__burgerholder {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   position: relative;
 }
 
-#hamburger {
+.navbar__hamburger {
   left: 0vw;
   top: 0vw;
   display: block;
   z-index: 5;
 }
-#hamburger:hover {
+.navbar__hamburger:hover {
   color: white;
 }
 
-#hamburger:hover > .hamburger-bit {
+.navbar__hamburger:hover > .hamburger-bit {
   background-color: white;
 }
 
-#hamburger2:hover > .hamburger-bit {
-  background-color: white;
-}
-
-.hamburger-bit {
+/*
+.navbar__hamburger2:hover > .hamburger-bit {
+  background-color:white;
+} */
+.navbar__hamburger--hamburger-bit {
   width: 3em;
   height: 0.5em;
   background-color: black;
@@ -47,17 +59,7 @@ body {
   transition-duration: 500ms;
 }
 
-.show #hamburger-bit-4 {
-  transform: translate(0, 1em) rotate(-45deg);
-  transition-duration: 500ms;
-}
-
 .show #hamburger-bit-2 {
-  opacity: 0;
-  transition-duration: 500ms;
-}
-
-.show #hamburger-bit-5 {
   opacity: 0;
   transition-duration: 500ms;
 }
@@ -67,15 +69,10 @@ body {
   transition-duration: 500ms;
 }
 
-.show #hamburger-bit-6 {
-  transform: translate(0, -1em) rotate(45deg);
-  transition-duration: 500ms;
-}
-
-#musicbutton:hover {
-  color: white;
-}
-
+/*
+#musicbutton {
+  @include hoverstyles
+}*/
 .fa-solid {
   margin-top: 0.85em;
 }
@@ -84,13 +81,13 @@ body {
   color: white;
 }
 
-#title {
+.title {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 2.5rem;
   margin-top: 0.25rem;
 }
 
-#audios {
+.audios {
   display: none;
   width: 100%;
   position: fixed;
@@ -103,6 +100,7 @@ source {
   display: none;
 }
 
+/* Menu */
 .menuclassdefault {
   display: none;
 }
@@ -175,6 +173,7 @@ source {
   color: white;
 }
 
+/* Biography */
 .paragraph {
   margin: 1rem;
 }
@@ -218,9 +217,10 @@ img {
   width: 100%;
 }
 
+/* Music */
 iframe {
-  width: 100%;
-  padding: 0.5rem 0;
+  width: 90%;
+  padding: 0.5rem;
 }
 
 .animatemusic {
@@ -240,4 +240,23 @@ iframe {
     left: 20rem;
     opacity: 100;
   }
+}
+/* Contact */
+svg {
+  display: block;
+  margin: auto;
+}
+
+.Footer__Button {
+  width: 10rem;
+}
+
+.Footer__Button--Dark {
+  display: block;
+  margin: auto;
+}
+
+.Footer__Button--Light {
+  display: none;
+  margin: auto;
 }/*# sourceMappingURL=mozart.css.map */

@@ -11,16 +11,16 @@
   <body>
        
 
-    <nav id="navbar">
-    <div id="burgerholder">
-      <div type="button" id="hamburger">
-        <div class="hamburger-bit" id="hamburger-bit-1"></div>
-        <div class="hamburger-bit" id="hamburger-bit-2"></div>
-        <div class="hamburger-bit" id="hamburger-bit-3"></div>
+    <nav id="navbar" class="navbar">
+    <div id="burgerholder" class="navbar__burgerholder">
+      <div type="button" id="hamburger" class="navbar__hamburger">
+        <div class="navbar__hamburger--hamburger-bit" id="hamburger-bit-1"></div>
+        <div class="navbar__hamburger--hamburger-bit" id="hamburger-bit-2"></div>
+        <div class="navbar__hamburger--hamburger-bit" id="hamburger-bit-3"></div>
       </div>
 
 
-      <header id="title">Mozart</header>
+      <header id="title" class="title">Mozart</header>
 
 
       <i class="fa-solid fa-music fa-2xl" id="musicbutton" type="button"></i>
@@ -40,7 +40,7 @@
         <div class="menu-item">Preview</div>
     </section> 
 
-    <audio id="audios" controls >
+    <audio id="audios" class="audios" controls >
       <source src="Eine-Kleine-Nachtmusik.mp3" type="audio/mpeg" >
     </audio>
 
@@ -128,10 +128,82 @@
       Praesent rutrum scelerisque libero, id aliquam leo mattis ut. 
     </p>
 
+   
+<!--Notes
+padding for videos.
+have a contact me and it be his grave-->
+
     <iframe  src="https://www.youtube.com/embed/mj2Tr-IUPhc" title="Musician Playing Mozart 1" frameborder="0" id="musician1" class="inspiredbyhim" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>    
     <iframe  src="https://www.youtube.com/embed/A_THdzBnHy0" title="Musician Playing Mozart 2" frameborder="0" id="musician2" class="inspiredbyhim" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>    
     <iframe  src="https://www.youtube.com/embed/vx3fuisF1Nk" title="Musician Playing Mozart 3" frameborder="0" id="musician3" class="inspiredbyhim" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     <iframe  src="https://www.youtube.com/embed/sPb47w6uQZY" title="Musician Playing Mozart 4" id="musician4" class="inspiredbyhim" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+
+
+    <footer> 
+      <h3>Contact</h3>
+      
+      <img
+      src="/Images/Grave.jpg"
+      alt="Mozart's Grave"
+      id="Mozartgrave"
+      class="Mozartimage complete"
+    />
+  
+
+
+    <h3>Spotify</h3>
+
+    <img type="button"
+    src="/Images/Spotify_Dark.png"   
+    alt="The spotify logo."
+    id="Spotifydark"
+    class="Footer__Button Footer__Button--Dark"
+  />
+
+  <img type="button"
+  src="/Images/Spotify_Light.png" 
+  alt="Ths spotify logo when hovered upon."
+  class="Footer__Button Footer__Button--Light"
+/>
+
+
+    <h3>Pandora</h3>
+    
+    <img type="button"
+    src="/Images/Pandora_Dark.png" 
+    alt="The pandora logo."
+    class="Footer__Button Footer__Button--Dark"
+  />
+
+  <img type="button"
+  src="/Images/Pandora_Light.png" 
+  alt="The pandora logo when hovered upon."
+  class="Footer__Button Footer__Button--Light"
+/>
+
+    <h3>Soundcloud</h3>
+
+    <img type="button"
+    src="/Images/Soundcloud_Dark.png" 
+    alt="The soundcloud logo."
+    class="Footer__Button Footer__Button--Dark"
+  />
+
+  <img type="button"
+  src="/Images/Soundcloud_Light.png" 
+  alt="The soundcloud logo hovered upon."
+  class="Footer__Button Footer__Button--Light "
+/>
+
+
+
+      <a href="https://www.flaticon.com/free-icons/spotify" title="spotify icons" class="citation">Spotify icons created by Pixel perfect - Flaticon</a>
+      <a href="https://www.flaticon.com/free-icons/pandora" title="pandora icons" class="citation">Pandora icons created by Pixel perfect - Flaticon</a>
+      <a href="https://www.flaticon.com/free-icons/soundcloud" title="soundcloud icons" class="citation">Soundcloud icons created by Pixel perfect - Flaticon</a>
+
+
+     </footer> 
   </body>
   <script src="mozart.js"></script>
 </html>

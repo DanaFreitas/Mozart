@@ -3,39 +3,30 @@ const menu = document.getElementById("menu");
 let menc = document.getElementsByClassName("menuclassdefault");
 const holder = document.getElementById("burgerholder");
 
-
 ham.addEventListener("click", () => {
   document.getElementById("hamburger").classList.toggle("show");
-
 });
 
 ham.addEventListener("click", () => {
-
   if (
     menu.classList.contains("menuclassdefault") ||
     menu.classList.contains("menuclassexit")
   ) {
     menu.classList.remove("menuclassdefault");
-    menu.classList.remove("menuclassexit");    
+    menu.classList.remove("menuclassexit");
     menu.classList.add("menuclassenter");
-    document.getElementById("hamburger").style.position="fixed";
-    document.getElementById("hamburger").style.left="14.3vw";
-    document.getElementById("navbar").style.position="relative";
+    document.getElementById("hamburger").style.position = "fixed";
+    document.getElementById("hamburger").style.left = "14.3vw";
+    document.getElementById("navbar").style.position = "relative";
+  } else if (menu.classList.contains("menuclassenter")) {
+    menu.classList.add("menuclassexit");
+    menu.classList.remove("menuclassenter");
+    document.getElementById("hamburger").style.position = "relative";
+    document.getElementById("hamburger").style.width = "";
+    document.getElementById("hamburger").style.left = "0rem";
+    document.getElementById("navbar").style.position = "fixed";
   }
-    else if (menu.classList.contains("menuclassenter"))
-    {
-      menu.classList.add("menuclassexit");    
-      menu.classList.remove("menuclassenter");
-      document.getElementById("hamburger").style.position="relative";
-      document.getElementById("hamburger").style.width="";
-      document.getElementById("hamburger").style.left="0rem";
-      document.getElementById("navbar").style.position="fixed";
-
-    }
-
 });
-
-
 
 const keyframesRule = `
   @keyframes myAnimation {
@@ -48,30 +39,20 @@ const keyframesRule = `
   }
 `;
 
-
 const music = document.getElementById("musicbutton");
 
 const audioele = document.getElementById("audios");
 const audiosource = new Audio("Eine-Kleine-Nachtmusik.mp3");
 music.addEventListener("click", () => {
-
-
-  if ((audioele.style.display == "none" || audioele.style.display == "")) {
+  if (audioele.style.display == "none" || audioele.style.display == "") {
     audioele.style.display = "block";
     audiosource.play();
-
-
-  }
- else if (audioele.style.display = "block") {
+  } else if ((audioele.style.display = "block")) {
     audioele.style.display = "none";
     audiosource.pause();
     audiosource.currentTime = 0;
-
-
-  }  
-
+  }
 });
-
 
 //if block, else none it works fine
 //if none else block, there needs to be a second click for it to start working
@@ -119,7 +100,9 @@ const observer2 = new IntersectionObserver((entries) => {
 window.addEventListener(
   "DOMContentLoaded",
   (event) => {
-    const sections = Array.from(document.getElementsByClassName("inspiredbyhim"));
+    const sections = Array.from(
+      document.getElementsByClassName("inspiredbyhim")
+    );
 
     for (let section of sections) {
       observer2.observe(section);
@@ -127,3 +110,40 @@ window.addEventListener(
   },
   options
 );
+
+const contact = document.getElementsByClassName("Footer__Button--Dark");
+const contactlight = document.getElementsByClassName("Footer__Button--Light");
+const testing = document.getElementById("Spotifydark");
+
+for (let i = 0; i < contact.length; i++) {
+  contact[i].addEventListener("click", () => {
+    if ((contact[i].style.display = "block")) {
+
+      contact[i].style.display = "none";
+      contactlight[i].style.display = "block";
+
+    } else if (contact[i].style.display = "none")
+    
+    {
+      contact[i].style.display = "block";
+      contactlight[i].style.display = "none";
+
+    }
+  });
+}
+
+
+for (let j = 0; j < contactlight.length; j++) {
+  contactlight[j].addEventListener("click", () => {
+    if ((contactlight[j].style.display = "block")) {
+
+      contact[j].style.display = "block";
+      contactlight[j].style.display = "none";
+    } else if (contactlight[j].style.display = "none")
+    
+    {
+      contact[j].style.display = "none";
+      contactlight[j].style.display = "block";
+    }
+  });
+}

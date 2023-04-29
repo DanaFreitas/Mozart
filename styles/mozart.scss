@@ -1,9 +1,26 @@
+/*Table of contents
+Body
+Navbar
+Menu
+Biography
+Music
+Contact
+*/
+
+/*Body*/
+
+
 body {margin:0;padding:0; background-color: grey;}
 
-#navbar{
+/*Navbar*/
+
+
+.navbar{
   z-index: 10;
  // position:relative;
  position: fixed;
+ background-color: grey;
+ width:100%;
 }
 
 
@@ -22,12 +39,12 @@ body {margin:0;padding:0; background-color: grey;}
 $text-center:center;
 
 
-#burgerholder {display:flex; flex-direction: row; justify-content: space-evenly; //z-index: 1; 
+.navbar__burgerholder {display:flex; flex-direction: row; justify-content: space-evenly;  
   position:relative;}
 
 
 
- #hamburger {
+ .navbar__hamburger {
    @include hoverstyles;
   //position:absolute;
   left: 0vw;
@@ -40,16 +57,16 @@ z-index: 5;}
 
 //need to have the divs spaced well. use visibility:hidden
 
-#hamburger:hover > .hamburger-bit {
+.navbar__hamburger:hover > .hamburger-bit {
   background-color:white;
 } 
-
-#hamburger2:hover > .hamburger-bit {
+/*
+.navbar__hamburger2:hover > .hamburger-bit {
   background-color:white;
-} 
+} */
 
 
-.hamburger-bit {
+.navbar__hamburger--hamburger-bit {
   width: 3em;
   height: 0.5em;
   background-color: black;
@@ -76,10 +93,10 @@ transform: translate(0, -1em) rotate(45deg); transition-duration: 500ms;
 
 
 
-
+/*
 #musicbutton {
   @include hoverstyles
-}
+}*/
  
 .fa-solid {margin-top: .85em}
 
@@ -88,14 +105,14 @@ transform: translate(0, -1em) rotate(45deg); transition-duration: 500ms;
 }
 
 
-#title {
+.title {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-size: 2.5rem;
   margin-top: .25rem;
 }
 
 
-#audios {
+.audios {
 display:none;
 width:100%;
 
@@ -108,7 +125,7 @@ bottom:10%;}
 
 source{display: none;}
 
-
+/* Menu */
 
 .menuclassdefault {
   display:none;
@@ -147,7 +164,7 @@ text-align:$text-center;
 
 .menuclassenter  {
  animation-name: menuappear;
- @include menumixin
+ @include menumixin;
 
 } 
 
@@ -219,6 +236,7 @@ text-align:$text-center;
   color:white
 } 
 
+/* Biography */
 
 .paragraph {margin: 1rem;}
 
@@ -264,7 +282,10 @@ h3  {text-align:$text-center;}
 
 img {width:100%}
 
-iframe {width:100%;padding:.5rem 0;}
+/* Music */
+
+
+iframe {width:90%;padding:.5rem;}
 
 .animatemusic {
   animation-name: musicfadein;
@@ -285,3 +306,16 @@ iframe {width:100%;padding:.5rem 0;}
     opacity:100;
   }
 }
+
+
+/* Contact */
+
+svg {display:block; margin:auto;
+
+}
+
+.Footer__Button {width:10rem;}
+
+.Footer__Button--Dark {display:block; margin:auto;}
+
+.Footer__Button--Light {display:none; margin:auto;}
