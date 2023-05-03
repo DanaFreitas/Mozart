@@ -11,25 +11,25 @@
   <body>
        
 
-    <nav id="navbar" class="navbar">
-    <div id="burgerholder" class="navbar__burgerholder">
-      <div type="button" id="hamburger" class="navbar__hamburger">
-        <div class="navbar__hamburger--hamburger-bit" id="hamburger-bit-1"></div>
-        <div class="navbar__hamburger--hamburger-bit" id="hamburger-bit-2"></div>
-        <div class="navbar__hamburger--hamburger-bit" id="hamburger-bit-3"></div>
+    <header id="header" class="header">
+    <div id="burgerholder" class="header__burgerholder">
+      <div type="button" id="hamburger" class="header__hamburger">
+        <div class="header__hamburger--hamburger-bit" id="hamburger-bit-1"></div>
+        <div class="header__hamburger--hamburger-bit" id="hamburger-bit-2"></div>
+        <div class="header__hamburger--hamburger-bit" id="hamburger-bit-3"></div>
       </div>
 
 
-      <header id="title" class="title">Mozart</header>
+      <div id="title" class="title">Mozart</div>
 
 
       <i class="fa-solid fa-music fa-2xl" id="musicbutton" type="button"></i>
       
       
-    </nav>
+      </header>
 
 
-
+<!-- 
      <section id="menu" class="menuclassdefault">
       
       
@@ -38,7 +38,19 @@
         <div class="menu-item">History</div>
         <div class="menu-item">Legacy</div>
         <div class="menu-item">Preview</div>
-    </section> 
+    </section>  -->
+
+    <nav>
+    <ul id="menu" class="menuclassdefault">
+      
+      
+
+      <li class="menu-item">Home</li>
+      <li class="menu-item">History</li>
+      <li class="menu-item">Legacy</li>
+      <li class="menu-item">Preview</li>
+   </ul>  
+   </nav>
 
     <audio id="audios" class="audios" controls >
       <source src="Eine-Kleine-Nachtmusik.mp3" type="audio/mpeg" >
@@ -119,7 +131,7 @@
 
 
 
-    <h3>Legacy</h3>
+    <h2>Legacy</h2>
     <p class="paragraph">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec
       purus a libero blandit varius eget nec ante. Praesent euismod id augue nec
@@ -133,26 +145,50 @@
 padding for videos.
 have a contact me and it be his grave-->
 
-    <iframe  src="https://www.youtube.com/embed/mj2Tr-IUPhc" title="Musician Playing Mozart 1" frameborder="0" id="musician1" class="inspiredbyhim" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>    
-    <iframe  src="https://www.youtube.com/embed/A_THdzBnHy0" title="Musician Playing Mozart 2" frameborder="0" id="musician2" class="inspiredbyhim" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>    
-    <iframe  src="https://www.youtube.com/embed/vx3fuisF1Nk" title="Musician Playing Mozart 3" frameborder="0" id="musician3" class="inspiredbyhim" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    <iframe  src="https://www.youtube.com/embed/sPb47w6uQZY" title="Musician Playing Mozart 4" id="musician4" class="inspiredbyhim" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe  src="https://www.youtube.com/embed/mj2Tr-IUPhc" title="Musician Playing Mozart 1" frameborder="0" id="musician1" class="Legacy_Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>    
+    <iframe  src="https://www.youtube.com/embed/A_THdzBnHy0" title="Musician Playing Mozart 2" frameborder="0" id="musician2" class="Legacy_Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>    
+    <iframe  src="https://www.youtube.com/embed/vx3fuisF1Nk" title="Musician Playing Mozart 3" frameborder="0" id="musician3" class="Legacy_Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe  src="https://www.youtube.com/embed/sPb47w6uQZY" title="Musician Playing Mozart 4" frameborder="0" id="musician4" class="Legacy_Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 
 
     <footer> 
-      <h3>Contact</h3>
+      <h2>Contact</h2>
       
+
+      <div class="Footer__Grave--Wrapper">
+      <div class="Footer__Grave--Background"></div>
+      <div class="Footer__Grave--HorizontalCross"></div>
+      <div class="Footer__Grave--VerticalCross"></div>
+
+      <div class="Footer__Grave--HorizontalCross2"></div>
+      <div class="Footer__Grave--VerticalCross2"></div>
+
+
+      <div class="Footer__Grave--HorizontalCross3"></div>
+      <div class="Footer__Grave--VerticalCross3"></div>
+
+
       <img
       src="/Images/Grave.jpg"
       alt="Mozart's Grave"
       id="Mozartgrave"
-      class="Mozartimage complete"
+      class="Footer__Image--Grave"
     />
+
+    <p class="paragraph">Unfortunately, Mozart has died many centuries ago. Yet, his music lives on, and you can find it throughout the internet. </p>
+
+
+      </div>
+
+   
   
 
 
-    <h3>Spotify</h3>
+
+
+
+<div class="Footer__Container">
 
     <img type="button"
     src="/Images/Spotify_Dark.png"   
@@ -168,7 +204,6 @@ have a contact me and it be his grave-->
 />
 
 
-    <h3>Pandora</h3>
     
     <img type="button"
     src="/Images/Pandora_Dark.png" 
@@ -182,7 +217,6 @@ have a contact me and it be his grave-->
   class="Footer__Button Footer__Button--Light"
 />
 
-    <h3>Soundcloud</h3>
 
     <img type="button"
     src="/Images/Soundcloud_Dark.png" 
@@ -197,11 +231,11 @@ have a contact me and it be his grave-->
 />
 
 
+</div>
 
-      <a href="https://www.flaticon.com/free-icons/spotify" title="spotify icons" class="citation">Spotify icons created by Pixel perfect - Flaticon</a>
-      <a href="https://www.flaticon.com/free-icons/pandora" title="pandora icons" class="citation">Pandora icons created by Pixel perfect - Flaticon</a>
-      <a href="https://www.flaticon.com/free-icons/soundcloud" title="soundcloud icons" class="citation">Soundcloud icons created by Pixel perfect - Flaticon</a>
-
+      <a href="https://www.flaticon.com/free-icons/spotify" title="spotify icons" class="Footer_Citation">Spotify icons created by Pixel perfect - Flaticon</a>
+      <a href="https://www.flaticon.com/free-icons/pandora" title="pandora icons" class="Footer_Citation">Pandora icons created by Pixel perfect - Flaticon</a>
+      <a href="https://www.flaticon.com/free-icons/soundcloud" title="soundcloud icons" class="Footer_Citation">Soundcloud icons created by Pixel perfect - Flaticon</a>
 
      </footer> 
   </body>

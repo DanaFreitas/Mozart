@@ -15,15 +15,15 @@ ham.addEventListener("click", () => {
     menu.classList.remove("menuclassdefault");
     menu.classList.remove("menuclassexit");
     menu.classList.add("menuclassenter");
-    document.getElementById("hamburger").style.position = "fixed";
-    document.getElementById("hamburger").style.left = "14.3vw";
+    // document.getElementById("hamburger").style.position = "fixed";
+    //document.getElementById("hamburger").style.left = "14.3vw";
     document.getElementById("navbar").style.position = "relative";
   } else if (menu.classList.contains("menuclassenter")) {
     menu.classList.add("menuclassexit");
     menu.classList.remove("menuclassenter");
-    document.getElementById("hamburger").style.position = "relative";
+   // document.getElementById("hamburger").style.position = "relative";
     document.getElementById("hamburger").style.width = "";
-    document.getElementById("hamburger").style.left = "0rem";
+   // document.getElementById("hamburger").style.left = "0rem";
     document.getElementById("navbar").style.position = "fixed";
   }
 });
@@ -89,10 +89,10 @@ window.addEventListener(
 const observer2 = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      entry.target.classList.add("animatemusic");
+      entry.target.classList.add("Legacy_Video");
       observer2.unobserve(entry.target);
     } else {
-      entry.target.classList.remove("animatemusic");
+      entry.target.classList.remove("Legacy_Video");
     }
   });
 });
@@ -101,7 +101,7 @@ window.addEventListener(
   "DOMContentLoaded",
   (event) => {
     const sections = Array.from(
-      document.getElementsByClassName("inspiredbyhim")
+      document.getElementsByClassName("Legacy_Video")
     );
 
     for (let section of sections) {
@@ -110,6 +110,17 @@ window.addEventListener(
   },
   options
 );
+
+
+
+
+
+
+
+
+
+
+
 
 const contact = document.getElementsByClassName("Footer__Button--Dark");
 const contactlight = document.getElementsByClassName("Footer__Button--Light");
