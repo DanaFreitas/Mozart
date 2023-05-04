@@ -5,6 +5,7 @@ Menu
 Biography
 Music
 Contact
+Footer
 */
 
 /*Body*/
@@ -300,40 +301,63 @@ iframe {width:90%;padding:.5rem;}
 }
 
 
-/* Contact */
 
 svg {display:block; margin:auto;
 
 }
 
+
+/*Contact*/
+
 @mixin Cross{
   position:absolute; 
   z-index:3;
   background-color: white;
-  height:.5em;
   display:block;
 }
 
+
+
 @mixin HorizontalCross{
-   width:.3em; margin-top: 3rem; left:45%;
+   height: .5em; width:3em; top:22%;
 }
 
 
 @mixin VerticalCross {
-   width:.5em; top:10%; left:50%;
+   height: 5em; width:.5em; top:15%;
+   
 }
 
 
 
 
-.Footer__Grave--Wrapper {position:relative; font-size: 16px;}
-.Footer__Grave--Background {position:absolute; width:100%; height:66%; background-color: black; z-index: 2; display:block; margin:auto;}
+.Contact__Grave--Wrapper {position:relative; font-size: 16px;}
+.Contact__Grave--Background {position:absolute; width:100%; height:100%; background-color: black; z-index: 2; display:block; margin:auto;}
+.Contact__Image--Grave {width: 100%;}
 
-.Footer__Grave--HorizontalCross{position:absolute; height:.5em; width:3em; 
-  background-color: white; z-index: 3; display:block; margin-top: 3rem; left:45%;}
-.Footer__Grave--VerticalCross{position:absolute; height:5em; width:.5em; background-color: white; z-index: 3; display:block; top:10%; left:50%;}
 
-.Footer__Image--Grave {width: 100%; height:66%;}
+.Contact__Grave--HorizontalCross1{ @include HorizontalCross; @include Cross; left:15%; }
+.Contact__Grave--VerticalCross1{ @include VerticalCross; @include Cross;     left:20%;
+}
+
+.Contact__Grave--HorizontalCross2{ @include HorizontalCross; @include Cross; left:45%;}
+.Contact__Grave--VerticalCross2{ @include VerticalCross; @include Cross;     left:50%;
+}
+
+
+.Contact__Grave--HorizontalCross3{ @include HorizontalCross; @include Cross; left:75%;}
+.Contact__Grave--VerticalCross3{ @include VerticalCross; @include Cross;     left:80%;
+}
+
+
+
+.Contact_Paragraph { display:none;
+
+}
+
+
+
+/* Footer */
 
 //use em
 
