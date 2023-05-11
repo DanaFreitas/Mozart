@@ -314,40 +314,79 @@ svg {display:block; margin:auto;
   z-index:3;
   background-color: white;
   display:block;
+  top:50%;
 }
 
 
 
 @mixin HorizontalCross{
-   height: .5em; width:3em; top:22%;
-}
-
-
-@mixin VerticalCross {
-   height: 5em; width:.5em; top:15%;
+   height: .5em;
+   width:3em; 
+   background-color: white;
+   left:50%;
+   z-index: 3;
+   //margin-right: 10rem;
    
 }
 
 
+@mixin VerticalCross {
+   height: 5em;
+    width:.5em; 
+  left:50%;
+  //top:45%;
+  }
 
 
-.Contact__Grave--Wrapper {position:relative; font-size: 16px;}
+//@mixin Cross {height:5rem; width:5rem; position:relative;}
+
+@mixin BeforeandAfter {
+   
+
+  &::before,
+  &::after
+  {   content:"";
+    position:absolute;
+    z-index:2;
+    background:white;}
+
+  &::before {    left:51%;
+    width:20%;
+    margin-left:-16%;
+    height:100%;
+ 
+ 
+ }
+  &::after {    top:51%;
+    height:15%;
+    margin-top:-16%;
+    width:100%;
+ 
+ 
+ }
+}
+
+
+
+
+.Contact__Grave--Wrapper {position:relative; font-size: 1rem;}
 .Contact__Grave--Background {position:absolute; width:100%; height:100%; background-color: black; z-index: 2; display:block; margin:auto;}
 .Contact__Image--Grave {width: 100%;}
 
-
-.Contact__Grave--HorizontalCross1{ @include HorizontalCross; @include Cross; left:15%; }
-.Contact__Grave--VerticalCross1{ @include VerticalCross; @include Cross;     left:20%;
-}
-
-.Contact__Grave--HorizontalCross2{ @include HorizontalCross; @include Cross; left:45%;}
-.Contact__Grave--VerticalCross2{ @include VerticalCross; @include Cross;     left:50%;
-}
+.Contact__Grave--CrossWrapper { display:flex; flex-direction: row; justify-content: space-around; 
+  position: absolute; top:50%; left:50%;   transform: translate(-50%, -50%);}
 
 
-.Contact__Grave--HorizontalCross3{ @include HorizontalCross; @include Cross; left:75%;}
-.Contact__Grave--VerticalCross3{ @include VerticalCross; @include Cross;     left:80%;
-}
+.Contact__Grave--Cross {@include Cross; @include BeforeandAfter; }
+.Contact__Grave--Cross2 {@include Cross; @include BeforeandAfter; }
+.Contact__Grave--Cross3 {@include Cross; @include BeforeandAfter; }
+
+
+
+
+//.Contact__Grave--Cross::after {@include HorizontalCross; position: absolute; content: "";}
+
+
 
 
 

@@ -17,14 +17,14 @@ ham.addEventListener("click", () => {
     menu.classList.add("menuclassenter");
     // document.getElementById("hamburger").style.position = "fixed";
     //document.getElementById("hamburger").style.left = "14.3vw";
-    document.getElementById("navbar").style.position = "relative";
+    //document.getElementById("navbar").style.position = "relative";
   } else if (menu.classList.contains("menuclassenter")) {
     menu.classList.add("menuclassexit");
     menu.classList.remove("menuclassenter");
    // document.getElementById("hamburger").style.position = "relative";
     document.getElementById("hamburger").style.width = "";
    // document.getElementById("hamburger").style.left = "0rem";
-    document.getElementById("navbar").style.position = "fixed";
+   // document.getElementById("navbar").style.position = "fixed";
   }
 });
 
