@@ -2,6 +2,7 @@
 Body
 Navbar
 Menu
+Audio
 Biography
 Music
 Contact
@@ -10,126 +11,29 @@ Footer
 
 /*Body*/
 
+*{ margin:0; padding: 0; box-sizing: border-box; }
 
-body {margin:0;padding:0; background-color: grey;}
-iframe {padding:0; margin:0;}
-
-/*Navbar*/
-
-ul {padding:0rem;}
-
-.header{
-  z-index: 10;
- // position:relative;
- position: fixed;
- background-color: grey;
- width:100%;
-}
-
-
-@mixin hoverstyles {
-  &:hover {
-    color:white;
-  }
-}
-
-@mixin hoverstylesbg {
-  &:hover {
-    background-color:white;
-  }
-}
+body {background-color: grey;}
 
 $text-center:center;
 
+@mixin hoverstyles {&:hover {color:white;}}
+ @mixin hoverstylesbg { &:hover { background-color:white;}}
 
-.header__burgerholder {display:flex; flex-direction: row; justify-content: space-evenly;  
-  position:relative; height:3.5rem;}
-
-
-
- .header__hamburger {
-   @include hoverstyles;
-  //position:absolute;
-  left: 0vw;
-  top: 0vw;
-  display:block;  
-  //transition-duration: 500ms;
-z-index: 5;}
+/*Navbar*/
 
 
+.header{
+  z-index: 10; position: fixed;background-color: grey;width:100%;  .header__burgerholder {display:flex; flex-direction: row; justify-content: space-evenly;  position:relative; height:3.5rem;}.header__hamburger { @include hoverstyles;left: 0vw;top: 0vw;display:block; z-index: 5;}.header__hamburger:hover > .header__hamburger--hamburger-bit {background-color:white;color:white} .header__hamburger--hamburger-bit {width: 3em;height: 0.5em;background-color: black;margin: .5em 0; transition:.4s}.show #hamburger-bit-1 {transform: translate(0, 1em) rotate(-45deg);transition-duration: 500ms;}.show #hamburger-bit-2 {opacity:0; transition-duration: 500ms;}.show #hamburger-bit-3  {transform: translate(0, -1em) rotate(45deg); transition-duration: 500ms;}.fa-solid {margin-top: .85em;}.fa-solid{@include hoverstyles;}.title {font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;font-size: 2.5rem;margin-top: .25rem;}}
 
-//need to have the divs spaced well. use visibility:hidden
-
-.header__hamburger:hover > .header__hamburger--hamburger-bit {
-  background-color:white;
-  color:white
-} 
-
-
-.header__hamburger--hamburger-bit {
-  width: 3em;
-  height: 0.5em;
-  background-color: black;
-   margin: .5em 0; 
-  transition:.4s
-  }
-
-
-
-.show #hamburger-bit-1 {
-  transform: translate(0, 1em) rotate(-45deg);
-  transition-duration: 500ms;
-}
-
-
-.show #hamburger-bit-2 {
- opacity:0; transition-duration: 500ms;
-}
-
-
-.show #hamburger-bit-3  {
-transform: translate(0, -1em) rotate(45deg); transition-duration: 500ms;
-}
-
-
-
-/*
-#musicbutton {
-  @include hoverstyles
-}*/
- 
-.fa-solid {margin-top: .85em;}
-
-.fa-solid{
-  @include hoverstyles;
-}
-
-
-.title {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  font-size: 2.5rem;
-  margin-top: .25rem;
-}
-
-
-.audios {
-display:none;
-width:100%;
-
-  position:fixed;
-width:100%;
-z-index: 1;
-bottom:10%;}
-
-
-
-source{display: none;}
 
 /* Menu */
 
 .menuclassdefault {
   display:none;
 }
+
+
 
 
 @mixin menumixin {
@@ -147,7 +51,7 @@ source{display: none;}
  margin: 0rem;
 animation-direction: normal;
 animation-duration: .75s;
-text-align:$text-center;
+text-align: $text-center;
 margin-top: 3.5rem;
 }
 
@@ -226,6 +130,25 @@ margin-top: 3.5rem;
   color:white
 } 
 
+/* Audio */ 
+
+.audios {
+  display:none;
+  width:100%;
+  
+    position:fixed;
+  width:100%;
+  z-index: 1;
+  bottom:10%;}
+  
+  
+  
+  source{display: none;}
+  
+
+
+
+
 /* Biography */
 
 #Mozart {margin-top: 5rem;}
@@ -251,7 +174,7 @@ h3  {text-align:$text-center;}
 
 
 .Mozartimagetest { animation-name: fadein;
-  animation-duration: 1.5s;
+  animation-duration: 5.5s;
   transition-property: opacity;
   opacity: 0;
   transition-timing-function: linear;
@@ -309,91 +232,70 @@ svg {display:block; margin:auto;
 
 /*Contact*/
 
-@mixin Cross{
-  position:absolute; 
-  z-index:3;
-  background-color: white;
-  display:block;
-  top:50%;
-}
 
 
 
-@mixin HorizontalCross{
-   height: .5em;
-   width:3em; 
-   background-color: white;
-   left:50%;
-   z-index: 3;
-   //margin-right: 10rem;
+
+// @mixin HorizontalCross{
+//    height: .5em;
+//    width:3em; 
+//    background-color: white;
+//    left:50%;
+//    z-index: 3;
+//    //margin-right: 10rem;
    
-}
+// }
 
 
-@mixin VerticalCross {
-   height: 5em;
-    width:.5em; 
-  left:50%;
-  //top:45%;
-  }
+// @mixin VerticalCross {
+//    height: 5em;
+//     width:.5em; 
+//   left:50%;
+//   //top:45%;
+//   }
 
 
 //@mixin Cross {height:5rem; width:5rem; position:relative;}
+//@mixin Cross{ position:absolute; z-index:3;background-color: blue;color:blue;display:block;top:50%;}
 
 @mixin BeforeandAfter {
    
 
-  &::before,
-  &::after
-  {   content:"";
-    position:absolute;
-    z-index:2;
-    background:white;}
+  &::before, &::after{content:"";position:absolute; display:block; z-index:4 ;background-color:white;color:white; display:block;top:50%;}
 
-  &::before {    left:51%;
-    width:20%;
-    margin-left:-16%;
-    height:100%;
- 
- 
+  &::before {//left:51%;
+    //width:20%;
+   // margin-left:16%;
+    //height:100%;
+    height: 5em;
+    width:.5em;
  }
-  &::after {    top:51%;
-    height:15%;
-    margin-top:-16%;
-    width:100%;
- 
- 
+
+  &::after { //top:15%;//height:15%;
+    //margin-top:16%;//width:100%;
+    height:.5em;
+    width:5em; 
+
  }
+}
+
+.Contact__Grave--Cross + .Contact__Grave--Cross {
+  margin-left: 20px;
 }
 
 
 
-
-.Contact__Grave--Wrapper {position:relative; font-size: 1rem;}
-.Contact__Grave--Background {position:absolute; width:100%; height:100%; background-color: black; z-index: 2; display:block; margin:auto;}
+.Contact__Grave--Wrapper {position:relative; font-size: 1rem; .Contact__Grave--Background {position:absolute; width:100%; height:100%; z-index: 2; display:block; margin:auto; background-color: black;}
 .Contact__Image--Grave {width: 100%;}
-
-.Contact__Grave--CrossWrapper { display:flex; flex-direction: row; justify-content: space-around; 
-  position: absolute; top:50%; left:50%;   transform: translate(-50%, -50%);}
-
-
-.Contact__Grave--Cross {@include Cross; @include BeforeandAfter; }
-.Contact__Grave--Cross2 {@include Cross; @include BeforeandAfter; }
-.Contact__Grave--Cross3 {@include Cross; @include BeforeandAfter; }
+.Contact__Grave--CrossWrapper {display:flex; flex-direction: row; justify-content: space-around ;position:absolute; top:50%; left:50%; transform: translate(-50%, -50%); 
+  width:100%; height:10rem; background-color: green;}
 
 
-
-
-//.Contact__Grave--Cross::after {@include HorizontalCross; position: absolute; content: "";}
-
-
-
-
-
-.Contact_Paragraph { display:none;
-
+.Contact__Grave--Cross {@include Cross; @include BeforeandAfter;}
+.Contact__Grave--Cross {@include Cross; @include BeforeandAfter;}
+.Contact__Grave--Cross {@include Cross; @include BeforeandAfter;}
+.Contact_Paragraph { display:none;}
 }
-
 
 
 /* Footer */

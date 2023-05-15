@@ -60,7 +60,7 @@ music.addEventListener("click", () => {
 let options = {
   root: null,
   rootMargin: "0px",
-  threshold: 1.0,
+  threshold: .5,
 };
 
 const observer = new IntersectionObserver((entries) => {
@@ -74,6 +74,7 @@ const observer = new IntersectionObserver((entries) => {
   });
 });
 
+
 window.addEventListener(
   "DOMContentLoaded",
   (event) => {
@@ -85,6 +86,9 @@ window.addEventListener(
   },
   options
 );
+
+
+
 
 const observer2 = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
