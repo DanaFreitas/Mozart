@@ -258,44 +258,79 @@ svg {display:block; margin:auto;
 //@mixin Cross {height:5rem; width:5rem; position:relative;}
 //@mixin Cross{ position:absolute; z-index:3;background-color: blue;color:blue;display:block;top:50%;}
 
+.Contact__Grave--Wrapper{
+height:12rem;
+}
+
+
 @mixin BeforeandAfter {
    
 
-  &::before, &::after{content:"";position:absolute; display:block; z-index:4 ;background-color:white;color:white; display:block;top:50%;}
+  &::before, &::after{content:"";position:absolute;  z-index:4 ;background-color:white;     
+  }
 
-  &::before {//left:51%;
-    //width:20%;
-   // margin-left:16%;
-    //height:100%;
-    height: 5em;
-    width:.5em;
+  //for the height
+  &::before {
+    height: 30vw;
+    width: 2.5vw;
+    top: 0;
+    left: 30%;
  }
 
-  &::after { //top:15%;//height:15%;
-    //margin-top:16%;//width:100%;
-    height:.5em;
-    width:5em; 
+ //for the width
+  &::after { 
+    height: 2.5vw;;
+    width:15vw; 
+ 
+    top:120%;
+    left: 0;
 
  }
 }
 
 .Contact__Grave--Cross + .Contact__Grave--Cross {
-  margin-left: 20px;
+  margin-left: 4vw;
 }
 
+.Contact__Grave--Cross {transform-origin: center; 
+  position:relative;
+   height:5vw; width:20vw;
+}
+
+.Contact__Grave--Wrapper {position:relative; font-size: 1rem; 
 
 
-.Contact__Grave--Wrapper {position:relative; font-size: 1rem; .Contact__Grave--Background {position:absolute; width:100%; height:100%; z-index: 2; display:block; margin:auto; background-color: black;}
+//make the image go behind the crosses, not on top
+
+  .Contact__Grave--Background {position:absolute; width:100%; height:100%; z-index: 2; display:block; margin:auto; background-color: black;}
 .Contact__Image--Grave {width: 100%;}
-.Contact__Grave--CrossWrapper {display:flex; flex-direction: row; justify-content: space-around ;position:absolute; top:50%; left:50%; transform: translate(-50%, -50%); 
-  width:100%; height:10rem; background-color: green;}
 
 
-.Contact__Grave--Cross {@include Cross; @include BeforeandAfter;}
-.Contact__Grave--Cross {@include Cross; @include BeforeandAfter;}
-.Contact__Grave--Cross {@include Cross; @include BeforeandAfter;}
+.Contact__Grave--CrossWrapper {display: flex;justify-content: center;align-items: center;height: 12rem;}
+
+
+.Contact__Grave--Cross { @include BeforeandAfter;}
 .Contact_Paragraph { display:none;}
 }
+
+.Obs3 {
+animation-name: gravereveal;
+
+background-color:red;
+position:absolute; width:100%; height:100%; z-index: 2; display:block; margin:auto;}
+
+@keyframes gravereveal {
+
+0% {
+  opacity:1;
+}
+
+100% {
+  opacity:0;
+}
+
+}
+
 
 
 /* Footer */

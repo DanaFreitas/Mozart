@@ -123,6 +123,40 @@ window.addEventListener(
 
 
 
+const observer3 = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.remove("Contact__Grave--Background");
+      entry.target.classList.add("Obs3");
+      observer3.unobserve(entry.target);
+    } else {
+      entry.target.classList.remove("Obs3");
+      entry.target.classList.add("Contact__Grave--Background");
+    }
+  });
+});
+
+
+
+window.addEventListener(
+  "DOMContentLoaded",
+  (event) => {
+    const sections = Array.from(
+      document.getElementsByClassName("Obs3")
+    );
+
+    for (let section of sections) {
+      observer3.observe(section);
+    }
+  },
+  options
+);
+
+
+
+
+
+
 
 
 

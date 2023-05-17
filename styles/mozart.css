@@ -244,6 +244,21 @@ svg {
 
 /*Contact*/
 .Contact__Grave--Wrapper {
+  height: 12rem;
+}
+
+.Contact__Grave--Cross + .Contact__Grave--Cross {
+  margin-left: 4vw;
+}
+
+.Contact__Grave--Cross {
+  transform-origin: center;
+  position: relative;
+  height: 5vw;
+  width: 20vw;
+}
+
+.Contact__Grave--Wrapper {
   position: relative;
   font-size: 1rem;
 }
@@ -261,104 +276,51 @@ svg {
 }
 .Contact__Grave--Wrapper .Contact__Grave--CrossWrapper {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: 10rem;
-  background-color: green;
-}
-.Contact__Grave--Wrapper .Contact__Grave--Cross {
-  position: absolute;
-  z-index: 3;
-  background-color: blue;
-  color: blue;
-  display: block;
-  top: 50%;
+  justify-content: center;
+  align-items: center;
+  height: 12rem;
 }
 .Contact__Grave--Wrapper .Contact__Grave--Cross::before, .Contact__Grave--Wrapper .Contact__Grave--Cross::after {
   content: "";
   position: absolute;
-  display: block;
   z-index: 4;
   background-color: white;
-  color: white;
 }
 .Contact__Grave--Wrapper .Contact__Grave--Cross::before {
-  left: 51%;
-  margin-left: 16%;
-  height: 5em;
-  width: 0.5em;
+  height: 30vw;
+  width: 2.5vw;
+  top: 0;
+  left: 30%;
 }
 .Contact__Grave--Wrapper .Contact__Grave--Cross::after {
-  top: 15%;
-  margin-top: 16%;
-  height: 0.5em;
-  width: 5em;
-}
-.Contact__Grave--Wrapper .Contact__Grave--Cross2 {
-  position: absolute;
-  z-index: 3;
-  background-color: blue;
-  color: blue;
-  display: block;
-  top: 50%;
-}
-.Contact__Grave--Wrapper .Contact__Grave--Cross2::before, .Contact__Grave--Wrapper .Contact__Grave--Cross2::after {
-  content: "";
-  position: absolute;
-  display: block;
-  z-index: 4;
-  background-color: white;
-  color: white;
-}
-.Contact__Grave--Wrapper .Contact__Grave--Cross2::before {
-  left: 51%;
-  margin-left: 16%;
-  height: 5em;
-  width: 0.5em;
-}
-.Contact__Grave--Wrapper .Contact__Grave--Cross2::after {
-  top: 15%;
-  margin-top: 16%;
-  height: 0.5em;
-  width: 5em;
-}
-.Contact__Grave--Wrapper .Contact__Grave--Cross3 {
-  position: absolute;
-  z-index: 3;
-  background-color: blue;
-  color: blue;
-  display: block;
-  top: 50%;
-}
-.Contact__Grave--Wrapper .Contact__Grave--Cross3::before, .Contact__Grave--Wrapper .Contact__Grave--Cross3::after {
-  content: "";
-  position: absolute;
-  display: block;
-  z-index: 4;
-  background-color: white;
-  color: white;
-}
-.Contact__Grave--Wrapper .Contact__Grave--Cross3::before {
-  left: 51%;
-  margin-left: 16%;
-  height: 5em;
-  width: 0.5em;
-}
-.Contact__Grave--Wrapper .Contact__Grave--Cross3::after {
-  top: 15%;
-  margin-top: 16%;
-  height: 0.5em;
-  width: 5em;
+  height: 2.5vw;
+  width: 15vw;
+  top: 120%;
+  left: 0;
 }
 .Contact__Grave--Wrapper .Contact_Paragraph {
   display: none;
 }
 
+.Obs3 {
+  animation-name: gravereveal;
+  background-color: red;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: block;
+  margin: auto;
+}
+
+@keyframes gravereveal {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 /* Footer */
 .Footer {
   font-size: 0.1rem;
