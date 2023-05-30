@@ -70,6 +70,8 @@ const observer = new IntersectionObserver((entries) => {
       observer.unobserve(entry.target);
     } else {
       entry.target.classList.remove("Mozartimagetest");
+      console.log("test")
+      
     }
   });
 });
@@ -97,6 +99,7 @@ const observer2 = new IntersectionObserver((entries) => {
       observer2.unobserve(entry.target);
     } else {
       entry.target.classList.remove("Legacy_Video");
+      console.log("test2")
     }
   });
 });
@@ -126,12 +129,12 @@ window.addEventListener(
 const observer3 = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      entry.target.classList.remove("Contact__Grave--Background");
-      entry.target.classList.add("Obs3");
+      entry.target.classList.add("Contact__Grave--Animate");
+     // entry.target.classList.remove("Contact_Paragraph--Hide")
+      //entry.target.classList.add("Contact_Paragraph--Show");
       observer3.unobserve(entry.target);
-    } else {
-      entry.target.classList.remove("Obs3");
-      entry.target.classList.add("Contact__Grave--Background");
+    } else {console.log("test3")
+      entry.target.classList.remove("Contact__Grave--Animate");
     }
   });
 });
@@ -142,7 +145,7 @@ window.addEventListener(
   "DOMContentLoaded",
   (event) => {
     const sections = Array.from(
-      document.getElementsByClassName("Obs3")
+      document.getElementsByClassName("Contact__Grave--CrossWrapper")
     );
 
     for (let section of sections) {
@@ -162,11 +165,11 @@ window.addEventListener(
 
 const contact = document.getElementsByClassName("Footer__Button--Dark");
 const contactlight = document.getElementsByClassName("Footer__Button--Light");
-const testing = document.getElementById("Spotifydark");
+//const testing = document.getElementById("Spotifydark");
 
 for (let i = 0; i < contact.length; i++) {
   contact[i].addEventListener("click", () => {
-    if ((contact[i].style.display = "block")) {
+    if ((contact[i].style.display == "block")) {
 
       contact[i].style.display = "none";
       contactlight[i].style.display = "block";
@@ -184,7 +187,7 @@ for (let i = 0; i < contact.length; i++) {
 
 for (let j = 0; j < contactlight.length; j++) {
   contactlight[j].addEventListener("click", () => {
-    if ((contactlight[j].style.display = "block")) {
+    if ((contactlight[j].style.display == "block")) {
 
       contact[j].style.display = "block";
       contactlight[j].style.display = "none";

@@ -153,7 +153,7 @@ margin-top: 3.5rem;
 
 #Mozart {margin-top: 5rem;}
 
-.paragraph {margin: 1rem;}
+.paragraph {margin: .1rem; text-align: center;}
 
 
 
@@ -200,8 +200,9 @@ img {width:100%}
 /* Music */
 
 
-iframe {width:90%;padding:.5rem;}
+iframe {width:90%;  padding:.5rem;}
 
+.Iframe__Container {display: flex; flex-direction: column; align-items:center; }
 
 .Legacy_Video {
   animation-name: musicfadein;
@@ -236,37 +237,27 @@ svg {display:block; margin:auto;
 
 
 
-// @mixin HorizontalCross{
-//    height: .5em;
-//    width:3em; 
-//    background-color: white;
-//    left:50%;
-//    z-index: 3;
-//    //margin-right: 10rem;
-   
-// }
-
-
-// @mixin VerticalCross {
-//    height: 5em;
-//     width:.5em; 
-//   left:50%;
-//   //top:45%;
-//   }
-
-
-//@mixin Cross {height:5rem; width:5rem; position:relative;}
-//@mixin Cross{ position:absolute; z-index:3;background-color: blue;color:blue;display:block;top:50%;}
-
 .Contact__Grave--Wrapper{
-height:12rem;
+  top: 0;
+  left: 0;  
+  position:relative; font-size: 1rem; 
 }
+
+
+
+.Contact__Image--Grave {z-index: 3;display:relative; width: 100%;}
+
+
+.Contact__Grave--CrossWrapper {width:100%; padding-top: 56.216216216%;}
+
+
+
 
 
 @mixin BeforeandAfter {
    
 
-  &::before, &::after{content:"";position:absolute;  z-index:4 ;background-color:white;     
+  &::before, &::after{content:"";position:absolute;  z-index:4 ;background-color:white;      
   }
 
   //for the height
@@ -282,54 +273,115 @@ height:12rem;
     height: 2.5vw;;
     width:15vw; 
  
-    top:120%;
+    top:10%;
     left: 0;
 
  }
+}
+
+
+//padding-top: 56.216216216%;
+
+
+.Contact__Grave--Cross {transform-origin: center; 
+  position:relative;
+   height:5vw; width:20vw;
+   @include BeforeandAfter; 
+   padding-bottom:65%;
 }
 
 .Contact__Grave--Cross + .Contact__Grave--Cross {
   margin-left: 4vw;
 }
 
-.Contact__Grave--Cross {transform-origin: center; 
-  position:relative;
-   height:5vw; width:20vw;
+
+
+@mixin Graveanimate {
+  display: flex;justify-content: center;align-items: center;height: 12rem;
+  }
+
+
+
+
+  .Contact__Grave--Animate {
+  top: 0;
+   left: 0;
+  animation-name: gravereveal;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  background-color:black;
+  position:absolute; width:100%; height:100%; z-index: 2; display:block; margin:auto;
+  @include Graveanimate()  
 }
 
-.Contact__Grave--Wrapper {position:relative; font-size: 1rem; 
 
-
-//make the image go behind the crosses, not on top
-
-  .Contact__Grave--Background {position:absolute; width:100%; height:100%; z-index: 2; display:block; margin:auto; background-color: black;}
-.Contact__Image--Grave {width: 100%;}
-
-
-.Contact__Grave--CrossWrapper {display: flex;justify-content: center;align-items: center;height: 12rem;}
-
-
-.Contact__Grave--Cross { @include BeforeandAfter;}
-.Contact_Paragraph { display:none;}
+.Contact_Paragraph--Hide { display:none;}
+.Contact_Paragraph--Show { display:block; padding:1rem;
+  animation-name: textreveal;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
 }
 
-.Obs3 {
-animation-name: gravereveal;
+@keyframes textreveal {
 
-background-color:red;
-position:absolute; width:100%; height:100%; z-index: 2; display:block; margin:auto;}
-
-@keyframes gravereveal {
-
-0% {
-  opacity:1;
+  0% {
+    opacity:0; 
+    display:none;
+  }
+  
+50% {
+  opacity:.1;
 }
 
-100% {
-  opacity:0;
-}
+
+
+  100% {
+    opacity:1;
+    display:block;
+  }
+
+
 
 }
+
+
+  @keyframes gravereveal {
+  
+  0% {
+    opacity:1; background-color: black;
+    display:block;
+  }
+  
+50% {
+  opacity:.9;
+}
+
+
+
+  100% {
+    opacity:.0;
+    display:none;
+  }
+  
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@mixin hoverstyles {&:hover {color:white;}}
+
+
 
 
 
@@ -337,15 +389,20 @@ position:absolute; width:100%; height:100%; z-index: 2; display:block; margin:au
 
 //use em
 
-.Footer {font-size: .1rem;}
+Footer {  position:relative;}
 
-.Footer__Button {@include hoverstyles; width:1rem; }
 
-.Footer__Button--Dark {display:block; margin:auto; }
+ .Footer__Buttoncontainer {display:flex; flex-direction: row; align-content: space-between;  
+position:relative; }
+
+.Footer__Button {@include hoverstyles; width:2rem;}
+
+.Footer__Button--Dark {display:block; margin:auto;}
 
 .Footer__Button--Light {display:none; margin:auto;}
 
-.Footer__Container {display:flex; flex-direction: row; justify-content: space-evenly;  padding:2rem;  
-}
 
-.Footer_Citation {font-size: .5rem; display:flex; flex-direction: column;}
+
+.Footer_Citation--Wrap {display:flex; flex-direction: column; align-content: space-between; }
+
+.Footer_Citation {font-size: .5rem; display:block; position: relative; padding:.3rem;}

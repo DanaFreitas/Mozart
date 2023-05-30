@@ -172,7 +172,8 @@ source {
 }
 
 .paragraph {
-  margin: 1rem;
+  margin: 0.1rem;
+  text-align: center;
 }
 
 h2 {
@@ -220,6 +221,12 @@ iframe {
   padding: 0.5rem;
 }
 
+.Iframe__Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .Legacy_Video {
   animation-name: musicfadein;
   animation-duration: 5.5s;
@@ -244,11 +251,21 @@ svg {
 
 /*Contact*/
 .Contact__Grave--Wrapper {
-  height: 12rem;
+  top: 0;
+  left: 0;
+  position: relative;
+  font-size: 1rem;
 }
 
-.Contact__Grave--Cross + .Contact__Grave--Cross {
-  margin-left: 4vw;
+.Contact__Image--Grave {
+  z-index: 3;
+  display: relative;
+  width: 100%;
+}
+
+.Contact__Grave--CrossWrapper {
+  width: 100%;
+  padding-top: 56.216216216%;
 }
 
 .Contact__Grave--Cross {
@@ -256,78 +273,103 @@ svg {
   position: relative;
   height: 5vw;
   width: 20vw;
+  padding-bottom: 65%;
 }
-
-.Contact__Grave--Wrapper {
-  position: relative;
-  font-size: 1rem;
-}
-.Contact__Grave--Wrapper .Contact__Grave--Background {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  display: block;
-  margin: auto;
-  background-color: black;
-}
-.Contact__Grave--Wrapper .Contact__Image--Grave {
-  width: 100%;
-}
-.Contact__Grave--Wrapper .Contact__Grave--CrossWrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 12rem;
-}
-.Contact__Grave--Wrapper .Contact__Grave--Cross::before, .Contact__Grave--Wrapper .Contact__Grave--Cross::after {
+.Contact__Grave--Cross::before, .Contact__Grave--Cross::after {
   content: "";
   position: absolute;
   z-index: 4;
   background-color: white;
 }
-.Contact__Grave--Wrapper .Contact__Grave--Cross::before {
+.Contact__Grave--Cross::before {
   height: 30vw;
   width: 2.5vw;
   top: 0;
   left: 30%;
 }
-.Contact__Grave--Wrapper .Contact__Grave--Cross::after {
+.Contact__Grave--Cross::after {
   height: 2.5vw;
   width: 15vw;
-  top: 120%;
+  top: 10%;
   left: 0;
 }
-.Contact__Grave--Wrapper .Contact_Paragraph {
-  display: none;
+
+.Contact__Grave--Cross + .Contact__Grave--Cross {
+  margin-left: 4vw;
 }
 
-.Obs3 {
+.Contact__Grave--Animate {
+  top: 0;
+  left: 0;
   animation-name: gravereveal;
-  background-color: red;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  background-color: black;
   position: absolute;
   width: 100%;
   height: 100%;
   z-index: 2;
   display: block;
   margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 12rem;
 }
 
+.Contact_Paragraph--Hide {
+  display: none;
+}
+
+.Contact_Paragraph--Show {
+  display: block;
+  padding: 1rem;
+  animation-name: textreveal;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes textreveal {
+  0% {
+    opacity: 0;
+    display: none;
+  }
+  50% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+    display: block;
+  }
+}
 @keyframes gravereveal {
   0% {
     opacity: 1;
+    background-color: black;
+    display: block;
+  }
+  50% {
+    opacity: 0.9;
   }
   100% {
     opacity: 0;
+    display: none;
   }
 }
 /* Footer */
-.Footer {
-  font-size: 0.1rem;
+Footer {
+  position: relative;
+}
+
+.Footer__Buttoncontainer {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+  position: relative;
 }
 
 .Footer__Button {
-  width: 1rem;
+  width: 2rem;
 }
 .Footer__Button:hover {
   color: white;
@@ -343,15 +385,15 @@ svg {
   margin: auto;
 }
 
-.Footer__Container {
+.Footer_Citation--Wrap {
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  padding: 2rem;
+  flex-direction: column;
+  align-content: space-between;
 }
 
 .Footer_Citation {
   font-size: 0.5rem;
-  display: flex;
-  flex-direction: column;
+  display: block;
+  position: relative;
+  padding: 0.3rem;
 }/*# sourceMappingURL=mozart.css.map */
