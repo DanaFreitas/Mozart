@@ -178,10 +178,12 @@ source {
 
 h2 {
   text-align: center;
+  padding: 3rem;
 }
 
 h3 {
   text-align: center;
+  padding: 3rem;
 }
 
 #Mozartfamily {
@@ -357,11 +359,7 @@ svg {
   }
 }
 /* Footer */
-Footer {
-  position: relative;
-}
-
-.Footer__Buttoncontainer {
+.test {
   display: flex;
   flex-direction: row;
   align-content: space-between;

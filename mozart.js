@@ -163,17 +163,21 @@ window.addEventListener(
 
 
 
-const contact = document.getElementsByClassName("Footer__Button--Dark");
-const contactlight = document.getElementsByClassName("Footer__Button--Light");
-//const testing = document.getElementById("Spotifydark");
+let contact = document.getElementsByClassName("Footer__Button--Dark");
+let contactlight = document.getElementsByClassName("Footer__Button--Light");
+
+console.log(contact[0])
+console.log(contact[1])
+console.log(contact[2])
+
 
 for (let i = 0; i < contact.length; i++) {
-  contact[i].addEventListener("click", () => {
+  contact[i].addEventListener("mouseover", () => {
     if ((contact[i].style.display == "block")) {
 
       contact[i].style.display = "none";
       contactlight[i].style.display = "block";
-
+      
     } else if (contact[i].style.display = "none")
     
     {
@@ -184,9 +188,12 @@ for (let i = 0; i < contact.length; i++) {
   });
 }
 
+//inevent of 3, 2 doesnt work
+//in event of 6, 2 and 5 dont work
+//in event of 9, the ones that dont work are numbers 3 5 and 7
 
-for (let j = 0; j < contactlight.length; j++) {
-  contactlight[j].addEventListener("click", () => {
+for (let j = 0; j <= contactlight.length; j++) {
+  contactlight[j].addEventListener("mouseout", () => {
     if ((contactlight[j].style.display == "block")) {
 
       contact[j].style.display = "block";

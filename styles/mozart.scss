@@ -18,7 +18,7 @@ body {background-color: grey;}
 $text-center:center;
 
 @mixin hoverstyles {&:hover {color:white;}}
- @mixin hoverstylesbg { &:hover { background-color:white;}}
+ //@mixin hoverstylesbg { &:hover { background-color:white;}}
 
 /*Navbar*/
 
@@ -158,9 +158,9 @@ margin-top: 3.5rem;
 
 
 
-h2  {text-align:$text-center;}
+h2  {text-align:$text-center; padding:3rem;}
 
-h3  {text-align:$text-center;}
+h3  {text-align:$text-center; padding:3rem;}
 
 
 
@@ -389,11 +389,17 @@ svg {display:block; margin:auto;
 
 //use em
 
-Footer {  position:relative;}
+//Footer {position:relative;}
 
 
- .Footer__Buttoncontainer {display:flex; flex-direction: row; align-content: space-between;  
-position:relative; }
+//  .Footer__Buttoncontainer {display:flex; flex-direction: row; align-content: space-between;  
+// position:relative;}
+
+.test {display:flex; flex-direction: row; align-content: space-between;  
+  position:relative;}
+
+  //if I have only test up, the hovering works perfectly, but the alignment doesnt.. if i have that AND buttoncontainer up, the alignment is
+  //good but not the  hovering.
 
 .Footer__Button {@include hoverstyles; width:2rem;}
 
