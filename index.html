@@ -20,10 +20,10 @@
       </div>
 
 
-      <div id="title" class="title">Mozart</div>
+      <h1  class="title">Mozart</h1>
 
 
-      <i class="fa-solid fa-music fa-2xl" id="musicbutton" type="button"></i>
+      <div class="fa-solid fa-music fa-2xl" id="musicbutton" type="button"></div>
       
       
       </header>
@@ -35,16 +35,17 @@
     <ul id="menu" class="menuclassdefault">
       
       
+      <!-- <a href="#contact">TEST FOR CONTACT</a> -->
+      <a href="#Mozart" class="menu-item" type="button" value="0">Home</a>
+      <a href="#hislife" class="menu-item" type="button" value="1">His life</a>
+      <a href="#hislegacy" class="menu-item" type="button" value="2">Legacy</a>
+      <a href="#contact" class="menu-item" type="button" value="3">Contact</a>
 
-      <li class="menu-item">Home</li>
-      <li class="menu-item">History</li>
-      <li class="menu-item">Legacy</li>
-      <li class="menu-item">Preview</li>
    </ul>  
    </nav>
 
-    <audio id="audios" class="audios" controls >
-      <source src="Eine-Kleine-Nachtmusik.mp3" type="audio/mpeg" >
+    <audio id="audios" class="audios" >
+      <source src="Eine-Kleine-Nachtmusik.mp3" type="audio/mpeg">
     </audio>
 
 
@@ -67,7 +68,7 @@
       Praesent rutrum scelerisque libero, id aliquam leo mattis ut.
     </p>
 
-    <h2 id="His life" class="heading">His life</h2>
+    <h2 id="hislife" class="heading">His life</h2>
 
     <h3 id="Early life" class="subheading">Mozart's Youth</h3>
 
@@ -122,7 +123,7 @@
 
 
 
-    <h2>Legacy</h2>
+    <h2 id = "hislegacy">Legacy</h2>
     <p class="paragraph">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec
       purus a libero blandit varius eget nec ante. Praesent euismod id augue nec
@@ -137,14 +138,14 @@ padding for videos.
 have a contact me and it be his grave-->
 
 <div class="Iframe__Container">
-    <iframe  src="https://www.youtube.com/embed/mj2Tr-IUPhc" title="Musician Playing Mozart 1" frameborder="0" id="musician1" class="Legacy_Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>    
-    <iframe  src="https://www.youtube.com/embed/A_THdzBnHy0" title="Musician Playing Mozart 2" frameborder="0" id="musician2" class="Legacy_Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>    
-    <iframe  src="https://www.youtube.com/embed/vx3fuisF1Nk" title="Musician Playing Mozart 3" frameborder="0" id="musician3" class="Legacy_Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-    <iframe  src="https://www.youtube.com/embed/sPb47w6uQZY" title="Musician Playing Mozart 4" frameborder="0" id="musician4" class="Legacy_Video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    <iframe  src="https://www.youtube.com/embed/mj2Tr-IUPhc" title="Musician Playing Mozart 1" frameborder="0" id="musician1" class="Legacy_Video"  allowfullscreen></iframe>    
+    <iframe  src="https://www.youtube.com/embed/A_THdzBnHy0" title="Musician Playing Mozart 2" frameborder="0" id="musician2" class="Legacy_Video"  allowfullscreen></iframe>    
+    <iframe  src="https://www.youtube.com/embed/vx3fuisF1Nk" title="Musician Playing Mozart 3" frameborder="0" id="musician3" class="Legacy_Video"  allowfullscreen></iframe>
+    <iframe  src="https://www.youtube.com/embed/sPb47w6uQZY" title="Musician Playing Mozart 4" frameborder="0" id="musician4" class="Legacy_Video"  allowfullscreen></iframe>
 </div>
 
 
-      <h2>Contact</h2>
+      <h2 id = "contact">Contact</h2>
       
 
       <div class="Contact__Grave--Wrapper">
@@ -160,27 +161,25 @@ have a contact me and it be his grave-->
 
 
     <div class="Contact__Grave--CrossWrapper">
+      <!-- <div class="Contact__Grave--Cross"></div>  
       <div class="Contact__Grave--Cross"></div>  
-      <div class="Contact__Grave--Cross"></div>  
-      <div class="Contact__Grave--Cross"></div>  
+      <div class="Contact__Grave--Cross"></div>   -->
+
+      <div class="Contact__Grave--Note"></div>
+      <div class="Contact__Grave--Note"></div>
+      <div class="Contact__Grave--Note"></div>
+
 </div>
 
 
 
 
-<!-- <p class="Paragraph Contact_Paragraph--Hide  -->
+<p class="Paragraph Contact_Paragraph--Hide"> </p>
   <p class= "paragraph Contact_Paragraph--Show" id="death">Unfortunately, Mozart has died many centuries ago. Yet, his music lives on, and you can find it throughout the internet. </p> 
 
 
       </div>
 
-   <!--
-    3:2
-    4:2
-    5:2,3,4
-    6:2,5
-    7:2,4,6
-   -->
   
 
 
@@ -190,55 +189,22 @@ have a contact me and it be his grave-->
 
 <div class="Footer__Buttoncontainer">
 
-    <!-- <img type="button"
-    src="/Images/Spotify_Dark.png"   
-    alt="The spotify logo."
-    class="Footer__Button Footer__Button--Dark"
-  />
+
+
+
 
   <img type="button"
   src="/Images/Spotify_Light.png" 
   alt="Ths spotify logo when hovered upon."
   class="Footer__Button Footer__Button--Light"
-/>
-
-
-
-<img type="button"
-src="/Images/Soundcloud_Dark.png" 
-alt="The soundcloud logo."
-class="Footer__Button Footer__Button--Dark"
-/>
-
-<img type="button"
-src="/Images/Soundcloud_Light.png" 
-alt="The soundcloud logo hovered upon."
-class="Footer__Button Footer__Button--Light "
-/>
-     
-    <img type="button"
-    src="/Images/Pandora_Dark.png" 
-    alt="The pandora logo."
-    class="Footer__Button Footer__Button--Dark"
   />
+  
+
 
   <img type="button"
-  src="/Images/Pandora_Light.png" 
-  alt="The pandora logo when hovered upon."
-  class="Footer__Button Footer__Button--Light"
-/>  -->
-
-<div class="test">
-<img type="button"
 src="/Images/Spotify_Dark.png"   
 alt="The spotify logo."
 class="Footer__Button Footer__Button--Dark"
-/>
-
-<img type="button"
-src="/Images/Spotify_Light.png" 
-alt="Ths spotify logo when hovered upon."
-class="Footer__Button Footer__Button--Light"
 />
 
 
@@ -266,10 +232,6 @@ src="/Images/Pandora_Light.png"
 alt="The pandora logo when hovered upon."
 class="Footer__Button Footer__Button--Light"
 /> 
-</div>
-
-<!-- //figoue out why the middle button wont change colore on hover. 
-Its something about being the second poistioned element. -->
 
 
 

@@ -18,7 +18,6 @@ body {background-color: grey;}
 $text-center:center;
 
 @mixin hoverstyles {&:hover {color:white;}}
- //@mixin hoverstylesbg { &:hover { background-color:white;}}
 
 /*Navbar*/
 
@@ -118,6 +117,8 @@ margin-top: 3.5rem;
   left:0;
   font-size: 1.5em;
   display:flex; flex-direction: column; justify-content: space-between; padding:2em;
+  color:black;
+  text-decoration: none;
   }
   
 
@@ -127,8 +128,7 @@ margin-top: 3.5rem;
 
 
 .menu-item:hover {
-  color:white
-} 
+  @include hoverstyles;} 
 
 /* Audio */ 
 
@@ -143,7 +143,7 @@ margin-top: 3.5rem;
   
   
   
-  source{display: none;}
+ source{display: none;}
   
 
 
@@ -248,7 +248,7 @@ svg {display:block; margin:auto;
 .Contact__Image--Grave {z-index: 3;display:relative; width: 100%;}
 
 
-.Contact__Grave--CrossWrapper {width:100%; padding-top: 56.216216216%;}
+.__Grave--CrossWrapper {width:100%; padding-top: 56.216216216%;}
 
 
 
@@ -257,7 +257,7 @@ svg {display:block; margin:auto;
 @mixin BeforeandAfter {
    
 
-  &::before, &::after{content:"";position:absolute;  z-index:4 ;background-color:white;      
+  &::before, &::after{content:"";position:absolute;  z-index:2 ;background-color:white;      
   }
 
   //for the height
@@ -379,7 +379,6 @@ svg {display:block; margin:auto;
 
 
 
-@mixin hoverstyles {&:hover {color:white;}}
 
 
 
@@ -392,16 +391,22 @@ svg {display:block; margin:auto;
 //Footer {position:relative;}
 
 
-//  .Footer__Buttoncontainer {display:flex; flex-direction: row; align-content: space-between;  
-// position:relative;}
+   .Footer__Buttoncontainer {display:flex; 
+     flex-direction: row; 
+     align-content: flex-end;  
+  position:relative;
+  margin:1rem;
+  padding-top: 3rem;
+   padding-bottom:3rem;
+}
 
-.test {display:flex; flex-direction: row; align-content: space-between;  
-  position:relative;}
+// .test {display:flex; flex-direction: row; align-content: flex-start;  
+//   position:relative;}
 
   //if I have only test up, the hovering works perfectly, but the alignment doesnt.. if i have that AND buttoncontainer up, the alignment is
   //good but not the  hovering.
 
-.Footer__Button {@include hoverstyles; width:2rem;}
+.Footer__Button {@include hoverstyles; width:2rem; }
 
 .Footer__Button--Dark {display:block; margin:auto;}
 
@@ -411,4 +416,4 @@ svg {display:block; margin:auto;
 
 .Footer_Citation--Wrap {display:flex; flex-direction: column; align-content: space-between; }
 
-.Footer_Citation {font-size: .5rem; display:block; position: relative; padding:.3rem;}
+.Footer_Citation {font-size: .5rem; display:block; position: relative; padding:.3rem; color:blue;}
