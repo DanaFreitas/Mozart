@@ -2,13 +2,18 @@
 
 const ham = document.getElementById("hamburger");
 const menu = document.getElementById("menu");
-const memulinks = document.getElementsByClassName("menu-item");
-//let menc = document.getElementsByClassName("menuclassdefault");
 const holder = document.getElementById("burgerholder");
 
+
+
+//makes menu animate
 ham.addEventListener("click", () => {
+  
   document.getElementById("hamburger").classList.toggle("show");
 });
+
+
+
 
 ham.addEventListener("click", () => {
   if (
@@ -18,16 +23,12 @@ ham.addEventListener("click", () => {
     menu.classList.remove("menuclassdefault");
     menu.classList.remove("menuclassexit");
     menu.classList.add("menuclassenter");
-    // document.getElementById("hamburger").style.position = "fixed";
-    //document.getElementById("hamburger").style.left = "14.3vw";
-    //document.getElementById("navbar").style.position = "relative";
+
   } else if (menu.classList.contains("menuclassenter")) {
     menu.classList.add("menuclassexit");
     menu.classList.remove("menuclassenter");
-    // document.getElementById("hamburger").style.position = "relative";
-    document.getElementById("hamburger").style.width = "";
-    // document.getElementById("hamburger").style.left = "0rem";
-    // document.getElementById("navbar").style.position = "fixed";
+    document.getElementById("hamburger").style.width = "";   
+
 
 
   }
@@ -41,14 +42,64 @@ ham.addEventListener("click", () => {
 
 
 
+//makes menu dissappear
+
+
+
+
+
 
 
 const menubutton = document.getElementsByClassName("menu-item")
 
+const offset = 10;
+
+
+
 
  for (let k = 0; k < menubutton.length; k++) {
-   menubutton[k].addEventListener("click",  () => {
-   
+
+
+ menubutton[k].addEventListener("click",  (event) => {
+  //console.log(window.scrollY);
+
+
+event.preventDefault();
+//Stop the buttons from going directly to the element. the menu distorts what is shown.
+
+
+const index = Array.from(menubutton).indexOf(event.target);
+//the element represents the targeted part of an array made up of the inputted elements.
+let targetPosition = menubutton[index].getBoundingClientRect().top + window.scrollY + offset;
+//getboundingclientrect provides the position of the element relative to the viewport
+//.top is the topmost window
+//window.scrollY is how many pixels from the top the viewport is
+//offset is a value of pixels
+
+console.log(targetPosition)
+//targetPosition.scrollIntoView({ top: targetPosition, behavior: 'smooth' });
+window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+
+
+//issue. the scrolling only moves the screen a handful of pixels, not to the target/
+
+
+
+
+
+
+    document.getElementById("hamburger").classList.toggle("show");
+
+    menu.classList.add("menuclassexit");
+
+    menu.classList.remove("menuclassenter");
+
+    window.moveTo(11110, 1110);
+
+
+
+    document.getElementById("hamburger").style.width = "";
+
    })
  }
 
@@ -96,6 +147,9 @@ let options = {
   threshold: 0.5,
 };
 
+
+
+
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
@@ -106,6 +160,8 @@ const observer = new IntersectionObserver((entries) => {
     }
   });
 });
+
+
 
 window.addEventListener(
   "DOMContentLoaded",
@@ -118,6 +174,9 @@ window.addEventListener(
   },
   options
 );
+
+
+
 
 const observer2 = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
@@ -144,12 +203,12 @@ window.addEventListener(
   options
 );
 
+
+
 const observer3 = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       entry.target.classList.add("Contact__Grave--Animate");
-      // entry.target.classList.remove("Contact_Paragraph--Hide")
-      //entry.target.classList.add("Contact_Paragraph--Show");
       observer3.unobserve(entry.target);
     } else {
       entry.target.classList.remove("Contact__Grave--Animate");
@@ -171,46 +230,89 @@ window.addEventListener(
   options
 );
 
-let contact = document.getElementsByClassName("Footer__Button--Dark");
-//let contactlight = document.getElementsByClassName("Footer__Button--Light");
 
-for (let i = 0; i < contact.length; i++) {
-  contact[i].addEventListener("mouseover", () => {
+
+
+
+
+
+
+
+
+
+  let contact = document.getElementsByClassName("Footer__Button--Dark");
+
+  for (let i = 0; i < contact.length; i++) {
+    contact[i].addEventListener("mouseover", () => {
     
 
-    if (contact[i].style.display == "block") {
-      contact[i].style.display = "none";
-      contactlight[i].style.display = "block";
+      if (contact[i].style.display == "block") {
+        contact[i].style.display = "none";
+        contactlight[i].style.display = "block";
 
      
-    } else if ((contact[i].style.display = "none")) {
-      contact[i].style.display = "block";
-      contactlight[i].style.display = "none";
-    }
-  });
-}
+      } else if ((contact[i].style.display = "none")) {
+        contact[i].style.display = "block";
+        contactlight[i].style.display = "none";
+      }
+    });
+  }
+
+
+  [...document.getElementsByClassName("Footer__Button")].forEach(function(item){
+
+    item.addEventListener('click', function() {
+    obj[this.id]();
+  })
+    })
+    
+   
+
+   var obj = {
+  
+     spotify1: function() {
+       window.location.href="https://open.spotify.com/artist/4NJhFmfw43RLBLjQvxDuRS"
+     },
+  
+     spotify2:  function() {
+       window.location.href="https://open.spotify.com/artist/4NJhFmfw43RLBLjQvxDuRS"
+     },
+  
+     soundcloud1: function() {
+       window.location.href="https:soundcloud.com/MOZART"
+     },
+  
+     soundcloud2: function() {
+     window.location.href="https:soundcloud.com/MOZART"
+   },
+  
+      pandora1: function()  {
+        window.location.href="https://www.pandora.com/artist/wolfgang-amadeus-mozart/ARlXdwmldP4lrc4"
+      },
+  
+      pandora2: function()  {
+        window.location.href="https://www.pandora.com/artist/wolfgang-amadeus-mozart/ARlXdwmldP4lrc4"
+      }  
+   }
+
+
+  let contactlight = document.getElementsByClassName("Footer__Button--Light");
+
+
+  for (let j = 0; j <= contactlight.length; j++) {
+    contactlight[j].addEventListener("mouseout", () => {
+      if (contactlight[j].style.display == "block") {
+        contact[j].style.display = "block";
+        contactlight[j].style.display = "none";
+      } else if ((contactlight[j].style.display = "none")) {
+        contact[j].style.display = "none";
+        contactlight[j].style.display = "block";
+      }
+    });
+  }
 
 
 
 
-
-
-let contactlight = document.getElementsByClassName("Footer__Button--Light");
-
-
-
-
-
-for (let j = 0; j <= contactlight.length; j++) {
-  contactlight[j].addEventListener("mouseout", () => {
-    if (contactlight[j].style.display == "block") {
-      contact[j].style.display = "block";
-      contactlight[j].style.display = "none";
-    } else if ((contactlight[j].style.display = "none")) {
-      contact[j].style.display = "none";
-      contactlight[j].style.display = "block";
-    }
-  });
-}
 
 

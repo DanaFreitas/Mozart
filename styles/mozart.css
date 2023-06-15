@@ -222,7 +222,8 @@ img {
 /* Music */
 iframe {
   width: 90%;
-  padding: 0.5rem;
+  margin: 0.5rem;
+  height: auto;
 }
 
 .Iframe__Container {
@@ -272,34 +273,36 @@ svg {
   padding-top: 56.216216216%;
 }
 
-.Contact__Grave--Cross {
+.Contact__Grave--Note {
   transform-origin: center;
   position: relative;
   height: 5vw;
   width: 20vw;
   padding-bottom: 65%;
 }
-.Contact__Grave--Cross::before, .Contact__Grave--Cross::after {
+.Contact__Grave--Note::before, .Contact__Grave--Note::after {
   content: "";
   position: absolute;
   z-index: 2;
   background-color: white;
 }
-.Contact__Grave--Cross::before {
+.Contact__Grave--Note::before {
   height: 30vw;
-  width: 2.5vw;
-  top: 0;
-  left: 30%;
+  width: 1.5vw;
+  top: 20%;
+  left: 35%;
+  border-radius: 0% 0% 40% 0%;
 }
-.Contact__Grave--Cross::after {
-  height: 2.5vw;
-  width: 15vw;
-  top: 10%;
-  left: 0;
+.Contact__Grave--Note::after {
+  height: 8vw;
+  width: 11vw;
+  border-radius: 70% 30% 70% 30%;
+  top: 60%;
+  left: -14%;
 }
 
-.Contact__Grave--Cross + .Contact__Grave--Cross {
-  margin-left: 4vw;
+.Contact__Grave--Note + .Contact__Grave--Note {
+  margin-right: 2vw;
 }
 
 .Contact__Grave--Animate {
@@ -318,9 +321,22 @@ svg {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 12rem;
 }
 
+@keyframes gravereveal {
+  0% {
+    opacity: 1;
+    background-color: black;
+    display: block;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
 .Contact_Paragraph--Hide {
   display: none;
 }
@@ -344,20 +360,6 @@ svg {
   100% {
     opacity: 1;
     display: block;
-  }
-}
-@keyframes gravereveal {
-  0% {
-    opacity: 1;
-    background-color: black;
-    display: block;
-  }
-  50% {
-    opacity: 0.9;
-  }
-  100% {
-    opacity: 0;
-    display: none;
   }
 }
 /* Footer */

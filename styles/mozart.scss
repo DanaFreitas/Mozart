@@ -200,9 +200,9 @@ img {width:100%}
 /* Music */
 
 
-iframe {width:90%;  padding:.5rem;}
+iframe {width:90%;  margin:.5rem; height:auto}
 
-.Iframe__Container {display: flex; flex-direction: column; align-items:center; }
+.Iframe__Container {display: flex; flex-direction: column; align-items:center;}
 
 .Legacy_Video {
   animation-name: musicfadein;
@@ -262,42 +262,44 @@ svg {display:block; margin:auto;
 
   //for the height
   &::before {
-    height: 30vw;
-    width: 2.5vw;
-    top: 0;
-    left: 30%;
- }
+    height:30vw;
+    width: 1.5vw;
+    top: 20%;
+    left: 35%;
+    border-radius: 0% 0% 40% 0%;  
+  }
 
  //for the width
   &::after { 
-    height: 2.5vw;;
-    width:15vw; 
+
+    height:8vw;
+    width:11vw;
+    border-radius: 70% 30% 70% 30%;;
+    top:60%;
+    left: -14%;
  
-    top:10%;
-    left: 0;
-
- }
+ } 
 }
-
-
+ 
+   
 //padding-top: 56.216216216%;
 
 
-.Contact__Grave--Cross {transform-origin: center; 
+.Contact__Grave--Note {transform-origin: center; 
   position:relative;
    height:5vw; width:20vw;
    @include BeforeandAfter; 
    padding-bottom:65%;
 }
 
-.Contact__Grave--Cross + .Contact__Grave--Cross {
-  margin-left: 4vw;
+.Contact__Grave--Note + .Contact__Grave--Note {
+  margin-right: 2vw;
 }
 
 
 
 @mixin Graveanimate {
-  display: flex;justify-content: center;align-items: center;height: 12rem;
+  display: flex;justify-content: center;align-items: center;//height: 12rem;
   }
 
 
@@ -313,6 +315,28 @@ svg {display:block; margin:auto;
   position:absolute; width:100%; height:100%; z-index: 2; display:block; margin:auto;
   @include Graveanimate()  
 }
+
+
+
+@keyframes gravereveal {
+  
+  0% {
+    opacity:1; background-color: black;
+    display:block;
+  }
+  
+50% {
+  opacity:.9;
+}
+
+
+
+  100% {
+    opacity:.0;
+    display:none;
+  }
+  
+  }
 
 
 .Contact_Paragraph--Hide { display:none;}
@@ -344,26 +368,6 @@ svg {display:block; margin:auto;
 
 }
 
-
-  @keyframes gravereveal {
-  
-  0% {
-    opacity:1; background-color: black;
-    display:block;
-  }
-  
-50% {
-  opacity:.9;
-}
-
-
-
-  100% {
-    opacity:.0;
-    display:none;
-  }
-  
-  }
 
 
 
