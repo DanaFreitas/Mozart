@@ -1,19 +1,93 @@
+ const express = require("express");
+ //const path = require('path')
+  const port= 3000;
+
+ const app = express();
+ app.get("/", function (req, res) {
+    // res.sendFile(__dirname + "/index.html");
+  res.setDefaultEncoding('Hello world');
+  });
+ app.listen(3000, function () {
+     console.log("Server is running on localhost3000");
+ });
+
+
+/// const express = require ('express');
+// const app = express();
+// const port= 3000;
+
+
+//use different api key
+
+
+// app.listen(port, () =>{
+//     console.log(`Server is listening on port ${port}`);
+// });
+
+
+app.get('/', (req, res) => {
+    res.send('Successful response.');
+console.log("TELEPORT SUCCESSFUL")
+});
+
+app.listen(port, ()=> console.log(`Dolphin app listening on port ${port}!`))
+
+
+
+
+
+//document is being a provlem. need to 
+
+
+
+
+require("dotenv").config();
+
+
+const sgMail = require("@sendgrid/mail");
+
+sgMail.setApiKey(process.env.SENDGRID_API_KEY)
+
+const msg = {
+  to: 'danarobertfreitas@gmail.com',
+  from: 'danarobertfreitas@gmail.com',
+  subject: 'test',
+  text: 'testing',
+  html: '<strong>testing</strong>',
+}
+
+sgMail  .send(msg)
+        .then(() => {
+          console.log('Email sent')
+        })
+        .catch((error) =>{
+          console.error(error)
+        })
+
+        
+
+
+//the code sohuld be working automatically, but it is not
+//check chatgpt. the last question was about fixing this. read it. 
+
+
+
+
+
+
+
+
+
 
 
 const ham = document.getElementById("hamburger");
 const menu = document.getElementById("menu");
 const holder = document.getElementById("burgerholder");
 
-
-
 //makes menu animate
 ham.addEventListener("click", () => {
-  
   document.getElementById("hamburger").classList.toggle("show");
 });
-
-
-
 
 ham.addEventListener("click", () => {
   if (
@@ -23,70 +97,41 @@ ham.addEventListener("click", () => {
     menu.classList.remove("menuclassdefault");
     menu.classList.remove("menuclassexit");
     menu.classList.add("menuclassenter");
-
   } else if (menu.classList.contains("menuclassenter")) {
     menu.classList.add("menuclassexit");
     menu.classList.remove("menuclassenter");
-    document.getElementById("hamburger").style.width = "";   
-
-
-
+    document.getElementById("hamburger").style.width = "";
   }
 });
 
-
-
-
-
-
-
-
-
 //makes menu dissappear
 
+const menubutton = document.getElementsByClassName("menu-item");
 
 
+const offset = -56;
+
+for (let k = 0; k < menubutton.length; k++) {  //This os looping a lot, need to add event listener
+ 
+  menubutton[k].addEventListener("click", (event) => {
+    event.preventDefault();
+    const section = document.getElementsByClassName("section");
+    
+  //for (let l = 0; l < section.length; l++) { 
+    let index = Array.from(section).indexOf(section);
+    const targetPosition = section[k].getBoundingClientRect().top + window.scrollY + offset;
+//need to maek that index reflect the section. when an integer is inputted, it work.s
 
 
+    window.scrollTo({ top: (0, targetPosition), behavior: "smooth" });
 
-
-const menubutton = document.getElementsByClassName("menu-item")
-
-const offset = 10;
-
-
-
-
- for (let k = 0; k < menubutton.length; k++) {
-
-
- menubutton[k].addEventListener("click",  (event) => {
-  //console.log(window.scrollY);
-
-
-event.preventDefault();
-//Stop the buttons from going directly to the element. the menu distorts what is shown.
-
-
-const index = Array.from(menubutton).indexOf(event.target);
-//the element represents the targeted part of an array made up of the inputted elements.
-let targetPosition = menubutton[index].getBoundingClientRect().top + window.scrollY + offset;
-//getboundingclientrect provides the position of the element relative to the viewport
-//.top is the topmost window
-//window.scrollY is how many pixels from the top the viewport is
-//offset is a value of pixels
-
-console.log(targetPosition)
-//targetPosition.scrollIntoView({ top: targetPosition, behavior: 'smooth' });
-window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-
-
-//issue. the scrolling only moves the screen a handful of pixels, not to the target/
-
-
-
-
-
+    //the element represents the targeted part of an array made up of the inputted elements.
+    ///im using the target as the menubutton when i should be using it on the section names
+    //the index of the array is effecting how far down the list to go
+    //getboundingclientrect provides the position of the element relative to the viewport
+    //.top is the topmost window
+    //window.scrollY is how many pixels from the top the viewport is
+    //offset is a value of pixels
 
     document.getElementById("hamburger").classList.toggle("show");
 
@@ -94,22 +139,10 @@ window.scrollTo({ top: targetPosition, behavior: 'smooth' });
 
     menu.classList.remove("menuclassenter");
 
-    window.moveTo(11110, 1110);
-
-
 
     document.getElementById("hamburger").style.width = "";
-
-   })
- }
-
-
-
-
-
-
- 
-
+   } )}//}
+  //};
 
 const keyframesRule = `
   @keyframes myAnimation {
@@ -127,28 +160,22 @@ let music = document.getElementById("musicbutton");
 const audioele = document.getElementById("audios");
 const audiosource = new Audio("Eine-Kleine-Nachtmusik.mp3");
 
-
 music.addEventListener("click", () => {
-  
-   if (audioele.style.display == "none" || audioele.style.display == "") {
-     audioele.style.display = "block";
-     audiosource.play();
-   } else if ((audioele.style.display = "block")) {
-     audioele.style.display = "none";
-     audiosource.pause();
-     audiosource.currentTime = 0;
-   }
+  if (audioele.style.display == "none" || audioele.style.display == "") {
+    audioele.style.display = "block";
+    audiosource.play();
+  } else if ((audioele.style.display = "block")) {
+    audioele.style.display = "none";
+    audiosource.pause();
+    audiosource.currentTime = 0;
+  }
 });
-
 
 let options = {
   root: null,
   rootMargin: "0px",
   threshold: 0.5,
 };
-
-
-
 
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
@@ -161,8 +188,6 @@ const observer = new IntersectionObserver((entries) => {
   });
 });
 
-
-
 window.addEventListener(
   "DOMContentLoaded",
   (event) => {
@@ -174,9 +199,6 @@ window.addEventListener(
   },
   options
 );
-
-
-
 
 const observer2 = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
@@ -203,8 +225,6 @@ window.addEventListener(
   options
 );
 
-
-
 const observer3 = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
@@ -230,89 +250,66 @@ window.addEventListener(
   options
 );
 
+let contact = document.getElementsByClassName("Footer__Button--Dark");
 
+for (let i = 0; i < contact.length; i++) {
+  contact[i].addEventListener("mouseover", () => {
+    if (contact[i].style.display == "block") {
+      contact[i].style.display = "none";
+      contactlight[i].style.display = "block";
+    } else if ((contact[i].style.display = "none")) {
+      contact[i].style.display = "block";
+      contactlight[i].style.display = "none";
+    }
+  });
+}
 
-
-
-
-
-
-
-
-
-  let contact = document.getElementsByClassName("Footer__Button--Dark");
-
-  for (let i = 0; i < contact.length; i++) {
-    contact[i].addEventListener("mouseover", () => {
-    
-
-      if (contact[i].style.display == "block") {
-        contact[i].style.display = "none";
-        contactlight[i].style.display = "block";
-
-     
-      } else if ((contact[i].style.display = "none")) {
-        contact[i].style.display = "block";
-        contactlight[i].style.display = "none";
-      }
-    });
-  }
-
-
-  [...document.getElementsByClassName("Footer__Button")].forEach(function(item){
-
-    item.addEventListener('click', function() {
+[...document.getElementsByClassName("Footer__Button")].forEach(function (item) {
+  item.addEventListener("click", function () {
     obj[this.id]();
-  })
-    })
-    
-   
+  });
+});
 
-   var obj = {
-  
-     spotify1: function() {
-       window.location.href="https://open.spotify.com/artist/4NJhFmfw43RLBLjQvxDuRS"
-     },
-  
-     spotify2:  function() {
-       window.location.href="https://open.spotify.com/artist/4NJhFmfw43RLBLjQvxDuRS"
-     },
-  
-     soundcloud1: function() {
-       window.location.href="https:soundcloud.com/MOZART"
-     },
-  
-     soundcloud2: function() {
-     window.location.href="https:soundcloud.com/MOZART"
-   },
-  
-      pandora1: function()  {
-        window.location.href="https://www.pandora.com/artist/wolfgang-amadeus-mozart/ARlXdwmldP4lrc4"
-      },
-  
-      pandora2: function()  {
-        window.location.href="https://www.pandora.com/artist/wolfgang-amadeus-mozart/ARlXdwmldP4lrc4"
-      }  
-   }
+var obj = {
+  spotify1: function () {
+    window.location.href =
+      "https://open.spotify.com/artist/4NJhFmfw43RLBLjQvxDuRS";
+  },
 
+  spotify2: function () {
+    window.location.href =
+      "https://open.spotify.com/artist/4NJhFmfw43RLBLjQvxDuRS";
+  },
 
-  let contactlight = document.getElementsByClassName("Footer__Button--Light");
+  soundcloud1: function () {
+    window.location.href = "https:soundcloud.com/MOZART";
+  },
 
+  soundcloud2: function () {
+    window.location.href = "https:soundcloud.com/MOZART";
+  },
 
-  for (let j = 0; j <= contactlight.length; j++) {
-    contactlight[j].addEventListener("mouseout", () => {
-      if (contactlight[j].style.display == "block") {
-        contact[j].style.display = "block";
-        contactlight[j].style.display = "none";
-      } else if ((contactlight[j].style.display = "none")) {
-        contact[j].style.display = "none";
-        contactlight[j].style.display = "block";
-      }
-    });
-  }
+  pandora1: function () {
+    window.location.href =
+      "https://www.pandora.com/artist/wolfgang-amadeus-mozart/ARlXdwmldP4lrc4";
+  },
 
+  pandora2: function () {
+    window.location.href =
+      "https://www.pandora.com/artist/wolfgang-amadeus-mozart/ARlXdwmldP4lrc4";
+  },
+};
 
+let contactlight = document.getElementsByClassName("Footer__Button--Light");
 
-
-
-
+for (let j = 0; j <= contactlight.length; j++) {
+  contactlight[j].addEventListener("mouseout", () => {
+    if (contactlight[j].style.display == "block") {
+      contact[j].style.display = "block";
+      contactlight[j].style.display = "none";
+    } else if ((contactlight[j].style.display = "none")) {
+      contact[j].style.display = "none";
+      contactlight[j].style.display = "block";
+    }
+  });
+}
