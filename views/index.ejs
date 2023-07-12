@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/mozart.css" type="text/css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" type="text/css" />
+  </head>
+  <body>
+       
+ 
+    <header id="header" class="header">
+    <div id="burgerholder" class="header__burgerholder">
+      <div type="button" id="hamburger" class="header__hamburger">
+        <div class="header__hamburger--hamburger-bit" id="hamburger-bit-1"></div>
+        <div class="header__hamburger--hamburger-bit" id="hamburger-bit-2"></div>
+        <div class="header__hamburger--hamburger-bit" id="hamburger-bit-3"></div>
+      </div>
+
+
+      <h1  class="title">Mozart</h1>
+
+
+      <div class="fa-solid fa-music fa-2xl" id="musicbutton" type="button"></div>
+      
+      
+      </header>
+
+
+ 
+
+    <nav>
+    <ul id="menu" class="menuclassdefault">
+      
+      
+      <a href="#Mozart" class="menu-item" type="button" value="0">Home</a>
+      <a href="#hislife" class="menu-item" type="button" value="1">His life</a>
+      <a href="#hislegacy" class="menu-item" type="button" value="2">Legacy</a>
+      <a href="#contact" class="menu-item" type="button" value="3">Contact</a>
+
+   </ul>  
+   </nav>
+
+<script>
+  const ham = document.getElementById("hamburger");
+const menu = document.getElementById("menu");
+const holder = document.getElementById("burgerholder");
+
+
+
+ham.addEventListener("click", () => {
+  document.getElementById("hamburger").classList.toggle("show");
+});
+
+ham.addEventListener("click", () => {
+  if (
+    menu.classList.contains("menuclassdefault") ||
+    menu.classList.contains("menuclassexit")
+  ) {
+    menu.classList.remove("menuclassdefault");
+    menu.classList.remove("menuclassexit");
+    menu.classList.add("menuclassenter");
+  } else if (menu.classList.contains("menuclassenter")) {
+    menu.classList.add("menuclassexit");
+    menu.classList.remove("menuclassenter");
+    document.getElementById("hamburger").style.width = "";
+  }
+});
+
+
+const menubutton = document.getElementsByClassName("menu-item");
+
+
+const offset = -56;
+
+for (let k = 0; k < menubutton.length; k++) {  //This os looping a lot, need to add event listener
+ 
+  menubutton[k].addEventListener("click", (event) => {
+    event.preventDefault();
+    const section = document.getElementsByClassName("section");
+    
+  //for (let l = 0; l < section.length; l++) { 
+    let index = Array.from(section).indexOf(section);
+    const targetPosition = section[k].getBoundingClientRect().top + window.scrollY + offset;
+//need to maek that index reflect the section. when an integer is inputted, it work.s
+
+
+    window.scrollTo({ top: (0, targetPosition), behavior: "smooth" });
+
+    //the element represents the targeted part of an array made up of the inputted elements.
+    ///im using the target as the menubutton when i should be using it on the section names
+    //the index of the array is effecting how far down the list to go
+    //getboundingclientrect provides the position of the element relative to the viewport
+    //.top is the topmost window
+    //window.scrollY is how many pixels from the top the viewport is
+    //offset is a value of pixels
+
+    document.getElementById("hamburger").classList.toggle("show");
+
+    menu.classList.add("menuclassexit");
+
+    menu.classList.remove("menuclassenter");
+
+
+    document.getElementById("hamburger").style.width = "";
+   } )}//}
+  //};
+</script>
+
+
+    <audio id="audios" class="audios" >
+      <source src="Eine-Kleine-Nachtmusik.mp3" type="audio/mpeg">
+    </audio>
+
+
+    <img
+      src="Images/Mozart.webp"
+      alt="Mozart"
+      id="Mozart"
+      class="Mozartimage complete section"
+    />
+
+    <!-- Have the element appear. have name of the sample page-->
+
+
+
+    <p id="intro" class="paragraph">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec
+      purus a libero blandit varius eget nec ante. Praesent euismod id augue nec
+      ultricies. Fusce metus magna, venenatis ut feugiat eu, gravida a dolor.
+      Aenean faucibus dolor tortor, sit amet luctus nisl scelerisque id.
+      Praesent rutrum scelerisque libero, id aliquam leo mattis ut.
+    </p>
+
+    <h2 id="hislife" class="heading section">His life</h2>
+
+    <h3 id="Early life" class="subheading">Mozart's Youth</h3>
+
+    <div id="box">
+
+    <img
+      src="Images/Mozart family on tour.jpg"
+      alt="Mozart Family on Tours"
+      id="Mozartfamily"
+      class="Mozartimage complete" 
+    />
+
+    </div>
+
+    <p class="paragraph">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec
+      purus a libero blandit varius eget nec ante. Praesent euismod id augue nec
+      ultricies. Fusce metus magna, venenatis ut feugiat eu, gravida a dolor.
+      Aenean faucibus dolor tortor, sit amet luctus nisl scelerisque id.
+      Praesent rutrum scelerisque libero, id aliquam leo mattis ut.
+    </p>
+
+    <h3 id="Rise to fame" class="subheading">Rise to Fame</h3>
+    <img
+      src="/Images/Mozart wearing badge.jpg"
+      alt="Mozart with an  Order of the Golden Spur badge he recived from Pope Clement XIV."
+      id="Mozartbadge"
+      class="Mozartimage complete"
+    />
+
+    <p class="paragraph">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec
+      purus a libero blandit varius eget nec ante. Praesent euismod id augue nec
+      ultricies. Fusce metus magna, venenatis ut feugiat eu, gravida a dolor.
+      Aenean faucibus dolor tortor, sit amet luctus nisl scelerisque id.
+      Praesent rutrum scelerisque libero, id aliquam leo mattis ut.
+    </p>
+
+    <h3 id="Later Years" class="subheading">Later Years</h3>
+    <img
+      src="/Images/Signature.png"
+      alt="Mozart's Signature"
+      id="Mozartsignature"
+      class="Mozartimage complete"
+    />
+
+    <p class="paragraph">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec
+      purus a libero blandit varius eget nec ante. Praesent euismod id augue nec
+      ultricies. Fusce metus magna, venenatis ut feugiat eu, gravida a dolor.
+      Aenean faucibus dolor tortor, sit amet luctus nisl scelerisque id.
+      Praesent rutrum scelerisque libero, id aliquam leo mattis ut.
+    </p>
+
+
+
+    <h2 id = "hislegacy" class="section">Legacy</h2>
+    <p class="paragraph">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec
+      purus a libero blandit varius eget nec ante. Praesent euismod id augue nec
+      ultricies. Fusce metus magna, venenatis ut feugiat eu, gravida a dolor.
+      Aenean faucibus dolor tortor, sit amet luctus nisl scelerisque id.
+      Praesent rutrum scelerisque libero, id aliquam leo mattis ut. 
+    </p>
+
+   <script>
+    
+const keyframesRule = `
+  @keyframes myAnimation {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+`;
+
+let music = document.getElementById("musicbutton");
+
+const audioele = document.getElementById("audios");
+const audiosource = new Audio("Eine-Kleine-Nachtmusik.mp3");
+
+music.addEventListener("click", () => {
+  if (audioele.style.display == "none" || audioele.style.display == "") {
+    audioele.style.display = "block";
+    audiosource.play();
+  } else if ((audioele.style.display = "block")) {
+    audioele.style.display = "none";
+    audiosource.pause();
+    audiosource.currentTime = 0;
+  }
+});
+
+let options = {
+  root: null,
+  rootMargin: "0px",
+  threshold: 0.5,
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("Mozartimagetest");
+      observer.unobserve(entry.target);
+    } else {
+      entry.target.classList.remove("Mozartimagetest");
+    }
+  });
+});
+
+window.addEventListener(
+  "DOMContentLoaded",
+  (event) => {
+    const sections = Array.from(document.getElementsByClassName("Mozartimage"));
+
+    for (let section of sections) {
+      observer.observe(section);
+    }
+  },
+  options
+);
+
+const observer2 = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("Legacy_Video");
+      observer2.unobserve(entry.target);
+    } else {
+      entry.target.classList.remove("Legacy_Video");
+    }
+  });
+});
+
+window.addEventListener(
+  "DOMContentLoaded",
+  (event) => {
+    const sections = Array.from(
+      document.getElementsByClassName("Legacy_Video")
+    );
+
+    for (let section of sections) {
+      observer2.observe(section);
+    }
+  },
+  options
+);
+
+const observer3 = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("Contact__Grave--Animate");
+      observer3.unobserve(entry.target);
+    } else {
+      entry.target.classList.remove("Contact__Grave--Animate");
+    }
+  });
+});
+
+window.addEventListener(
+  "DOMContentLoaded",
+  (event) => {
+    const sections = Array.from(
+      document.getElementsByClassName("Contact__Grave--CrossWrapper")
+    );
+
+    for (let section of sections) {
+      observer3.observe(section);
+    }
+  },
+  options
+);
+   </script>
+<!--Notes
+padding for videos.
+have a contact me and it be his grave-->
+
+<div class="Iframe__Container">
+    <iframe  src="https://www.youtube.com/embed/mj2Tr-IUPhc" title="Musician Playing Mozart 1" frameborder="0" id="musician1" class="Legacy_Video"  allowfullscreen></iframe>    
+    <iframe  src="https://www.youtube.com/embed/A_THdzBnHy0" title="Musician Playing Mozart 2" frameborder="0" id="musician2" class="Legacy_Video"  allowfullscreen></iframe>    
+    <iframe  src="https://www.youtube.com/embed/vx3fuisF1Nk" title="Musician Playing Mozart 3" frameborder="0" id="musician3" class="Legacy_Video"  allowfullscreen></iframe>
+    <iframe  src="https://www.youtube.com/embed/sPb47w6uQZY" title="Musician Playing Mozart 4" frameborder="0" id="musician4" class="Legacy_Video"  allowfullscreen></iframe>
+</div>
+
+
+      <h2 id = "contact" class="section">Contact</h2>
+      
+
+      <div class="Contact__Grave--Wrapper">
+      <!-- <div class="Contact__Grave--Background "></div> -->
+
+        
+      <img
+      src="/Images/Grave.jpg"
+      alt="Mozart's Grave"
+     id="Mozartgrave"
+      class="Contact__Image--Grave"
+    />   
+
+
+    <div class="Contact__Grave--CrossWrapper">
+      <!-- <div class="Contact__Grave--Cross"></div>  
+      <div class="Contact__Grave--Cross"></div>  
+      <div class="Contact__Grave--Cross"></div>   -->
+
+      <div class="Contact__Grave--Note"></div>
+      <div class="Contact__Grave--Note"></div>
+      <div class="Contact__Grave--Note"></div>
+
+</div>
+
+
+
+
+<p class="Paragraph Contact_Paragraph--Hide"> </p>
+  <p class= "paragraph Contact_Paragraph--Show" id="death">Unfortunately, Mozart has died many centuries ago. Yet, his music lives on, and you can find it throughout the internet. </p> 
+
+
+      </div>
+
+  
+<!-- Having trouble setting up the links. Suspect the reason if realted to there being other classes or the images itself. This is not a 
+problem on jsfiddle. -->
+
+      <footer class="Footer"> 
+
+
+
+<div class="Footer__Buttoncontainer">
+
+
+<!-- issue isnt multiple classes.
+issue isnt the names of the ids.
+issue isn't  -->
+
+
+   <img type="button"
+  src="/Images/Spotify_Light.png" 
+  alt="Ths spotify logo when hovered upon."
+  class="Footer__Button Footer__Button--Light"
+  id="spotify1"
+  />
+   
+
+
+  <img type="button"
+src="/Images/Spotify_Dark.png"   
+alt="The spotify logo."
+class="Footer__Button Footer__Button--Dark"
+id="spotify2"
+/>
+
+
+
+<img type="button"
+src="/Images/Soundcloud_Dark.png" 
+alt="The soundcloud logo."
+class="Footer__Button Footer__Button--Dark"
+id="soundcloud1"
+/>
+
+<img type="button"
+src="/Images/Soundcloud_Light.png" 
+alt="The soundcloud logo hovered upon."
+class="Footer__Button Footer__Button--Light "
+id="soundcloud2"
+/>
+ 
+<img type="button"
+src="/Images/Pandora_Dark.png" 
+alt="The pandora logo."
+class="Footer__Button Footer__Button--Dark"
+id="pandora1"
+/>
+ 
+<img type="button"
+src="/Images/Pandora_Light.png" 
+alt="The pandora logo when hovered upon."
+class="Footer__Button Footer__Button--Light"
+id="pandora2"
+/>  
+
+
+<script>[...document.getElementsByClassName("Footer__Button")].forEach(function (item) {
+  item.addEventListener("click", function () {
+    obj[this.id]();
+  });
+});
+
+const obj = {
+  spotify1: function () {
+    window.location.href =
+      "https://open.spotify.com/artist/4NJhFmfw43RLBLjQvxDuRS";
+  },
+
+  spotify2: function () {
+    window.location.href =
+      "https://open.spotify.com/artist/4NJhFmfw43RLBLjQvxDuRS";
+  },
+
+  soundcloud1: function () {
+    window.location.href = "https:soundcloud.com/MOZART";
+  },
+
+  soundcloud2: function () {
+    window.location.href = "https:soundcloud.com/MOZART";
+  },
+
+  pandora1: function () {
+    window.location.href =
+      "https://www.pandora.com/artist/wolfgang-amadeus-mozart/ARlXdwmldP4lrc4";
+  },
+
+  pandora2: function () {
+    window.location.href =
+      "https://www.pandora.com/artist/wolfgang-amadeus-mozart/ARlXdwmldP4lrc4";
+  },
+};
+</script>
+
+
+</div>
+<div class="Footer_Citation--Wrap">
+      <a href="https://www.flaticon.com/free-icons/spotify" title="spotify icons" class="Footer_Citation">Spotify icons created by Pixel perfect - Flaticon</a>
+      <a href="https://www.flaticon.com/free-icons/pandora" title="pandora icons" class="Footer_Citation">Pandora icons created by Pixel perfect - Flaticon</a>
+      <a href="https://www.flaticon.com/free-icons/soundcloud" title="soundcloud icons" class="Footer_Citation">Soundcloud icons created by Pixel perfect - Flaticon</a>
+</div>
+     </footer> 
+  </body>
+
+  <script>
+
+    let contact = document.getElementsByClassName("Footer__Button--Dark");
+    
+    for (let i = 0; i < contact.length; i++) {
+      contact[i].addEventListener("mouseover", () => {
+        if (contact[i].style.display == "block") {
+          contact[i].style.display = "none";
+          contactlight[i].style.display = "block";
+        } else if ((contact[i].style.display = "none")) {
+          contact[i].style.display = "block";
+          contactlight[i].style.display = "none";
+        }
+      });
+    }
+    
+    
+    let contactlight = document.getElementsByClassName("Footer__Button--Light");
+    
+    for (let j = 0; j <= contactlight.length; j++) {
+      contactlight[j].addEventListener("mouseout", () => {
+        if (contactlight[j].style.display == "block") {
+          contact[j].style.display = "block";
+          contactlight[j].style.display = "none";
+        } else if ((contactlight[j].style.display = "none")) {
+          contact[j].style.display = "none";
+          contactlight[j].style.display = "block";
+        }
+      });
+    }
+    </script>
+  <script src="mozart.js"></script>
+</html>
