@@ -16,7 +16,7 @@ Footer
 }
 
 body {
-  background-color: grey;
+  background-color: lightgrey;
 }
 
 /*Navbar*/
@@ -72,7 +72,7 @@ body {
   color: white;
 }
 .header .title {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 2.5rem;
   margin-top: 0.25rem;
 }
@@ -220,10 +220,10 @@ img {
 }
 
 /* Music */
-iframe {
-  width: 90%;
-  margin: 0.5rem;
-  height: auto;
+.Legacy_Video {
+  margin: 1rem;
+  width: 80%;
+  aspect-ratio: 16/9;
 }
 
 .Iframe__Container {
@@ -255,6 +255,41 @@ svg {
 }
 
 /*Contact*/
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+label {
+  font-size: 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 0.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: left;
+}
+
+input {
+  height: 1.5rem;
+  border: solid;
+  border-color: grey;
+  width: 80%;
+}
+
+textarea {
+  width: 80%;
+  border: solid;
+  border-color: grey;
+}
+
+.Input_Button {
+  width: 20%;
+  aspect-ratio: 2/1;
+  margin: 0.5rem;
+}
+
 .Contact__Grave--Wrapper {
   top: 0;
   left: 0;

@@ -13,7 +13,7 @@ Footer
 
 *{ margin:0; padding: 0; box-sizing: border-box; }
 
-body {background-color: grey;}
+body {background-color:lightgrey;}
 
 $text-center:center;
 
@@ -23,7 +23,7 @@ $text-center:center;
 
 
 .header{
-  z-index: 10; position: fixed;background-color: grey;width:100%;  .header__burgerholder {display:flex; flex-direction: row; justify-content: space-evenly;  position:relative; height:3.5rem;}.header__hamburger { @include hoverstyles;left: 0vw;top: 0vw;display:block; z-index: 5;}.header__hamburger:hover > .header__hamburger--hamburger-bit {background-color:white;color:white} .header__hamburger--hamburger-bit {width: 3em;height: 0.5em;background-color: black;margin: .5em 0; transition:.4s}.show #hamburger-bit-1 {transform: translate(0, 1em) rotate(-45deg);transition-duration: 500ms;}.show #hamburger-bit-2 {opacity:0; transition-duration: 500ms;}.show #hamburger-bit-3  {transform: translate(0, -1em) rotate(45deg); transition-duration: 500ms;}.fa-solid {margin-top: .85em;}.fa-solid{@include hoverstyles;}.title {font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;font-size: 2.5rem;margin-top: .25rem;}}
+  z-index: 10; position: fixed;background-color: grey;width:100%;  .header__burgerholder {display:flex; flex-direction: row; justify-content: space-evenly;  position:relative; height:3.5rem;}.header__hamburger { @include hoverstyles;left: 0vw;top: 0vw;display:block; z-index: 5;}.header__hamburger:hover > .header__hamburger--hamburger-bit {background-color:white;color:white} .header__hamburger--hamburger-bit {width: 3em;height: 0.5em;background-color: black;margin: .5em 0; transition:.4s}.show #hamburger-bit-1 {transform: translate(0, 1em) rotate(-45deg);transition-duration: 500ms;}.show #hamburger-bit-2 {opacity:0; transition-duration: 500ms;}.show #hamburger-bit-3  {transform: translate(0, -1em) rotate(45deg); transition-duration: 500ms;}.fa-solid {margin-top: .85em;}.fa-solid{@include hoverstyles;}.title {font-family:Arial, Helvetica, sans-serif;font-size: 2.5rem;margin-top: .25rem;}}
 
 
 /* Menu */
@@ -200,7 +200,7 @@ img {width:100%}
 /* Music */
 
 
-iframe {width:90%;  margin:.5rem; height:auto}
+.Legacy_Video { margin:1rem;  width:80%; aspect-ratio: 16/9;}
 
 .Iframe__Container {display: flex; flex-direction: column; align-items:center;}
 
@@ -236,6 +236,38 @@ svg {display:block; margin:auto;
 
 
 
+
+.form { display: flex; flex-direction: column;  
+  //align-items: center; 
+  justify-content: center;
+  width:80%; 
+  margin: 0 auto;
+}
+
+
+ label{font-size: 1.5rem; padding-top: 1rem; padding-bottom: .5rem; font-family:Arial, Helvetica, sans-serif; 
+  text-align: left;}
+
+
+
+
+
+input {height:1.5rem; border:solid; border-color: grey; width: 80%; }
+
+
+
+
+
+textarea { width:80%; border:solid; border-color: grey;}
+
+.Input_Button {width: 20%; aspect-ratio: 2/1; margin:.5rem;
+}
+
+
+
+
+
+//make the button look better
 
 .Contact__Grave--Wrapper{
   top: 0;
