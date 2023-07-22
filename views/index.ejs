@@ -358,7 +358,7 @@ have a contact me and it be his grave-->
 <h2 class="heading section"> Email us</h2>
 
 <div class="form_container">
-<form action="" class="form">
+<form action="/sendemail" class="form" method="POST" >
   <!-- <div class="display_inline"> -->
 
 <label for="name">Name:</label>  
@@ -366,17 +366,30 @@ have a contact me and it be his grave-->
 
 <label for="email">Email</label>
 <input type="text" name="email" id="email">
+<label for="subject">Subject</label>
+<input type="text" name="subject" id="subject">
+
+
 <label for="contactus">Text:</label>
 <textarea name="contactus" id="text" cols="30" rows="10"></textarea>
-<button class="Input_Button" name="submit"> submit</button>
+<button class="Input_Button" name="submit" id="submit"> submit</button>
 <!-- </div> -->
 </form>
-<div class="form_container">
 
-<div id="test"></div>
 
+
+
+ <!-- <div class="form_container">
+<div id="test"></div>  -->
 <!-- Having trouble setting up the links. Suspect the reason if realted to there being other classes or the images itself. This is not a 
 problem on jsfiddle. -->
+
+
+
+
+
+
+
 
       <footer class="Footer"> 
 
@@ -474,6 +487,17 @@ const obj = {
 };
 </script>
 
+ <script>
+
+  const formsubmit = document.getElementById("submit")
+  const formrecipient = document.getElementById("email")
+  const formsubject = document.getElementById("subject")
+  const formtext = document.getElementById("text")
+  </script>
+  
+
+  
+  
 
 </div>
 <div class="Footer_Citation--Wrap">
