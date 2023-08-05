@@ -1,21 +1,21 @@
+require("dotenv").config();
 const sgMail = require('@sendgrid/mail');
  
  
 sgMail.setApiKey(process.env.SENDGRID_API_KEY)
  
-const apiKey = process.env.SENDGRID_API_KEY;
 
 
 
 
-const sendEmail = (to,from, subject, text) => {
+const sendEmail = (to,from, subject, output) => {
     const msg = {
         to,
         from,
         subject,
-        text
+        html:output,
 
-    }
+    };
 
     sgMail  .send(msg)
         .then(() => {
@@ -23,12 +23,12 @@ const sendEmail = (to,from, subject, text) => {
         })
         .catch((error) =>{
           console.error(error)
+          console.log('Response Error:', error.response.data);
         })
-
-      //})
 
 
 
 }
-
 module.exports = sendEmail;
+
+

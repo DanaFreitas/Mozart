@@ -1,25 +1,24 @@
  const express = require("express");
  const app = express();
- const sendEmail = require('./utils/sendEmail.js')
+ const bodyParser = require('body-parser')
+ //swnd to req body
+ app.use(express.json())
+
+ const sendEmail = require('./utils/sendemail')
  const ejs = require('ejs');
  const port = 3000;
 const path = require('path')
- const router = express.Router();
+//can make pathing
+ const router = express.Router(); 
  require('dotenv').config();
+ //allow dotenv
  express.urlencoded({ extended: false }) //will alow destructuring for post 
-
- //const sgMail = require('@sendgrid/mail') 
- 
- //sgMail.setApiKey(process.env.SENDGRID_API_KEY)
-  
- //const apiKey = process.env.SENDGRID_API_KEY;
- 
-
  app.set('views', path.join(__dirname, 'views'))
+ //put in views
 app.set('view engine', 'ejs');
-
+//put in ejs
  app.get("/", function (req, res) {
-  //
+  // make index
   res.render("index")
 });
 
@@ -28,71 +27,56 @@ app.get("/sent", (req, res) => {
   res.render("sent");
 });
 
+//makes the sent page
+
+
 
 app.use('/', router)
   app.use(express.static(__dirname + '/public')); 
-  //app.use(express.static('public'));
 
+//allow public
+
+  app.use(bodyParser.json());
   
+
   app.listen(port,  ()=> 
       console.log(`Server is running on ${port}`)
   );
 
-
-//})
-
+//declares running
 
 
-//cant have 2 app.listen(port)
+app.post("/sendthemail", (req,res) => {
 
-//{
-
-// const formsubmit = document.getElementById("submit")
-// const formrecipient = document.getElementById("email")
-// const formsubject = document.getElementById("subject")
-// const formtext = document.getElementById("text")
+  const {name,email,about,text} = req.body;
 
 
 
-//for some reason, it has to come from me
-
-app.post("/sendemail", (req,res) => {
 
 
-  const {name,email,subject,text} = req.body;
-  const from = "process.env.FROM_EMAIL";
-
-  const output = 'testing!!!'
-
-  sendEmail(output)
-  res.redirect("/sent");
-  // const msg = {
-  //   to: formrecipient,
-  //   from: 'danarobertfreitas@gmail.com',
-  //   subject: formsubject,
-  //   text: formtext,
-  //   html: 'testing',
-  // }
+  //get data from client
+  //const from = email;
+  const from = "danarobertfreitas@gmail.com"; 
+  const to = "danarobertfreitas@gmail.com";
 
 
-// sgMail  .send(msg)
-//         .then(() => {
-//           console.log('Email sent')
-//         })
-//         .catch((error) =>{
-//           console.error(error)
-//         })
+const subject = "test";
 
-//       })
+//protect the sender
+  const output = `
+    <p>You have a new message from a Mozart fan.</p>
+    <h3>Contact Details</h3>
+    <ul>
+      <li>Name: ${name}</li>
+      <li>Email: ${email}</li>
+      <li>Subject: ${about}</li>
+      <li>Text: ${text}</li>
 
+    </ul>
+  `
+  sendEmail(to,from ,subject, output)
+  //res.redirect("/sent");
 })
      
 
 
-
-
-
-      // // formsubmit.addEventListener("click", (event) => {
-      // //   console.log("Log!")
-      // //  window.location.href = "localhost:3000/"
-      // // })
