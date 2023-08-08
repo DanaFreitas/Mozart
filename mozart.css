@@ -1,0 +1,464 @@
+/*Table of contents
+Body
+Navbar
+Menu
+Audio
+Biography
+Music
+Contact
+Footer
+*/
+/*Body*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@media screen and (min-width: 480px) {
+  * {
+    font-size: 24px;
+  }
+}
+body {
+  background-color: lightgrey;
+}
+
+p {
+  padding: 1rem;
+}
+
+img {
+  width: 100%;
+  padding: 1rem;
+}
+
+/*Navbar*/
+.header {
+  z-index: 10;
+  position: fixed;
+  background-color: #9A9595;
+  width: 100%;
+}
+.header .header__burgerholder {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  position: relative;
+  height: 3.5rem;
+}
+.header .header__hamburger {
+  left: 0vw;
+  top: 0vw;
+  display: block;
+  z-index: 5;
+}
+.header .header__hamburger:hover {
+  color: white;
+}
+@media screen and (min-width: 480px) {
+  .header .header__hamburger {
+    visibility: hidden;
+  }
+}
+.header .header__hamburger:hover > .header__hamburger--hamburger-bit {
+  background-color: white;
+  color: white;
+}
+.header .header__hamburger--hamburger-bit {
+  width: 3em;
+  height: 0.5em;
+  background-color: black;
+  margin: 0.5em 0;
+  transition: 0.4s;
+}
+.header .show #hamburger-bit-1 {
+  transform: translate(0, 1em) rotate(-45deg);
+  transition-duration: 500ms;
+}
+.header .show #hamburger-bit-2 {
+  opacity: 0;
+  transition-duration: 500ms;
+}
+.header .show #hamburger-bit-3 {
+  transform: translate(0, -1em) rotate(45deg);
+  transition-duration: 500ms;
+}
+.header .fa-solid {
+  margin-top: 0.85em;
+}
+.header .fa-solid:hover {
+  color: white;
+}
+.header .title {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2.5rem;
+  margin-top: 0.25rem;
+}
+
+@media screen and (min-width: 480px) {
+  .title {
+    font-size: 4rem;
+  }
+}
+@media screen and (min-width: 480px) {
+  .header__burgerholder > .header__hamburger > * {
+    display: none;
+  }
+}
+/* Menu */
+.menuclassdefault {
+  display: none;
+}
+
+.menuclassexit {
+  animation-name: menudisappear;
+  transition: 1s;
+  animation-fill-mode: forwards;
+  display: block;
+  z-index: 4;
+  position: fixed;
+  background-color: grey;
+  color: black;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  overflow-x: hidden;
+  margin: 0rem;
+  animation-direction: normal;
+  animation-duration: 0.75s;
+  text-align: center;
+  margin-top: 3.5rem;
+}
+
+.menuclassenter {
+  animation-name: menuappear;
+  display: block;
+  z-index: 4;
+  position: fixed;
+  background-color: grey;
+  color: black;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  overflow-x: hidden;
+  margin: 0rem;
+  animation-direction: normal;
+  animation-duration: 0.75s;
+  text-align: center;
+  margin-top: 3.5rem;
+}
+
+@keyframes menudisappear {
+  0% {
+    transform: translate(0px, 0px);
+    display: block;
+  }
+  100% {
+    transform: translate(-500px, 0px);
+    display: none;
+  }
+}
+@keyframes menuappear {
+  0% {
+    transform: translate(-500px, 0px);
+  }
+  100% {
+    transform: translate(0px, 0px);
+  }
+}
+.menu-item {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  left: 0;
+  font-size: 1.5em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2em;
+  color: black;
+  text-decoration: none;
+}
+
+.menu-item:hover:hover {
+  color: white;
+}
+
+@media screen and (min-width: 480px) {
+  .header__responsivemenu--wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 100%;
+    height: 4rem;
+  }
+  .header__responsivemenu--item {
+    font-size: 1rem;
+    z-index: 11;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    color: black;
+  }
+}
+/* Audio */
+.audios {
+  display: none;
+  width: 100%;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  bottom: 10%;
+}
+
+source {
+  display: none;
+}
+
+/* Biography */
+#Mozart {
+  margin-top: 5rem;
+}
+
+.paragraph {
+  margin: 0.1rem;
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+  padding: 3rem;
+  font-size: 3rem;
+}
+
+@media screen and (min-width: 480px) {
+  h2 {
+    font-size: 2rem;
+  }
+}
+h3 {
+  text-align: center;
+  padding: 3rem;
+}
+
+@media screen and (min-width: 480px) {
+  h3 {
+    font-size: 1.5rem;
+  }
+}
+#Mozartfamily {
+  height: auto;
+  width: 100%;
+  color: blue;
+}
+
+.Mozartimagetest {
+  animation-name: fadein;
+  animation-duration: 5.5s;
+  transition-property: opacity;
+  opacity: 0;
+  transition-timing-function: linear;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.complete {
+  transform: none;
+  opacity: 1;
+}
+
+/* Music */
+.Legacy_Video {
+  margin: 1rem;
+  width: 80%;
+  aspect-ratio: 16/9;
+}
+
+.Iframe__Container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Legacy_Video {
+  animation-name: musicfadein;
+  animation-duration: 5.5s;
+  transition-property: left;
+  transition-timing-function: linear;
+}
+
+@keyframes musicfadein {
+  0% {
+    left: -10rem;
+    opacity: 0;
+  }
+  100% {
+    left: 20rem;
+    opacity: 100;
+  }
+}
+svg {
+  display: block;
+  margin: auto;
+}
+
+/*Contact*/
+.Contact__Grave--Wrapper {
+  top: 0;
+  left: 0;
+  position: relative;
+  font-size: 1rem;
+}
+
+.Contact__Image--Grave {
+  z-index: 3;
+  display: relative;
+  width: 100%;
+}
+
+.__Grave--CrossWrapper {
+  width: 100%;
+  padding-top: 56.216216216%;
+}
+
+.Contact__Grave--Note {
+  transform-origin: center;
+  position: relative;
+  height: 5vw;
+  width: 20vw;
+  padding-bottom: 65%;
+}
+.Contact__Grave--Note::before, .Contact__Grave--Note::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  background-color: white;
+}
+.Contact__Grave--Note::before {
+  height: 30vw;
+  width: 1.5vw;
+  top: 20%;
+  left: 35%;
+  border-radius: 0% 0% 40% 0%;
+}
+.Contact__Grave--Note::after {
+  height: 8vw;
+  width: 11vw;
+  border-radius: 70% 30% 70% 30%;
+  top: 60%;
+  left: -14%;
+}
+
+.Contact__Grave--Note + .Contact__Grave--Note {
+  margin-right: 2vw;
+}
+
+.Contact__Grave--Animate {
+  top: 0;
+  left: 0;
+  animation-name: gravereveal;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  background-color: black;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: block;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes gravereveal {
+  0% {
+    opacity: 1;
+    background-color: black;
+    display: block;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+.Contact_Paragraph--Hide {
+  display: none;
+}
+
+.Contact_Paragraph--Show {
+  display: block;
+  padding: 1rem;
+  animation-name: textreveal;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes textreveal {
+  0% {
+    opacity: 0;
+    display: none;
+  }
+  50% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+    display: block;
+  }
+}
+/* Footer */
+.Footer__Buttoncontainer {
+  display: flex;
+  flex-direction: row;
+  align-content: flex-end;
+  position: relative;
+  margin: 1rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.Footer__Button {
+  height: 2rem;
+  width: 2rem;
+  padding: 0rem;
+}
+.Footer__Button:hover {
+  color: white;
+}
+
+@media screen and (min-width: 480px) {
+  .Footer__Button {
+    height: 3rem;
+    width: 3rem;
+  }
+}
+.Footer__Button--Dark {
+  display: block;
+  margin: auto;
+}
+
+.Footer__Button--Light {
+  display: none;
+  margin: auto;
+}
+
+.Footer_Citation--Wrap {
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+
+.Footer_Citation {
+  font-size: 0.5rem;
+  display: block;
+  position: relative;
+  padding: 0.3rem;
+  color: blue;
+}/*# sourceMappingURL=mozart.css.map */
