@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="mozart.css" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" type="text/css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
   </head>
   <body>
        
@@ -14,7 +15,7 @@
     <header id="header" class="header">
 
 
-
+      <div id="headerwrapper" class="header_default--wrapper">
      <div id="burgerholder" class="header__burgerholder">
       <div type="button" id="hamburger" class="header__hamburger">
         <div class="header__hamburger--hamburger-bit" id="hamburger-bit-1"></div>
@@ -27,18 +28,33 @@
       <h1  class="title">Mozart</h1>
 
 
-      <div class="fa-solid fa-music fa-2xl" id="musicbutton" type="button"></div>
+      <div class="fa-solid fa-music 
+      " id="musicbutton" type="button"></div>
+      <!-- fa-2xl       -->
+      </div>
+      <ul id="slidemenu" class="menu_slide" data-menutype="default">
       
       
-      <ul id="menu2" class="header__responsivemenu--wrapper">
+        <a href="#Mozart" class="menu-item scrollitem" data-menutype="default" type="button" value="0">Home</a>
+        <a href="#hislife" class="menu-item scrollitem" data-menutype="default" type="button" value="1">His life</a>
+        <a href="#hislegacy" class="menu-item scrollitem" data-menutype="default" type="button" value="2">His Legacy</a>
+        <a href="#contact" class="menu-item scrollitem" data-menutype="default" type="button" value="3">Contact</a>
+  
+     </ul>  
+  
+      
+      <ul id="responsivemenu" class="header__responsivemenu--wrapper" data-menutype="default">
        
        
-        <a href="#Mozart" class="header__responsivemenu--item" type="button" value="4">Home</a>
-        <a href="#hislife" class="header__responsivemenu--item" type="button" value="5">His life</a>
-        <a href="#hislegacy" class="header__responsivemenu--item" type="button" value="6">His Legacy</a>
-        <a href="#contact" class="header__responsivemenu--item" type="button" value="7">Contact</a>
+        <a href="#Mozart" class="header__responsivemenu--item scrollitem" data-menutype="default" type="button" value="4">Home</a>
+        <a href="#hislife" class="header__responsivemenu--item scrollitem" data-menutype="default" type="button" value="5">His life</a>
+        <a href="#hislegacy" class="header__responsivemenu--item scrollitem" data-menutype="default" type="button" value="6">His Legacy</a>
+        <a href="#contact" class="header__responsivemenu--item scrollitem" data-menutype="default" type="button" value="7">Contact</a>
     
      </ul>  
+
+   
+
 
       </header>
 
@@ -46,15 +62,7 @@
  
 
     <nav id="nav__default">
-    <ul id="menu" class="menuclassdefault">
-      
-      
-      <a href="#Mozart" class="menu-item" type="button" value="0">Home</a>
-      <a href="#hislife" class="menu-item" type="button" value="1">His life</a>
-      <a href="#hislegacy" class="menu-item" type="button" value="2">His Legacy</a>
-      <a href="#contact" class="menu-item" type="button" value="3">Contact</a>
-
-   </ul>  
+ 
 
    </nav>
 
@@ -66,16 +74,16 @@
     </audio>
 
 
-    <img
+      <img
       src="Images/Mozart.webp"
       alt="Mozart"
       id="Mozart"
       class="Mozartimage complete section"
-    />
+    />  
 
     <!-- Have the element appear. have name of the sample page-->
 
-
+     
 
     <p id="intro" class="paragraph">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas nec

@@ -9,13 +9,15 @@ Contact
 Footer
 */
 /*Body*/
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,600&family=Roboto+Condensed:ital,wght@0,400;1,300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,600&family=EB+Garamond:wght@500&family=Roboto+Condensed:ital,wght@0,400;1,300&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 481px) {
   * {
     font-size: 24px;
   }
@@ -33,26 +35,41 @@ img {
   padding: 1rem;
 }
 
+@media screen and (min-width: 769px) {
+  img {
+    width: 88%;
+    padding: 1rem;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+}
 /*Navbar*/
 .header {
   z-index: 10;
   position: fixed;
   background-color: #9A9595;
   width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template: "p1" "p2";
 }
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 481px) {
   .header .header__burgerholder {
     display: none;
   }
+}
+.header .header_default--wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  grid-area: p1;
 }
 .header .header__hamburger {
   left: 0vw;
   top: 0vw;
   display: block;
   z-index: 5;
+  margin-top: 1em;
 }
 .header .header__hamburger:hover {
   color: white;
@@ -83,30 +100,43 @@ img {
 .header .fa-solid {
   margin-top: 0.85em;
 }
+.header .fa-solid {
+  font-size: 2em;
+}
 .header .fa-solid:hover {
   color: white;
 }
 .header .title {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 2.5rem;
-  margin-top: 0.25rem;
+  font-family: "EB Garamond", serif;
+  font-size: 3.5rem;
+  margin-top: 0rem;
 }
-
-@media screen and (min-width: 480px) {
-  .title {
+@media screen and (min-width: 481px) {
+  .header .title {
     font-size: 4rem;
+    flex: 1;
+    text-align: center;
+  }
+  .header .fa-solid {
+    margin-right: 1rem;
   }
 }
-@media screen and (min-width: 480px) {
-  .header__burgerholder > .header__hamburger > * {
+@media screen and (min-width: 481px) {
+  .header .header__burgerholder > .header__hamburger > * {
     display: none;
   }
 }
+
 /* Menu */
-.menuclassdefault {
+.menu_slide {
   display: none;
 }
 
+@media screen and (min-width: 481px) {
+  #nav_default {
+    display: none;
+  }
+}
 .menuclassexit {
   animation-name: menudisappear;
   transition: 1s;
@@ -151,7 +181,7 @@ img {
     display: block;
   }
   100% {
-    transform: translate(-500px, 0px);
+    transform: translate(-100%, 0px);
     display: none;
   }
 }
@@ -183,13 +213,21 @@ img {
   display: none;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 481px) {
   .header__responsivemenu--wrapper {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
     height: 4rem;
+    grid-area: p2;
+    padding: 0.5rem;
+  }
+  .header__responsivemenu--wrapper > * {
+    margin: 0.8rem;
+  }
+  .header__responsivemenu--wrapper:hover > *:hover {
+    color: white;
   }
   .header__responsivemenu--item {
     font-size: 1rem;
@@ -215,7 +253,9 @@ source {
 
 /* Biography */
 #Mozart {
-  margin-top: 5rem;
+  display: block;
+  transform: translateY(8rem);
+  margin-bottom: 8rem;
 }
 
 .paragraph {
@@ -229,7 +269,7 @@ h2 {
   font-size: 3rem;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 481px) {
   h2 {
     font-size: 2rem;
   }
@@ -239,17 +279,17 @@ h3 {
   padding: 3rem;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 481px) {
   h3 {
     font-size: 1.5rem;
   }
 }
+/*
 #Mozartfamily {
-  height: auto;
-  width: 100%;
-  color: blue;
+   height: auto; width:100%;
+  color:blue;
 }
-
+*/
 .Mozartimagetest {
   animation-name: fadein;
   animation-duration: 5.5s;
@@ -434,7 +474,7 @@ svg {
   color: white;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 481px) {
   .Footer__Button {
     height: 3rem;
     width: 3rem;

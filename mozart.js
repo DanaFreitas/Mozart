@@ -1,5 +1,5 @@
   const ham = document.getElementById("hamburger");
-const menu = document.getElementById("menu");
+const slidemenu = document.getElementById("slidemenu");
 const holder = document.getElementById("burgerholder");
 
 
@@ -9,39 +9,44 @@ ham.addEventListener("click", () => {
 });
 
 ham.addEventListener("click", () => {
+  
+
   if (
-    menu.classList.contains("menuclassdefault") ||
-    menu.classList.contains("menuclassexit")
+    slidemenu.classList.contains("menu_slide") ||
+    slidemenu.classList.contains("menuclassexit")
   ) {
-    menu.classList.remove("menuclassdefault");
-    menu.classList.remove("menuclassexit");
-    menu.classList.add("menuclassenter");
-  } else if (menu.classList.contains("menuclassenter")) {
-    menu.classList.add("menuclassexit");
-    menu.classList.remove("menuclassenter");
+    slidemenu.classList.remove("menu_slide");
+    slidemenu.classList.remove("menuclassexit");
+    slidemenu.classList.add("menuclassenter");
+  } else if (slidemenu.classList.contains("menuclassenter")) {
+    slidemenu.classList.add("menuclassexit");
+    slidemenu.classList.remove("menuclassenter");
     document.getElementById("hamburger").style.width = "";
   }
 });
 
 
-const menubutton = document.getElementsByClassName("menu-item");
+//this is to get the effects to scroll
+const menubutton = document.getElementsByClassName("scrollitem");
 
+const offset = 0;
 
-const offset = -56;
+for (let k = 0; k < menubutton.length; k++) {  
 
-for (let k = 0; k < menubutton.length; k++) {  //This os looping a lot, need to add event listener
- 
   menubutton[k].addEventListener("click", (event) => {
-    event.preventDefault();
-    const section = document.getElementsByClassName("section");
-    
-  //for (let l = 0; l < section.length; l++) { 
-    let index = Array.from(section).indexOf(section);
+  event.preventDefault();
+
+    let section = document.getElementsByClassName("section");
+
+     if (k > 3) {k -= 4}
+   // let index = Array.from(section).indexOf(section);
+
     const targetPosition = section[k].getBoundingClientRect().top + window.scrollY + offset;
-//need to maek that index reflect the section. when an integer is inputted, it work.s
 
 
-    window.scrollTo({ top: (0, targetPosition), behavior: "smooth" });
+    window.scrollTo({ top: (0, targetPosition-300), behavior: "smooth" });
+
+
 
     //the element represents the targeted part of an array made up of the inputted elements.
     ///im using the target as the menubutton when i should be using it on the section names
@@ -51,16 +56,26 @@ for (let k = 0; k < menubutton.length; k++) {  //This os looping a lot, need to 
     //window.scrollY is how many pixels from the top the viewport is
     //offset is a value of pixels
 
-    document.getElementById("hamburger").classList.toggle("show");
-
-    menu.classList.add("menuclassexit");
-
-    menu.classList.remove("menuclassenter");
 
 
+
+  
+  const respon = document.getElementsByClassName("header__responsivemenu--item")
+
+if (event.target = respon) {
+  console.log("test")
+  } 
+
+ else {
+  document.getElementById("hamburger").classList.toggle("show");
+console.log("test2")
+     slidemenu.classList.add("menuclassexit")
+   slidemenu.classList.remove("menuclassenter")
     document.getElementById("hamburger").style.width = "";
-   } )}//}
-  //};
+ }
+//doesnt seem to make a difference
+} )}
+  
 
     
     const keyframesRule = `
