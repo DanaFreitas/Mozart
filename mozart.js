@@ -120,10 +120,10 @@ console.log("test2")
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("Mozartimagetest");
+          entry.target.classList.add("Mozartimageanimate");
           observer.unobserve(entry.target);
         } else {
-          entry.target.classList.remove("Mozartimagetest");
+          entry.target.classList.remove("Mozartimageanimate");
         }
       });
     });

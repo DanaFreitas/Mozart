@@ -19,10 +19,7 @@ Footer
 
 *{ margin:0; padding: 0; box-sizing: border-box; }
 
-@media screen and (min-width: 481px) {
-* {font-size: 24px;}
-}
-
+html {font-size: calc(15px + 0.390625vw); }
 @media screen and (min-width:1025px) {
 
 // @if header {
@@ -30,7 +27,8 @@ Footer
 // }
 
  body{ margin: 0rem 5rem 0rem 5rem;
-.header {position: relative;}}
+//.header {position: relative;}
+.header {right:0%}}
 }
 
 @media screen and (min-width: 1769px) {
@@ -41,7 +39,10 @@ Footer
 
 body {background-color:lightgrey;}
 
+
 p {padding:1rem;}
+
+
 
 //img{width:100%; padding:1rem;}
 
@@ -57,7 +58,7 @@ p {padding:1rem;}
      height: auto; width:20%;display: inline;}
   .Mozartimage:nth-of-type(odd) {float: right;
      height: auto; width:20%;display: inline;}
-  #Mozartsignature {width:70%; margin-left: auto; margin-right: auto;  }
+  #Mozartsignature {width:50%; margin-left: auto; margin-right: auto;  }
   #Mozart {float: none; margin-left: auto; margin-right: auto;}
   .subheading {clear:both;}
 }
@@ -285,10 +286,13 @@ color:black;   text-decoration: none;
 /* Biography */
 
 #Mozart {display:block; transform: translateY(8rem); margin-bottom: 8rem; border-radius: 50%; }
+#Mozartbadge {border-radius: 50%;}
 
 .paragraph {margin: .1rem; text-align: center;}
 
-
+@media screen and (min-width:1201px) {
+  .paragraph {padding:0 17rem 0 17rem;}
+}
 
 
 h2  {text-align:$text-center; padding:3rem; font-size:3rem;}
@@ -313,7 +317,7 @@ h3  {text-align:$text-center; padding:3rem;}
 
 
 
-.Mozartimagetest { animation-name: fadein;
+.Mozartimageanimate { animation-name: fadein;
   animation-duration: 5.5s;
   transition-property: opacity;
   opacity: 0;
