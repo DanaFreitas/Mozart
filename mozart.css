@@ -22,6 +22,14 @@ Footer
     font-size: 24px;
   }
 }
+@media screen and (min-width: 1025px) {
+  body {
+    margin: 0rem 5rem 0rem 5rem;
+  }
+  body .header {
+    position: relative;
+  }
+}
 body {
   background-color: lightgrey;
 }
@@ -30,18 +38,31 @@ p {
   padding: 1rem;
 }
 
-img {
-  width: 100%;
-  padding: 1rem;
-}
-
-@media screen and (min-width: 769px) {
-  img {
-    width: 88%;
-    padding: 1rem;
+@media screen and (min-width: 1025px) {
+  .Mozartimage:nth-of-type(even) {
+    float: left;
+    height: auto;
+    width: 20%;
+    display: inline;
+  }
+  .Mozartimage:nth-of-type(odd) {
+    float: right;
+    height: auto;
+    width: 20%;
+    display: inline;
+  }
+  #Mozartsignature {
+    width: 70%;
     margin-left: auto;
     margin-right: auto;
-    display: block;
+  }
+  #Mozart {
+    float: none;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .subheading {
+    clear: both;
   }
 }
 /*Navbar*/
@@ -108,6 +129,8 @@ img {
 }
 .header .title {
   font-family: "EB Garamond", serif;
+  color: black;
+  text-decoration: none;
   font-size: 3.5rem;
   margin-top: 0rem;
 }
@@ -237,6 +260,15 @@ img {
     text-decoration: none;
   }
 }
+.section {
+  scroll-margin-top: 10rem;
+}
+
+@media screen and (min-width: 769px) {
+  .scrollitem {
+    font-size: 1.5rem;
+  }
+}
 /* Audio */
 .audios {
   display: none;
@@ -256,6 +288,7 @@ source {
   display: block;
   transform: translateY(8rem);
   margin-bottom: 8rem;
+  border-radius: 50%;
 }
 
 .paragraph {
@@ -284,12 +317,6 @@ h3 {
     font-size: 1.5rem;
   }
 }
-/*
-#Mozartfamily {
-   height: auto; width:100%;
-  color:blue;
-}
-*/
 .Mozartimagetest {
   animation-name: fadein;
   animation-duration: 5.5s;
@@ -324,6 +351,16 @@ h3 {
   align-items: center;
 }
 
+@media screen and (min-width: 1025px) {
+  .Iframe__Container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+  .Iframe__Container .Legacy_Video {
+    width: 90%;
+  }
+}
 .Legacy_Video {
   animation-name: musicfadein;
   animation-duration: 5.5s;

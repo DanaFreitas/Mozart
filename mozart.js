@@ -2,7 +2,13 @@
 const slidemenu = document.getElementById("slidemenu");
 const holder = document.getElementById("burgerholder");
 
+const title = document.getElementsByClassName("title");
 
+// title.addEventListener("click", ()=> {
+
+//   title.scrollIntoView({ behavior: "smooth", block: "start", inline: "center" })
+
+// })
 
 ham.addEventListener("click", () => {
   document.getElementById("hamburger").classList.toggle("show");
@@ -28,7 +34,7 @@ ham.addEventListener("click", () => {
 
 //this is to get the effects to scroll
 const menubutton = document.getElementsByClassName("scrollitem");
-
+//const test = document.getElementById("death")
 const offset = 0;
 
 for (let k = 0; k < menubutton.length; k++) {  
@@ -39,12 +45,12 @@ for (let k = 0; k < menubutton.length; k++) {
     let section = document.getElementsByClassName("section");
 
      if (k > 3) {k -= 4}
-   // let index = Array.from(section).indexOf(section);
 
-    const targetPosition = section[k].getBoundingClientRect().top + window.scrollY + offset;
+   // const targetPosition = section[k].getBoundingClientRect().top + window.scrollY + offset;
 
+    section[k].scrollIntoView({ behavior: "smooth", block: "start", inline: "center" })
 
-    window.scrollTo({ top: (0, targetPosition-300), behavior: "smooth" });
+    //window.scrollTo({ top: (0, targetPosition), behavior: "smooth" });
 
 
 
