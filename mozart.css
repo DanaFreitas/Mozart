@@ -43,6 +43,13 @@ img {
   padding: 1rem;
 }
 
+@media screen and (min-width: 769px) {
+  img {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 @media screen and (min-width: 1025px) {
   .Mozartimage:nth-of-type(even) {
     float: left;
