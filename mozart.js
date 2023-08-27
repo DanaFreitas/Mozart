@@ -2,13 +2,28 @@
 const slidemenu = document.getElementById("slidemenu");
 const holder = document.getElementById("burgerholder");
 
-const title = document.getElementsByClassName("title");
+const title = document.getElementById("title");
 
-// title.addEventListener("click", ()=> {
+title.addEventListener("click", (event)=> {
+  let Mozartheader = document.getElementById("Mozart")
+  event.preventDefault();
+   Mozartheader.scrollIntoView({ behavior: "smooth", block: "start", inline: "start" })
+ })
 
-//   title.scrollIntoView({ behavior: "smooth", block: "start", inline: "center" })
 
-// })
+
+ const menubutton = document.getElementsByClassName("scrollitem");
+ const offset = 0;
+ for (let k = 0; k < menubutton.length; k++) {  
+
+  menubutton[k].addEventListener("click", (event) => {
+  event.preventDefault();
+    let section = document.getElementsByClassName("section");
+     if (k > 3) {k -= 4}
+    section[k].scrollIntoView({ behavior: "smooth", block: "start", inline: "center" })
+  })}
+
+
 
 ham.addEventListener("click", () => {
   document.getElementById("hamburger").classList.toggle("show");
@@ -32,44 +47,36 @@ ham.addEventListener("click", () => {
 });
 
 
-//this is to get the effects to scroll
-const menubutton = document.getElementsByClassName("scrollitem");
-//const test = document.getElementById("death")
-const offset = 0;
+
+
+
+
+//const menubutton = document.getElementsByClassName("scrollitem");
+//const offset = 0;
+
+
 
 for (let k = 0; k < menubutton.length; k++) {  
 
-  menubutton[k].addEventListener("click", (event) => {
-  event.preventDefault();
+ menubutton[k].addEventListener("click", (event) => {
+ event.preventDefault();
 
-    let section = document.getElementsByClassName("section");
+   let section = document.getElementsByClassName("section");
 
-     if (k > 3) {k -= 4}
-
-   // const targetPosition = section[k].getBoundingClientRect().top + window.scrollY + offset;
-
-    section[k].scrollIntoView({ behavior: "smooth", block: "start", inline: "center" })
-
-    //window.scrollTo({ top: (0, targetPosition), behavior: "smooth" });
+    if (k > 3) {k -= 4}
 
 
+   section[k].scrollIntoView({ behavior: "smooth", block: "start", inline: "center" })
+ 
 
-    //the element represents the targeted part of an array made up of the inputted elements.
-    ///im using the target as the menubutton when i should be using it on the section names
-    //the index of the array is effecting how far down the list to go
-    //getboundingclientrect provides the position of the element relative to the viewport
-    //.top is the topmost window
-    //window.scrollY is how many pixels from the top the viewport is
-    //offset is a value of pixels
 
 
 
 
   
   const respon = document.getElementsByClassName("header__responsivemenu--item")
-
 if (event.target = respon) {
-  console.log("test")
+  //console.log("test2")
   } 
 
  else {
@@ -168,10 +175,10 @@ console.log("test2")
     const observer3 = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("Contact__Grave--Animate");
+          entry.target.classList.add("grave__Grave--Animate");
           observer3.unobserve(entry.target);
         } else {
-          entry.target.classList.remove("Contact__Grave--Animate");
+          entry.target.classList.remove("grave__Grave--Animate");
         }
       });
     });
@@ -180,7 +187,7 @@ console.log("test2")
       "DOMContentLoaded",
       (event) => {
         const sections = Array.from(
-          document.getElementsByClassName("Contact__Grave--CrossWrapper")
+          document.getElementsByClassName("grave__Grave--CrossWrapper")
         );
     
         for (let section of sections) {
@@ -189,10 +196,6 @@ console.log("test2")
       },
       options
     );
-    // Notes
-    // padding for videos.
-    // have a contact me and it be his grave
-    
 
     [...document.getElementsByClassName("Footer__Button")].forEach(function (item) {
       item.addEventListener("click", function () {

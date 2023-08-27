@@ -4,8 +4,9 @@ Navbar
 Menu
 Audio
 Biography
+  Grave
 Music
-Contact
+grave
 Footer
 */
 /*Body*/
@@ -37,6 +38,11 @@ p {
   padding: 1rem;
 }
 
+img {
+  width: 100%;
+  padding: 1rem;
+}
+
 @media screen and (min-width: 1025px) {
   .Mozartimage:nth-of-type(even) {
     float: left;
@@ -62,6 +68,9 @@ p {
   }
   .subheading {
     clear: both;
+  }
+  img {
+    padding: 2rem;
   }
 }
 /*Navbar*/
@@ -299,11 +308,6 @@ source {
   text-align: center;
 }
 
-@media screen and (min-width: 1201px) {
-  .paragraph {
-    padding: 0 17rem 0 17rem;
-  }
-}
 h2 {
   text-align: center;
   padding: 3rem;
@@ -346,6 +350,94 @@ h3 {
   opacity: 1;
 }
 
+/* Grave */
+.grave__Grave--Wrapper {
+  top: 0;
+  left: 0;
+  position: relative;
+  font-size: 1rem;
+}
+
+.grave__Image--Grave {
+  z-index: 3;
+  display: relative;
+  width: 100%;
+}
+
+.grave__Grave--CrossWrapper {
+  width: 100%;
+  padding-top: 56.216216216%;
+}
+
+.grave__Grave--Note {
+  transform-origin: center;
+  position: relative;
+  height: 5vw;
+  width: 20vw;
+  padding-bottom: 65%;
+}
+.grave__Grave--Note::before, .grave__Grave--Note::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  background-color: white;
+}
+.grave__Grave--Note::before {
+  height: 30vw;
+  width: 1.5vw;
+  top: -15.609375%;
+  left: 50%;
+  border-radius: 0% 0% 40% 0%;
+}
+@media screen and (min-width: 1025px) {
+  .grave__Grave--Note::before {
+    top: calc(-29% + 1.790625vw);
+  }
+}
+.grave__Grave--Note::after {
+  height: 8vw;
+  width: 11vw;
+  border-radius: 70% 30% 70% 30%;
+  bottom: 63%;
+  left: 1%;
+}
+
+.grave__Grave--Note + .grave__Grave--Note {
+  margin-right: 2vw;
+}
+
+.grave__Grave--Animate {
+  top: 0;
+  left: 0;
+  animation-name: gravereveal;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  background-color: black;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: block;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes gravereveal {
+  0% {
+    opacity: 1;
+    background-color: black;
+    display: block;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
 /* Music */
 .Legacy_Video {
   margin: 1rem;
@@ -391,89 +483,7 @@ svg {
   margin: auto;
 }
 
-/*Contact*/
-.Contact__Grave--Wrapper {
-  top: 0;
-  left: 0;
-  position: relative;
-  font-size: 1rem;
-}
-
-.Contact__Image--Grave {
-  z-index: 3;
-  display: relative;
-  width: 100%;
-}
-
-.__Grave--CrossWrapper {
-  width: 100%;
-  padding-top: 56.216216216%;
-}
-
-.Contact__Grave--Note {
-  transform-origin: center;
-  position: relative;
-  height: 5vw;
-  width: 20vw;
-  padding-bottom: 65%;
-}
-.Contact__Grave--Note::before, .Contact__Grave--Note::after {
-  content: "";
-  position: absolute;
-  z-index: 2;
-  background-color: white;
-}
-.Contact__Grave--Note::before {
-  height: 30vw;
-  width: 1.5vw;
-  top: 20%;
-  left: 35%;
-  border-radius: 0% 0% 40% 0%;
-}
-.Contact__Grave--Note::after {
-  height: 8vw;
-  width: 11vw;
-  border-radius: 70% 30% 70% 30%;
-  top: 60%;
-  left: -14%;
-}
-
-.Contact__Grave--Note + .Contact__Grave--Note {
-  margin-right: 2vw;
-}
-
-.Contact__Grave--Animate {
-  top: 0;
-  left: 0;
-  animation-name: gravereveal;
-  animation-duration: 3s;
-  animation-fill-mode: forwards;
-  background-color: black;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  display: block;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-@keyframes gravereveal {
-  0% {
-    opacity: 1;
-    background-color: black;
-    display: block;
-  }
-  50% {
-    opacity: 0.9;
-  }
-  100% {
-    opacity: 0;
-    display: none;
-  }
-}
+/*grave*/
 .Contact_Paragraph--Hide {
   display: none;
 }

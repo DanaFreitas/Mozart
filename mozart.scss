@@ -4,8 +4,9 @@ Navbar
 Menu
 Audio
 Biography
+  Grave
 Music
-Contact
+grave
 Footer
 */
 
@@ -32,9 +33,6 @@ html {font-size: calc(15px + 0.390625vw); }
 }
 
 @media screen and (min-width: 1769px) {
- // html {margin:50px;}
-//need to properly manage this
-    
 }
 
 body {background-color:lightgrey;}
@@ -44,7 +42,7 @@ p {padding:1rem;}
 
 
 
-//img{width:100%; padding:1rem;}
+img{width:100%; padding:1rem;}
 
 
 // @media screen and (min-width:769px) and (max-width:1200px) {
@@ -61,6 +59,7 @@ p {padding:1rem;}
   #Mozartsignature {width:50%; margin-left: auto; margin-right: auto;  }
   #Mozart {float: none; margin-left: auto; margin-right: auto;}
   .subheading {clear:both;}
+  img {padding: 2rem;}
 }
 
 
@@ -291,7 +290,7 @@ color:black;   text-decoration: none;
 .paragraph {margin: .1rem; text-align: center;}
 
 @media screen and (min-width:1201px) {
-  .paragraph {padding:0 17rem 0 17rem;}
+  //.paragraph {padding:0 17rem 0 17rem;}
 }
 
 
@@ -340,6 +339,117 @@ h3  {text-align:$text-center; padding:3rem;}
 }
 
 
+/* Grave */
+
+
+
+.grave__Grave--Wrapper{
+  top: 0;
+  left: 0;  
+  position:relative; font-size: 1rem; 
+}
+
+
+
+.grave__Image--Grave {z-index: 3;display:relative; width: 100%;}
+
+
+.grave__Grave--CrossWrapper {width:100%; padding-top: 56.216216216%;
+}
+
+
+
+
+
+@mixin BeforeandAfter {
+   
+
+  &::before, &::after{content:"";position:absolute;  z-index:2 ;background-color:white;      
+  }
+
+  //for the stem
+  &::before {
+    height:30vw;
+    width: 1.5vw;
+    top: -16% +  0.390625%;
+    left: 50%;
+    border-radius: 0% 0% 40% 0%;  
+  }
+
+   @media screen and (min-width:1025px) {
+ &::before {
+   top:calc(-29% + 1.790625vw)}
+   }
+
+ //for the head
+  &::after { 
+
+    height:8vw;
+    width:11vw;
+    border-radius: 70% 30% 70% 30%;;
+    bottom:63%;
+    left: 1%;
+ 
+ } 
+}
+ 
+   
+
+
+.grave__Grave--Note {transform-origin: center; 
+  position:relative;
+   height:5vw; width:20vw;
+   @include BeforeandAfter; 
+   padding-bottom:65%;
+}
+
+.grave__Grave--Note + .grave__Grave--Note {
+  margin-right: 2vw;
+}
+
+
+
+@mixin Graveanimate {
+  display: flex;justify-content: center;align-items: center;//height: 12rem;
+  }
+
+
+
+
+  .grave__Grave--Animate {
+  top: 0;
+   left: 0;
+  animation-name: gravereveal;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  background-color:black;
+  position:absolute; width:100%; height:100%; z-index: 2; display:block; margin:auto;
+  @include Graveanimate()  
+}
+
+
+
+@keyframes gravereveal {
+  
+  0% {
+    opacity:1; background-color: black;
+    display:block;
+  }
+  
+50% {
+  opacity:.9;
+}
+
+
+
+  100% {
+    opacity:.0;
+    display:none;
+  }
+  
+  }
+
+
 /* Music */
 
 
@@ -386,7 +496,7 @@ svg {display:block; margin:auto;
 }
 
 
-/*Contact*/
+/*grave*/
 
 
 
@@ -397,108 +507,6 @@ svg {display:block; margin:auto;
 
 
 //make the button look better
-
-.Contact__Grave--Wrapper{
-  top: 0;
-  left: 0;  
-  position:relative; font-size: 1rem; 
-}
-
-
-
-.Contact__Image--Grave {z-index: 3;display:relative; width: 100%;}
-
-
-.__Grave--CrossWrapper {width:100%; padding-top: 56.216216216%;
-}
-
-
-
-
-
-@mixin BeforeandAfter {
-   
-
-  &::before, &::after{content:"";position:absolute;  z-index:2 ;background-color:white;      
-  }
-
-  //for the height
-  &::before {
-    height:30vw;
-    width: 1.5vw;
-    top: 20%;
-    left: 35%;
-    border-radius: 0% 0% 40% 0%;  
-  }
-
- //for the width
-  &::after { 
-
-    height:8vw;
-    width:11vw;
-    border-radius: 70% 30% 70% 30%;;
-    top:60%;
-    left: -14%;
- 
- } 
-}
- 
-   
-//padding-top: 56.216216216%;
-
-
-.Contact__Grave--Note {transform-origin: center; 
-  position:relative;
-   height:5vw; width:20vw;
-   @include BeforeandAfter; 
-   padding-bottom:65%;
-}
-
-.Contact__Grave--Note + .Contact__Grave--Note {
-  margin-right: 2vw;
-}
-
-
-
-@mixin Graveanimate {
-  display: flex;justify-content: center;align-items: center;//height: 12rem;
-  }
-
-
-
-
-  .Contact__Grave--Animate {
-  top: 0;
-   left: 0;
-  animation-name: gravereveal;
-  animation-duration: 3s;
-  animation-fill-mode: forwards;
-  background-color:black;
-  position:absolute; width:100%; height:100%; z-index: 2; display:block; margin:auto;
-  @include Graveanimate()  
-}
-
-
-
-@keyframes gravereveal {
-  
-  0% {
-    opacity:1; background-color: black;
-    display:block;
-  }
-  
-50% {
-  opacity:.9;
-}
-
-
-
-  100% {
-    opacity:.0;
-    display:none;
-  }
-  
-  }
 
 
 .Contact_Paragraph--Hide { display:none;}
