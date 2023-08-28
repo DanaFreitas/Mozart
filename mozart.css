@@ -43,13 +43,6 @@ img {
   padding: 1rem;
 }
 
-@media screen and (min-width: 769px) {
-  img {
-    width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-}
 @media screen and (min-width: 1025px) {
   .Mozartimage:nth-of-type(even) {
     float: left;
@@ -84,7 +77,7 @@ img {
 .header {
   z-index: 10;
   position: fixed;
-  background-color: #9A9595;
+  background-color: #9a9595;
   width: 100%;
   display: grid;
   grid-template: "p1" "p2";
