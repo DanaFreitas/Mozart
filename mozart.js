@@ -25,8 +25,8 @@ for (let k = 0; k < menubutton.length; k++) {
     }
     section[k].scrollIntoView({
       behavior: "smooth",
-      block: "start",
-      inline: "center",
+      block: "end",
+      inline: "nearest",
     });
   });
 }
@@ -63,8 +63,9 @@ for (let k = 0; k < menubutton.length; k++) {
     section[k].scrollIntoView({
       behavior: "smooth",
       block: "start",
-      inline: "center",
+      inline: "nearest",
     });
+
 
     const respon = document.getElementsByClassName(
       "header__responsivemenu--item"
@@ -109,7 +110,7 @@ music.addEventListener("click", () => {
 
 let options = {
   root: null,
-  rootMargin: "0px",
+  //rootMargin: "0px",
   threshold: 0.5,
 };
 
@@ -161,6 +162,8 @@ window.addEventListener(
   options
 );
 
+
+
 const observer3 = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
@@ -171,6 +174,7 @@ const observer3 = new IntersectionObserver((entries) => {
     }
   });
 });
+
 
 window.addEventListener(
   "DOMContentLoaded",
@@ -185,6 +189,10 @@ window.addEventListener(
   },
   options
 );
+
+
+
+
 
 [...document.getElementsByClassName("Footer__Button")].forEach(function (item) {
   item.addEventListener("click", function () {
@@ -221,11 +229,6 @@ const obj = {
       "https://www.pandora.com/artist/wolfgang-amadeus-mozart/ARlXdwmldP4lrc4";
   },
 };
-
-const formsubmit = document.getElementById("submit");
-const formrecipient = document.getElementById("email");
-const formsubject = document.getElementById("subject");
-const formtext = document.getElementById("text");
 
 let contact = document.getElementsByClassName("Footer__Button--Dark");
 

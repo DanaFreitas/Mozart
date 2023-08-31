@@ -491,7 +491,6 @@ svg {
 .Contact_Paragraph--Show {
   display: block;
   padding: 1rem;
-  animation-name: textreveal;
   animation-duration: 3s;
   animation-fill-mode: forwards;
 }
