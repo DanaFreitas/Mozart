@@ -173,7 +173,7 @@ img {
   transition: 1s;
   animation-fill-mode: forwards;
   display: block;
-  z-index: 4;
+  z-index: 40;
   position: fixed;
   background-color: grey;
   color: black;
@@ -185,13 +185,13 @@ img {
   animation-direction: normal;
   animation-duration: 0.75s;
   text-align: center;
-  margin-top: 3.5rem;
+  margin-top: 4.5rem;
 }
 
 .menuclassenter {
   animation-name: menuappear;
   display: block;
-  z-index: 4;
+  z-index: 40;
   position: fixed;
   background-color: grey;
   color: black;
@@ -203,7 +203,7 @@ img {
   animation-direction: normal;
   animation-duration: 0.75s;
   text-align: center;
-  margin-top: 3.5rem;
+  margin-top: 4.5rem;
 }
 
 @keyframes menudisappear {
@@ -224,7 +224,7 @@ img {
     transform: translate(0px, 0px);
   }
 }
-.menu-item {
+.header__defaultmenu--item {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   left: 0;
   font-size: 1.5em;
@@ -236,7 +236,7 @@ img {
   text-decoration: none;
 }
 
-.menu-item:hover:hover {
+.header__defaultmenu--item:hover:hover {
   color: white;
 }
 
@@ -364,11 +364,6 @@ h3 {
   width: 100%;
 }
 
-.grave__Grave--CrossWrapper {
-  width: 100%;
-  padding-top: 56.216216216%;
-}
-
 .grave__Grave--Note {
   transform-origin: center;
   position: relative;
@@ -406,22 +401,25 @@ h3 {
   margin-right: 2vw;
 }
 
-.grave__Grave--Animate {
+.grave__Grave--CrossWrapper {
+  width: 100%;
+  padding-top: 56.216216216%;
   top: 0;
   left: 0;
-  animation-name: gravereveal;
-  animation-duration: 3s;
-  animation-fill-mode: forwards;
   background-color: black;
   position: absolute;
-  width: 100%;
   height: 100%;
   z-index: 2;
-  display: block;
   margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.grave__Grave--Animate {
+  animation-name: gravereveal;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
 }
 
 @keyframes gravereveal {
@@ -439,16 +437,19 @@ h3 {
   }
 }
 /* Music */
-.Legacy_Video {
-  margin: 1rem;
-  width: 80%;
-  aspect-ratio: 16/9;
-}
-
 .Iframe__Container {
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: auto;
+}
+
+.Legacy_Video {
+  min-width: -moz-max-content;
+  min-width: max-content;
+  margin: 1rem;
+  width: 20rem;
+  height: 11.25rem;
 }
 
 @media screen and (min-width: 1025px) {
@@ -458,7 +459,8 @@ h3 {
     grid-template-rows: repeat(2, 1fr);
   }
   .Iframe__Container .Legacy_Video {
-    width: 90%;
+    width: 30rem;
+    height: 116.875rem;
   }
 }
 .Legacy_Video {
@@ -478,11 +480,6 @@ h3 {
     opacity: 100;
   }
 }
-svg {
-  display: block;
-  margin: auto;
-}
-
 /*grave*/
 .Contact_Paragraph--Hide {
   display: none;
@@ -491,6 +488,7 @@ svg {
 .Contact_Paragraph--Show {
   display: block;
   padding: 1rem;
+  animation-name: textreveal;
   animation-duration: 3s;
   animation-fill-mode: forwards;
 }

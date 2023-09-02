@@ -14,28 +14,42 @@ title.addEventListener("click", (event) => {
   });
 });
 
-const menubutton = document.getElementsByClassName("scrollitem");
-const offset = 0;
-for (let k = 0; k < menubutton.length; k++) {
-  menubutton[k].addEventListener("click", (event) => {
+const grave = document.getElementsByClassName(
+  "grave__Grave--CrossWrapper"
+);
+
+const defaultMenuButton = document.getElementsByClassName("header__defaultmenu--item")
+const responsiveMenuButton = document.getElementsByClassName("header__responsivemenu--item")
+
+for (let k = 0; k < responsiveMenuButton.length; k++) {
+  responsiveMenuButton[k].addEventListener("click", (event) => {
+    console.log("Responsive Menu Button Clicked"); // Add this line
     event.preventDefault();
+    observer3.disconnect();
+
     let section = document.getElementsByClassName("section");
-    if (k > 3) {
-      k -= 4;
-    }
     section[k].scrollIntoView({
       behavior: "smooth",
-      block: "end",
+      block: "start",
       inline: "nearest",
     });
-  });
+    setTimeout(() => {
+      observer3.observe(event), 1000;
+    });
+  }); 
 }
 
+
+
+
 ham.addEventListener("click", () => {
-  document.getElementById("hamburger").classList.toggle("show");
+//  document.getElementById("hamburger").classList.toggle("show");
 });
 
 ham.addEventListener("click", () => {
+  document.getElementById("hamburger").classList.toggle("show");
+
+  console.log("Hamburger Button Clicked"); // Add this line
   if (
     slidemenu.classList.contains("menu_slide") ||
     slidemenu.classList.contains("menuclassexit")
@@ -50,35 +64,42 @@ ham.addEventListener("click", () => {
   }
 });
 
-for (let k = 0; k < menubutton.length; k++) {
-  menubutton[k].addEventListener("click", (event) => {
+for (let l = 0; l < defaultMenuButton.length; l++) {
+  defaultMenuButton[l].addEventListener("click", (event) => {
     event.preventDefault();
-
+    console.log("Responsive Menu Button Clicked"); // Add this line
     let section = document.getElementsByClassName("section");
 
-    if (k > 3) {
-      k -= 4;
-    }
 
-    section[k].scrollIntoView({
+console.log(defaultMenuButton)
+console.log(defaultMenuButton[l])
+
+    section[l].scrollIntoView({
       behavior: "smooth",
       block: "start",
       inline: "nearest",
     });
+   // setTimeout(()=> {observer3.observe(entry), 1000}) 
 
 
     const respon = document.getElementsByClassName(
-      "header__responsivemenu--item"
+      "header__defaultmenu--item"
     );
-    if ((event.target = respon)) {
-    } else {
+    console.log("test1");
+    console.log(defaultMenuButton[l])
+
+    // if ((event.target != respon)) {
+    //   console.log("test2");
+    //   console.log(defaultMenuButton[l])
+    // } else {
       document.getElementById("hamburger").classList.toggle("show");
-      console.log("test2");
+      console.log("test3");
       slidemenu.classList.add("menuclassexit");
       slidemenu.classList.remove("menuclassenter");
       document.getElementById("hamburger").style.width = "";
     }
-  });
+  //}
+  );
 }
 
 const keyframesRule = `
@@ -174,8 +195,6 @@ const observer3 = new IntersectionObserver((entries) => {
     }
   });
 });
-
-
 window.addEventListener(
   "DOMContentLoaded",
   (event) => {

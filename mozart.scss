@@ -192,7 +192,7 @@ $text-center: center;
 
 @mixin menumixin {
   display: block;
-  z-index: 4;
+  z-index: 40;
   position: fixed;
   background-color: grey;
   color: black;
@@ -204,7 +204,7 @@ $text-center: center;
   animation-direction: normal;
   animation-duration: 0.75s;
   text-align: $text-center;
-  margin-top: 3.5rem;
+  margin-top: 4.5rem;
 }
 
 .menuclassexit {
@@ -240,7 +240,7 @@ $text-center: center;
   }
 }
 
-.menu-item {
+.header__defaultmenu--item {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   left: 0;
   font-size: 1.5em;
@@ -252,7 +252,7 @@ $text-center: center;
   text-decoration: none;
 }
 
-.menu-item:hover {
+.header__defaultmenu--item:hover {
   @include hoverstyles;
 }
 
@@ -394,10 +394,7 @@ h3 {
   width: 100%;
 }
 
-.grave__Grave--CrossWrapper {
-  width: 100%;
-  padding-top: 56.216216216%;
-}
+
 
 @mixin BeforeandAfter {
   &::before,
@@ -446,27 +443,37 @@ h3 {
   margin-right: 2vw;
 }
 
-@mixin Graveanimate {
+
+
+.grave__Grave--CrossWrapper {
+  width: 100%;
+  padding-top: 56.216216216%;
+  top: 0;
+  left: 0;
+  background-color: black;
+  position: absolute;
+  height: 100%;
+  z-index: 2;
+  //display: block;
+  margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .grave__Grave--Animate {
-  top: 0;
-  left: 0;
   animation-name: gravereveal;
   animation-duration: 3s;
   animation-fill-mode: forwards;
-  background-color: black;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 2;
-  display: block;
-  margin: auto;
-  @include Graveanimate();
+
+  //@include Graveanimate();
 }
+
+
+// @mixin Graveanimate {
+ 
+// }
+
 
 @keyframes gravereveal {
   0% {
@@ -487,25 +494,41 @@ h3 {
 
 /* Music */
 
-.Legacy_Video {
-  margin: 1rem;
-  width: 80%;
-  aspect-ratio: 16/9;
-}
 
 .Iframe__Container {
   display: flex;
   flex-direction: column;
   align-items: center;
+overflow: auto;
 }
 
+.Legacy_Video {
+ min-width: max-content;
+  //min-height: max-content;
+  margin: 1rem;
+  width: 20rem;
+  height: 11.25rem;
+  //width:80%;
+  //height: auto;
+  //aspect-ratio: 16/9;
+}
+
+@media screen and (min-width: 769px) {
+  .Legacy_Video {
+    //width:80%;
+    //height:auto;
+  }
+}
 @media screen and (min-width: 1025px) {
   .Iframe__Container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    .Legacy_Video {
-      width: 90%;
+    .Legacy_Video {width:30rem;
+      height:116.875rem;
+      //width: 90%;
+      //height:auto;
+       
     }
   }
 }
@@ -528,10 +551,10 @@ h3 {
   }
 }
 
-svg {
-  display: block;
-  margin: auto;
-}
+// svg {
+//   display: block;
+//   margin: auto;
+// }
 
 /*grave*/
 
@@ -541,7 +564,7 @@ svg {
 .Contact_Paragraph--Show {
   display: block;
   padding: 1rem;
- // animation-name: textreveal;
+ animation-name: textreveal;
   animation-duration: 3s;
   animation-fill-mode: forwards;
 }

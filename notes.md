@@ -86,3 +86,53 @@ notes
 does this sffect other animations?
 
 inspect other options as well.
+
+
+9/1 used     observer3.disconnect()
+
+not so fast
+    when i use it on the first scrollinto, it works perfectly for the pc version, but not the mobile, since it operates seperately.
+    when i use it for the second, it doesn't work, i need to find a way to input it properly.
+        the mobile menu has gone back to not working, i need to fix that first as a prerequisite to fix the scrollinto
+    
+    can comfterablly input the disconnect into the pc version
+
+for mobilemenu test 1 and 2 work but not three
+    for the if statement 
+        event.target = respon triggers as true. need to be able to make it trigger as false    
+        event.target != respon doesnt change anything. is there an issue with there being two seperate scrollintoviews?
+
+        putting in the proper event menubutton[k] caused severse animation effects to affect the mobile menu. i think i may need to condense the two scrollintoview
+
+
+I made     if (k > 3) {
+      k -= 4;
+    }
+ due to issues of both sets of buttons sharing a class
+both scrollintos shouldnt need one as one should be responding to the mobile and one the pc
+
+i tested and my suspicions are confirmed. the fimvtopms are relating to the pc buttons, not the mobile ones
+    possible solutions
+            seperate both buttons into seperate classes
+            alter the if statement so only 1 set of values is run instead of two where one overrides the other
+
+
+
+            9/3 So close to being done. there is some sort of issue with the notes...again
+
+            when i scroll down the site manually, they are in their proper place. When i go down with the buttons, the notes line up horizontally
+
+            s,b fine,bad
+            s,s fine,fine
+            b,b bad, bad
+            b,s bad fine
+
+            theres something about trigger the button event that messes with the layout
+
+            tested both versions. theimproper on doesnt have "grave__Grave--Animate" while the proper does. 
+            The class is added while I scroll down. it isnt there by default. 
+            hypothesis: the notes start off messed up but become "acceptable" when the event is triggered. I need to have them that way from the beggining. 
+
+            The issue was the animate class and the styles for visuals beign shared. I seprerated them.
+
+            Now the issue is the button to "contact" isn't working well. It has something to do with the iframes. 
