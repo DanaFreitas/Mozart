@@ -499,39 +499,30 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width:100%; height:10rem;
 overflow: auto;
 }
 
 .Legacy_Video {
  min-width: max-content;
-  //min-height: max-content;
   margin: 1rem;
-  width: 20rem;
-  height: 11.25rem;
-  //width:80%;
-  //height: auto;
-  //aspect-ratio: 16/9;
+  width:80%;
+  height: auto;
+  aspect-ratio: 16/9;
 }
 
-@media screen and (min-width: 769px) {
-  .Legacy_Video {
-    //width:80%;
-    //height:auto;
-  }
-}
+
+
 @media screen and (min-width: 1025px) {
   .Iframe__Container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    .Legacy_Video {width:30rem;
-      height:116.875rem;
-      //width: 90%;
-      //height:auto;
+  
        
     }
   }
-}
+
 
 .Legacy_Video {
   animation-name: musicfadein;

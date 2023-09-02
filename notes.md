@@ -131,8 +131,11 @@ i tested and my suspicions are confirmed. the fimvtopms are relating to the pc b
 
             tested both versions. theimproper on doesnt have "grave__Grave--Animate" while the proper does. 
             The class is added while I scroll down. it isnt there by default. 
-            hypothesis: the notes start off messed up but become "acceptable" when the event is triggered. I need to have them that way from the beggining. 
+            hypothesis: the notes start off messed up but become "acceptable" when the event is triggered. I need to have them that way from the beginning. 
 
             The issue was the animate class and the styles for visuals beign shared. I seprerated them.
 
             Now the issue is the button to "contact" isn't working well. It has something to do with the iframes. 
+
+             I gave the iframe container an explicit hieght and that made it work. 
+

@@ -1,6 +1,5 @@
 const ham = document.getElementById("hamburger");
-const slidemenu = document.getElementById("slidemenu");
-const holder = document.getElementById("burgerholder");
+ const holder = document.getElementById("burgerholder");
 
 const title = document.getElementById("title");
 
@@ -23,8 +22,7 @@ const responsiveMenuButton = document.getElementsByClassName("header__responsive
 
 for (let k = 0; k < responsiveMenuButton.length; k++) {
   responsiveMenuButton[k].addEventListener("click", (event) => {
-    console.log("Responsive Menu Button Clicked"); // Add this line
-    event.preventDefault();
+     event.preventDefault();
     observer3.disconnect();
 
     let section = document.getElementsByClassName("section");
@@ -49,17 +47,38 @@ ham.addEventListener("click", () => {
 ham.addEventListener("click", () => {
   document.getElementById("hamburger").classList.toggle("show");
 
-  console.log("Hamburger Button Clicked"); // Add this line
+if (!slidemenu.classList.contains("menuclassenter") &&     !slidemenu.classList.contains("menuclassexit"))
+  
+  { console.log("The not operator works")
+  slidemenu.classList.add("menuclassenter")
+}
+
+else {
+  console.log("Has neither")
+}
+
+
+
   if (
     slidemenu.classList.contains("menu_slide") ||
     slidemenu.classList.contains("menuclassexit")
   ) {
     slidemenu.classList.remove("menu_slide");
-    slidemenu.classList.remove("menuclassexit");
-    slidemenu.classList.add("menuclassenter");
+
+   //return slidemenu.classList.replace("menuclassexit", "menuclassenter")
+
+     slidemenu.classList.remove("menuclassexit");
+     slidemenu.classList.add("menuclassenter");
+
+
+
   } else if (slidemenu.classList.contains("menuclassenter")) {
+
     slidemenu.classList.add("menuclassexit");
     slidemenu.classList.remove("menuclassenter");
+
+   //return slidemenu.classList.replace("menuclassenter", "menuclassexit")
+
     document.getElementById("hamburger").style.width = "";
   }
 });
@@ -67,12 +86,9 @@ ham.addEventListener("click", () => {
 for (let l = 0; l < defaultMenuButton.length; l++) {
   defaultMenuButton[l].addEventListener("click", (event) => {
     event.preventDefault();
-    console.log("Responsive Menu Button Clicked"); // Add this line
-    let section = document.getElementsByClassName("section");
+     let section = document.getElementsByClassName("section");
 
 
-console.log(defaultMenuButton)
-console.log(defaultMenuButton[l])
 
     section[l].scrollIntoView({
       behavior: "smooth",
@@ -85,15 +101,7 @@ console.log(defaultMenuButton[l])
     const respon = document.getElementsByClassName(
       "header__defaultmenu--item"
     );
-    console.log("test1");
-    console.log(defaultMenuButton[l])
-
-    // if ((event.target != respon)) {
-    //   console.log("test2");
-    //   console.log(defaultMenuButton[l])
-    // } else {
       document.getElementById("hamburger").classList.toggle("show");
-      console.log("test3");
       slidemenu.classList.add("menuclassexit");
       slidemenu.classList.remove("menuclassenter");
       document.getElementById("hamburger").style.width = "";
