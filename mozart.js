@@ -10,7 +10,7 @@ title.addEventListener("click", (event) => {
     behavior: "smooth",
     block: "start",
     inline: "start",
-  });
+  }); 
 });
 
 const grave = document.getElementsByClassName(
@@ -40,12 +40,11 @@ for (let k = 0; k < responsiveMenuButton.length; k++) {
 
 
 
-ham.addEventListener("click", () => {
-//  document.getElementById("hamburger").classList.toggle("show");
-});
+// ham.addEventListener("click", () => {
+// });
 
 ham.addEventListener("click", () => {
-  document.getElementById("hamburger").classList.toggle("show");
+  ham.classList.toggle("show");
 
 if (!slidemenu.classList.contains("menuclassenter") &&     !slidemenu.classList.contains("menuclassexit"))
   

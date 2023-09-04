@@ -442,8 +442,9 @@ h3 {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 10rem;
+  height: 60rem;
   overflow: auto;
+  position: relative;
 }
 
 .Legacy_Video {
@@ -460,6 +461,7 @@ h3 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
+    height: 40rem;
   }
 }
 .Legacy_Video {

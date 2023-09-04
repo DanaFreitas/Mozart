@@ -499,8 +499,9 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width:100%; height:10rem;
+  width:100%; height: 60rem;
 overflow: auto;
+  position: relative;
 }
 
 .Legacy_Video {
@@ -513,12 +514,13 @@ overflow: auto;
 
 
 
+
 @media screen and (min-width: 1025px) {
   .Iframe__Container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-  
+    height: 40rem;
        
     }
   }
