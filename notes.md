@@ -139,3 +139,7 @@ i tested and my suspicions are confirmed. the fimvtopms are relating to the pc b
 
              I gave the iframe container an explicit hieght and that made it work. 
 
+9/5 produced to website. many issues.
+    when the notes animate, their allignment is wrong
+    OR
+    it doesnt animate
