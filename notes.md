@@ -143,3 +143,65 @@ i tested and my suspicions are confirmed. the fimvtopms are relating to the pc b
     when the notes animate, their allignment is wrong
     OR
     it doesnt animate
+
+
+
+
+    9/6 more detailed analysis of website
+        when I scroll down, animate works
+        when I use link and scroll up, it doesnt work 
+        when i use to go down, and link to go up, it doesnt work
+
+        issue, the wrapper changing affects the children. need to use ems. 
+
+        the grave img is fine
+            the gravewrapper is too wide, and the 80% isnt working right. its worse if I dont correct that in the inspact element. theres also an overflow
+            the  grave crosswrapper is too tall and too wide 
+
+
+fixed by removing animate as part of the 80%
+    i likely dont need the padding since other parts have padding 
+
+    the font size was making the wrapper smaller. part of top,left, and postiion relative?
+        only issue now is the width. maybe im make children articically smaller?
+
+
+
+9/7 google lighthouse analysis
+    mobile
+        properly size images
+            serve images in next-gen formats
+                efficiently encoed images
+                    reduce file size without compromising quality
+    youtube vids can be lazy loaded
+        img need explicit width and height
+            page prevented back/fowrds cache restoration
+                minimize mian-thread work
+    html needs a lang attribute
+    browser errors logged into console
+    
+    needs a meta description
+    tap targets not sized best
+
+desktop just had a ton of exclamation marks.
+
+9/8 issue with the mismatch beyween the background and the grave image is that values like 80% width of 80%  width  are 64% of viewport because 
+the width is based on the parent
+
+besides the lighthouse, the only other issue is the triggering. it has something to do with triggering events. somehow, triggering on of the menu
+buttons effects the animation
+
+this doesnt affect the other fadeins, they triggger one the screen crosses paths with them. there is something different about it vs the other intersection observers.
+
+the animation works just fine for mobile
+
+BUT
+
+i need to make the images more responsive to change. i think an issue is the padding
+    fixed that
+
+the disconnect and reconnect for the responsiveevent caused the issue
+
+
+
+modified the last for loop

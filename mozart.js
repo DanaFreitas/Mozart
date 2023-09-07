@@ -23,7 +23,6 @@ const responsiveMenuButton = document.getElementsByClassName("header__responsive
 for (let k = 0; k < responsiveMenuButton.length; k++) {
   responsiveMenuButton[k].addEventListener("click", (event) => {
      event.preventDefault();
-    observer3.disconnect();
 
     let section = document.getElementsByClassName("section");
     section[k].scrollIntoView({
@@ -31,17 +30,12 @@ for (let k = 0; k < responsiveMenuButton.length; k++) {
       block: "start",
       inline: "nearest",
     });
-    setTimeout(() => {
-      observer3.observe(event), 1000;
-    });
   }); 
 }
 
 
 
 
-// ham.addEventListener("click", () => {
-// });
 
 ham.addEventListener("click", () => {
   ham.classList.toggle("show");
@@ -94,7 +88,6 @@ for (let l = 0; l < defaultMenuButton.length; l++) {
       block: "start",
       inline: "nearest",
     });
-   // setTimeout(()=> {observer3.observe(entry), 1000}) 
 
 
     const respon = document.getElementsByClassName(
@@ -138,7 +131,7 @@ music.addEventListener("click", () => {
 
 let options = {
   root: null,
-  //rootMargin: "0px",
+  rootMargin: "0px",
   threshold: 0.5,
 };
 
@@ -272,7 +265,7 @@ for (let i = 0; i < contact.length; i++) {
 
 let contactlight = document.getElementsByClassName("Footer__Button--Light");
 
-for (let j = 0; j <= contactlight.length; j++) {
+for (let j = 0; j < contactlight.length; j++) {
   contactlight[j].addEventListener("mouseout", () => {
     if (contactlight[j].style.display == "block") {
       contact[j].style.display = "block";

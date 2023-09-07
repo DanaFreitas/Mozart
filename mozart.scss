@@ -386,14 +386,30 @@ h3 {
   left: 0;
   position: relative;
   font-size: 1rem;
+  padding:1rem;
 }
+
+
+
+
 
 .grave__Image--Grave {
   z-index: 3;
   display: relative;
   width: 100%;
+  
 }
 
+@media screen and (min-width:1025px){
+   .grave__Grave--CrossWrapper
+   //.grave__Grave--Animate 
+   {width:80%;}
+  
+   .grave__Grave--Wrapper {
+    padding:6rem;
+   }
+
+}
 
 
 @mixin BeforeandAfter {
@@ -459,6 +475,7 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
+  
 }
 
 .grave__Grave--Animate {
@@ -504,13 +521,6 @@ overflow: auto;
   position: relative;
 }
 
-.Legacy_Video {
- min-width: max-content;
-  margin: 1rem;
-  width:80%;
-  height: auto;
-  aspect-ratio: 16/9;
-}
 
 
 
@@ -525,8 +535,14 @@ overflow: auto;
     }
   }
 
-
 .Legacy_Video {
+
+  min-width: max-content;
+  margin: 1rem;
+  width:80%;
+  height: auto;
+  aspect-ratio: 16/9;
+
   animation-name: musicfadein;
   animation-duration: 5.5s;
   transition-property: left;
