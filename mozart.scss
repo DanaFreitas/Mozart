@@ -393,7 +393,6 @@ h3 {
 
 
 
-
 .grave__Image--Grave {
   z-index: 3;
   display: relative;
@@ -403,7 +402,6 @@ h3 {
 
 @media screen and (min-width:1025px){
    .grave__Grave--CrossWrapper
-   //.grave__Grave--Animate 
    {width:80%;}
   
    .grave__Grave--Wrapper {
@@ -454,6 +452,7 @@ h3 {
   width: 20vw;
   @include BeforeandAfter;
   padding-bottom: 65%;
+  min-width:0;
 }
 
 .grave__Grave--Note + .grave__Grave--Note {
@@ -471,12 +470,13 @@ h3 {
   position: absolute;
   height: 100%;
   z-index: 2;
-  //display: block;
   margin: auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  
+ -webkit-display: flex;
+ -moz-display: flex;
+ -ms--display: flex;
 }
 
 .grave__Grave--Animate {
@@ -484,13 +484,8 @@ h3 {
   animation-duration: 3s;
   animation-fill-mode: forwards;
 
-  //@include Graveanimate();
 }
 
-
-// @mixin Graveanimate {
- 
-// }
 
 
 @keyframes gravereveal {
@@ -506,7 +501,6 @@ h3 {
 
   100% {
     opacity: 0;
-    display: none;
   }
 }
 
@@ -561,10 +555,6 @@ overflow: auto;
   }
 }
 
-// svg {
-//   display: block;
-//   margin: auto;
-// }
 
 /*grave*/
 
@@ -617,6 +607,7 @@ overflow: auto;
   .Footer__Button {
     height: 3rem;
     width: 3rem;
+    border:  solid transparent;
   }
 }
 
@@ -642,5 +633,4 @@ overflow: auto;
   position: relative;
   padding: 0.3rem;
   color: blue;
-  padding:3rem;
 }

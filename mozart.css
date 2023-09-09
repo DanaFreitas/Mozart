@@ -379,6 +379,7 @@ h3 {
   height: 5vw;
   width: 20vw;
   padding-bottom: 65%;
+  min-width: 0;
 }
 .grave__Grave--Note::before, .grave__Grave--Note::after {
   content: "";
@@ -423,6 +424,9 @@ h3 {
   display: flex;
   justify-content: center;
   align-items: center;
+  -webkit-display: flex;
+  -moz-display: flex;
+  -ms--display: flex;
 }
 
 .grave__Grave--Animate {
@@ -442,7 +446,6 @@ h3 {
   }
   100% {
     opacity: 0;
-    display: none;
   }
 }
 /* Music */
@@ -537,6 +540,7 @@ h3 {
   .Footer__Button {
     height: 3rem;
     width: 3rem;
+    border: solid transparent;
   }
 }
 .Footer__Button--Dark {
@@ -561,5 +565,4 @@ h3 {
   position: relative;
   padding: 0.3rem;
   color: blue;
-  padding: 3rem;
 }/*# sourceMappingURL=mozart.css.map */

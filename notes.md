@@ -205,3 +205,19 @@ the disconnect and reconnect for the responsiveevent caused the issue
 
 
 modified the last for loop
+
+
+
+9/9 did a lot of changes for lighthouse
+    made webp
+    shrank images 
+    lazy loaded
+    used incognito
+    meta description
+
+the issue is different browsers.
+    the code works on firefox and librewolf
+        but not chrome opera and edge
+
+flex operates far diferently with firefox vs other browsers
+    the animated notes glitch for a split second
