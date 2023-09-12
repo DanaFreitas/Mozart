@@ -82,82 +82,92 @@ img {
   display: grid;
   grid-template: "p1" "p2";
 }
+
 @media screen and (min-width: 481px) {
-  .header .header__burgerholder {
+  .header__burgerholder {
     display: none;
   }
 }
-.header .header_default--wrapper {
+.header_default--wrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   grid-area: p1;
 }
-.header .header__hamburger {
+
+.header__hamburger {
   left: 0vw;
   top: 0vw;
   display: block;
   z-index: 5;
   margin-top: 1em;
 }
-.header .header__hamburger:hover {
+.header__hamburger:hover {
   color: white;
 }
-.header .header__hamburger:hover > .header__hamburger--hamburger-bit {
+
+.header__hamburger:hover > .header__hamburger--hamburger-bit {
   background-color: white;
   color: white;
 }
-.header .header__hamburger--hamburger-bit {
+
+.header__hamburger--hamburger-bit {
   width: 3em;
   height: 0.5em;
   background-color: black;
   margin: 0.5em 0;
   transition: 0.4s;
 }
-.header .show #hamburger-bit-1 {
+
+.show #hamburger-bit-1 {
   transform: translate(0, 1em) rotate(-45deg);
   transition-duration: 500ms;
 }
-.header .show #hamburger-bit-2 {
+
+.show #hamburger-bit-2 {
   opacity: 0;
   transition-duration: 500ms;
 }
-.header .show #hamburger-bit-3 {
+
+.show #hamburger-bit-3 {
   transform: translate(0, -1em) rotate(45deg);
   transition-duration: 500ms;
 }
-.header .fa-solid {
+
+.fa-solid {
   margin-top: 0.85em;
 }
-.header .fa-solid {
+
+.fa-solid {
   font-size: 2em;
 }
-.header .fa-solid:hover {
+.fa-solid:hover {
   color: white;
 }
-.header .title {
+
+.title {
   font-family: "EB Garamond", serif;
   color: black;
   text-decoration: none;
   font-size: 3.5rem;
   margin-top: 0rem;
 }
+
 @media screen and (min-width: 481px) {
-  .header .title {
+  .title {
     font-size: 4rem;
     flex: 1;
     text-align: center;
   }
-  .header .fa-solid {
+  .fa-solid {
     margin-right: 1rem;
   }
 }
 @media screen and (min-width: 481px) {
-  .header .header__burgerholder > .header__hamburger > * {
+  .header__burgerholder > .header__hamburger > * {
     display: none;
   }
 }
-
 /* Menu */
 .menu_slide {
   display: none;
@@ -280,7 +290,6 @@ img {
 /* Audio */
 .audios {
   display: none;
-  width: 100%;
   position: fixed;
   width: 100%;
   z-index: 1;

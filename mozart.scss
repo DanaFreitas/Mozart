@@ -99,7 +99,7 @@ $text-center: center;
   background-color: #9a9595;
   width: 100%;
   display: grid;
-  grid-template: "p1" "p2";
+  grid-template: "p1" "p2"; }
   @media screen and (min-width: 481px) {
     .header__burgerholder {
       display: none;
@@ -153,6 +153,9 @@ $text-center: center;
     font-size: 2em;
   }
 
+  // .fa-solid:hover{
+  //   @include hoverstyles;  }
+
   .title {
     font-family: "EB Garamond", serif;
 
@@ -177,7 +180,7 @@ $text-center: center;
       display: none;
     }
   }
-}
+
 
 /* Menu */
 
@@ -255,6 +258,7 @@ $text-center: center;
 
 .header__defaultmenu--item:hover {
   @include hoverstyles;
+
 }
 
 .header__responsivemenu--wrapper {
@@ -278,6 +282,7 @@ $text-center: center;
 
   .header__responsivemenu--wrapper:hover > * {
     @include hoverstyles;
+    //color:white;
   }
 
   .header__responsivemenu--item {
@@ -303,13 +308,12 @@ $text-center: center;
 
 .audios {
   display: none;
-  width: 100%;
-
   position: fixed;
   width: 100%;
   z-index: 1;
   bottom: 10%;
 }
+
 
 source {
   display: none;

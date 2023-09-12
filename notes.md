@@ -221,3 +221,47 @@ the issue is different browsers.
 
 flex operates far diferently with firefox vs other browsers
     the animated notes glitch for a split second
+
+
+    9/10
+
+got some advice
+    fix musical note.
+        it sys white when using chromium and in mobile
+
+    change hero image
+        have name besides the image
+        idea for mobile, have the name with musical sheet in the background
+    use different font
+        poppins or sum
+
+
+is the issue the menu or the music1
+
+for the menu, if i click the menu, the note turns back to black and vice versa
+the buttons themselves work fine, its just the visuals
+
+
+.header__hamburger:hover {
+  color: white;
+}
+
+.header .fa-solid:hover {
+  color: white;
+}
+
+attempts to use ".fa-solid:hover{
+    color:white;
+  }"
+
+  didnt make a difference
+
+  the js is still effective so its the css
+
+  why only when movile?
+  whats the line where it starts to work?
+
+
+  9/11 I was gravely wrong about something. It isnt firefox vs chrome. its mobile vs pv. I need to properly use the "mobile" part of dev tools and not just shrink the pc part.
+
+can looks at evenrs ar js, but this is a hover, not an event. 

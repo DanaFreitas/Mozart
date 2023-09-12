@@ -70,7 +70,6 @@ else {
     slidemenu.classList.add("menuclassexit");
     slidemenu.classList.remove("menuclassenter");
 
-   //return slidemenu.classList.replace("menuclassenter", "menuclassexit")
 
     document.getElementById("hamburger").style.width = "";
   }
@@ -114,7 +113,6 @@ const keyframesRule = `
     `;
 
 let music = document.getElementById("musicbutton");
-
 const audioele = document.getElementById("audios");
 const audiosource = new Audio("Eine-Kleine-Nachtmusik.mp3");
 
@@ -122,7 +120,7 @@ music.addEventListener("click", () => {
   if (audioele.style.display == "none" || audioele.style.display == "") {
     audioele.style.display = "block";
     audiosource.play();
-  } else if ((audioele.style.display = "block")) {
+  } else if ((audioele.style.display == "block")) {
     audioele.style.display = "none";
     audiosource.pause();
     audiosource.currentTime = 0;
