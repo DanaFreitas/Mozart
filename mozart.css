@@ -114,17 +114,16 @@ img {
   margin-top: 1em;
 }
 
-.header__hamburger:hover > .header__hamburger--hamburger-bit {
-  background-color: white;
-  color: white;
-}
-
 .header__hamburger--hamburger-bit {
   width: 3em;
   height: 0.5em;
   background-color: black;
   margin: 0.5em 0;
   transition: 0.4s;
+}
+
+.show > .header__hamburger--hamburger-bit {
+  background-color: white;
 }
 
 .show #hamburger-bit-1 {
@@ -204,7 +203,7 @@ img {
   animation-duration: 0.75s;
   text-align: center;
   margin-top: 4.5rem;
-  color: black;
+  color: white;
 }
 
 .menuclassenter {
@@ -276,9 +275,6 @@ img {
   .header__responsivemenu--wrapper > * {
     margin: 0.8rem;
   }
-  .header__responsivemenu--wrapper a:hover {
-    color: white;
-  }
   .header__responsivemenu--item {
     font-size: 1rem;
     z-index: 11;
@@ -287,6 +283,10 @@ img {
     text-decoration: none;
   }
 }
+.header__responsivemenu--item:hover {
+  color: white;
+}
+
 .section {
   scroll-margin-top: 10;
 }

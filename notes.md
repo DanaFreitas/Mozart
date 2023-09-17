@@ -309,3 +309,6 @@ I JUST REALIZED. Its not working because its MOBILE! Not desktoip but small. Of 
 
 
 pointer course, pointer fine
+
+> combinator 
+:focus

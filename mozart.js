@@ -55,8 +55,7 @@ if (!slidemenu.classList.contains("menuclassenter") &&     !slidemenu.classList.
   ) {
     slidemenu.classList.remove("menu_slide");
 
-   //return slidemenu.classList.replace("menuclassexit", "menuclassenter")
-
+   
      slidemenu.classList.remove("menuclassexit");
      slidemenu.classList.add("menuclassenter");
 
@@ -94,7 +93,6 @@ for (let l = 0; l < defaultMenuButton.length; l++) {
       slidemenu.classList.remove("menuclassenter");
       document.getElementById("hamburger").style.width = "";
     }
-  //}
   );
 }
 

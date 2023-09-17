@@ -129,7 +129,6 @@ $text-center: center;
   }
 
   .header__hamburger {
-    //@include hoverstyles;
     left: 0vw;
     top: 0vw;
     display: block;
@@ -137,17 +136,6 @@ $text-center: center;
     margin-top: 1em;
   }
 
-
-   .header__hamburger:hover > .header__hamburger--hamburger-bit {
-     background-color: white;
-     color: white;
-   }
-
- 
-
-// @media (pointer: fine){
-//   .header__hamburger--hamburger-bit{background-color: black;}
-// }
   
   .header__hamburger--hamburger-bit {
     width: 3em;
@@ -157,11 +145,10 @@ $text-center: center;
     transition: 0.4s;
   }
 
-  // @media (pointer: course){   
-  //    .header__hamburger--hamburger-bit {background-color:white;}
-  // }
-
-
+  
+.show > .header__hamburger--hamburger-bit{
+  background-color:white;
+}
 
   .show #hamburger-bit-1 {
     transform: translate(0, 1em) rotate(-45deg);
@@ -257,7 +244,7 @@ $text-center: center;
   transition: 1s;
   animation-fill-mode: forwards;
   @include menumixin;
-  color:black;
+  color:white;
 }
 
 .menuclassenter {
@@ -322,20 +309,6 @@ $text-center: center;
     padding: 0.5rem;
   }
 
-  
-  // // .header__responsivemenu--wrapper:hover > :hover{
-  // //   color:white;
-  // // }
-
-  .header__responsivemenu--wrapper a:hover{
-    color:white;
-  }
-
-
- // .header__responsivemenu--wrapper:hover > * {
-    //@include hoverstyles;
-   //color:white;
-  //}
 
   .header__responsivemenu--item {
     font-size: 1rem;
@@ -345,6 +318,16 @@ $text-center: center;
     text-decoration: none;
   }
 }
+
+.header__responsivemenu--item:hover{
+  color:white;
+}
+
+
+
+
+
+
 
 .section {
   scroll-margin-top: 10;
@@ -362,7 +345,6 @@ $text-center: center;
 
 
 .audios {
-  //@include hoverstyles;
   display: none;
   position: fixed;
   width: 100%;
