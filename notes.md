@@ -265,3 +265,47 @@ attempts to use ".fa-solid:hover{
   9/11 I was gravely wrong about something. It isnt firefox vs chrome. its mobile vs pv. I need to properly use the "mobile" part of dev tools and not just shrink the pc part.
 
 can looks at evenrs ar js, but this is a hover, not an event. 
+
+
+
+9/12 my issues with chrome extend to incognito
+
+figure out whether the hovering is related to the header or the headerwrapper
+likely header, the subheadings in pc mode dont work either
+
+check out display:grid firefox vs chrome
+
+firefox and librewolf work. chrome and opera dont
+
+
+scss 125
+  .header__hamburger:hover > .header__hamburger--hamburger-bit {
+   // background-color: white;
+    //color: white;
+  }
+causes the burger to change color
+
+scss 152 
+ .fa-solid {
+    @include hoverstyles;
+    font-size: 2em;
+  }
+    causes the note to change color
+
+    the issue is :hover in chromuium
+
+
+    chromium: the most recently clicked element changes color
+    not: color changes in hover
+
+
+9/16 I was wonder the relation between the grid as with the error. I loved the responsive menu outside of thw grid.
+For firefox, it works as id expect.
+For chromium, there is notyhing. Even when I dont have it in the dev tools, there is nothing. require further investigation. 
+
+
+
+I JUST REALIZED. Its not working because its MOBILE! Not desktoip but small. Of course hover wont work on mobile. 
+
+
+pointer course, pointer fine

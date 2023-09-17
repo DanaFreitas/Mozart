@@ -26,9 +26,16 @@ html {
   font-size: calc(15px + 0.390625vw);
   
 }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
 @media screen and (min-width: 1025px) {
   body {
-    margin: 0rem 5rem 0rem 5rem;
+    margin: 0 5rem 0 5rem;
 
     .header {
       right: 0%;
@@ -86,7 +93,7 @@ img {
 $text-center: center;
 
 @mixin hoverstyles {
-  &:hover {
+  &:hover{
     color: white;
   }
 }
@@ -100,11 +107,19 @@ $text-center: center;
   width: 100%;
   display: grid;
   grid-template: "p1" "p2"; }
+
+
   @media screen and (min-width: 481px) {
     .header__burgerholder {
       display: none;
     }
   }
+
+  @media (pointer: fine){
+
+    .header__hamburger:hover {color:white;}
+  }
+
 
   .header_default--wrapper {
     display: flex;
@@ -114,7 +129,7 @@ $text-center: center;
   }
 
   .header__hamburger {
-    @include hoverstyles;
+    //@include hoverstyles;
     left: 0vw;
     top: 0vw;
     display: block;
@@ -122,10 +137,18 @@ $text-center: center;
     margin-top: 1em;
   }
 
-  .header__hamburger:hover > .header__hamburger--hamburger-bit {
-    background-color: white;
-    color: white;
-  }
+
+   .header__hamburger:hover > .header__hamburger--hamburger-bit {
+     background-color: white;
+     color: white;
+   }
+
+ 
+
+// @media (pointer: fine){
+//   .header__hamburger--hamburger-bit{background-color: black;}
+// }
+  
   .header__hamburger--hamburger-bit {
     width: 3em;
     height: 0.5em;
@@ -133,6 +156,13 @@ $text-center: center;
     margin: 0.5em 0;
     transition: 0.4s;
   }
+
+  // @media (pointer: course){   
+  //    .header__hamburger--hamburger-bit {background-color:white;}
+  // }
+
+
+
   .show #hamburger-bit-1 {
     transform: translate(0, 1em) rotate(-45deg);
     transition-duration: 500ms;
@@ -145,16 +175,8 @@ $text-center: center;
     transform: translate(0, -1em) rotate(45deg);
     transition-duration: 500ms;
   }
-  .fa-solid {
-    margin-top: 0.85em;
-  }
-  .fa-solid {
-    @include hoverstyles;
-    font-size: 2em;
-  }
+  
 
-  // .fa-solid:hover{
-  //   @include hoverstyles;  }
 
   .title {
     font-family: "EB Garamond", serif;
@@ -162,7 +184,7 @@ $text-center: center;
     color: black;
     text-decoration: none;
     font-size: 3.5rem;
-    margin-top: 0rem;
+    margin-top: 0;
   }
 
   @media screen and (min-width: 481px) {
@@ -174,12 +196,30 @@ $text-center: center;
     .fa-solid {
       margin-right: 1rem;
     }
-  }
+}
   @media screen and (min-width: 481px) {
     .header__burgerholder > .header__hamburger > * {
       display: none;
     }
   }
+
+  
+
+
+  .fa-solid {
+    font-size: 2em;
+    margin-top: 0.85em;
+    color:black;
+  }
+
+@media (pointer: fine){
+  .fa-solid:hover {color:white;}
+}
+  
+
+ 
+    
+
 
 
 /* Menu */
@@ -204,11 +244,12 @@ $text-center: center;
   width: 100%;
   top: 0;
   overflow-x: hidden;
-  margin: 0rem;
+  margin: 0;
   animation-direction: normal;
   animation-duration: 0.75s;
   text-align: $text-center;
   margin-top: 4.5rem;
+
 }
 
 .menuclassexit {
@@ -216,6 +257,7 @@ $text-center: center;
   transition: 1s;
   animation-fill-mode: forwards;
   @include menumixin;
+  color:black;
 }
 
 .menuclassenter {
@@ -257,7 +299,7 @@ $text-center: center;
 }
 
 .header__defaultmenu--item:hover {
-  @include hoverstyles;
+ @include hoverstyles;
 
 }
 
@@ -280,10 +322,20 @@ $text-center: center;
     padding: 0.5rem;
   }
 
-  .header__responsivemenu--wrapper:hover > * {
-    @include hoverstyles;
-    //color:white;
+  
+  // // .header__responsivemenu--wrapper:hover > :hover{
+  // //   color:white;
+  // // }
+
+  .header__responsivemenu--wrapper a:hover{
+    color:white;
   }
+
+
+ // .header__responsivemenu--wrapper:hover > * {
+    //@include hoverstyles;
+   //color:white;
+  //}
 
   .header__responsivemenu--item {
     font-size: 1rem;
@@ -295,7 +347,7 @@ $text-center: center;
 }
 
 .section {
-  scroll-margin-top: 10rem;
+  scroll-margin-top: 10;
 }
 
 @media screen and (min-width: 769px) {
@@ -306,7 +358,11 @@ $text-center: center;
 
 /* Audio */
 
+
+
+
 .audios {
+  //@include hoverstyles;
   display: none;
   position: fixed;
   width: 100%;
@@ -515,7 +571,7 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width:100%; height: 60rem;
+  width:100%; height: 60;
 overflow: auto;
   position: relative;
 }
@@ -529,7 +585,7 @@ overflow: auto;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    height: 40rem;
+    height: 40;
        
     }
   }
@@ -550,11 +606,11 @@ overflow: auto;
 
 @keyframes musicfadein {
   0% {
-    left: -10rem;
+    left: -10;
     opacity: 0;
   }
   100% {
-    left: 20rem;
+    left: 20;
     opacity: 100;
   }
 }
@@ -605,7 +661,7 @@ overflow: auto;
   @include hoverstyles;
   height: 2rem;
   width: 2rem;
-  padding: 0rem;
+  padding: 0;
 }
 @media screen and (min-width: 481px) {
   .Footer__Button {

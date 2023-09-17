@@ -42,13 +42,10 @@ ham.addEventListener("click", () => {
 
 if (!slidemenu.classList.contains("menuclassenter") &&     !slidemenu.classList.contains("menuclassexit"))
   
-  { console.log("The not operator works")
+  { 
   slidemenu.classList.add("menuclassenter")
 }
 
-else {
-  console.log("Has neither")
-}
 
 
 
@@ -116,16 +113,24 @@ let music = document.getElementById("musicbutton");
 const audioele = document.getElementById("audios");
 const audiosource = new Audio("Eine-Kleine-Nachtmusik.mp3");
 
+
+
+
 music.addEventListener("click", () => {
   if (audioele.style.display == "none" || audioele.style.display == "") {
     audioele.style.display = "block";
     audiosource.play();
+    music.style.color = "white";
   } else if ((audioele.style.display == "block")) {
     audioele.style.display = "none";
     audiosource.pause();
     audiosource.currentTime = 0;
+    music.style.color = "black";
   }
 });
+
+
+
 
 let options = {
   root: null,

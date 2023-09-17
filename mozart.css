@@ -22,9 +22,15 @@ html {
   font-size: calc(15px + 0.390625vw);
 }
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
 @media screen and (min-width: 1025px) {
   body {
-    margin: 0rem 5rem 0rem 5rem;
+    margin: 0 5rem 0 5rem;
   }
   body .header {
     right: 0%;
@@ -88,6 +94,11 @@ img {
     display: none;
   }
 }
+@media (pointer: fine) {
+  .header__hamburger:hover {
+    color: white;
+  }
+}
 .header_default--wrapper {
   display: flex;
   flex-direction: row;
@@ -101,9 +112,6 @@ img {
   display: block;
   z-index: 5;
   margin-top: 1em;
-}
-.header__hamburger:hover {
-  color: white;
 }
 
 .header__hamburger:hover > .header__hamburger--hamburger-bit {
@@ -134,23 +142,12 @@ img {
   transition-duration: 500ms;
 }
 
-.fa-solid {
-  margin-top: 0.85em;
-}
-
-.fa-solid {
-  font-size: 2em;
-}
-.fa-solid:hover {
-  color: white;
-}
-
 .title {
   font-family: "EB Garamond", serif;
   color: black;
   text-decoration: none;
   font-size: 3.5rem;
-  margin-top: 0rem;
+  margin-top: 0;
 }
 
 @media screen and (min-width: 481px) {
@@ -166,6 +163,17 @@ img {
 @media screen and (min-width: 481px) {
   .header__burgerholder > .header__hamburger > * {
     display: none;
+  }
+}
+.fa-solid {
+  font-size: 2em;
+  margin-top: 0.85em;
+  color: black;
+}
+
+@media (pointer: fine) {
+  .fa-solid:hover {
+    color: white;
   }
 }
 /* Menu */
@@ -191,11 +199,12 @@ img {
   width: 100%;
   top: 0;
   overflow-x: hidden;
-  margin: 0rem;
+  margin: 0;
   animation-direction: normal;
   animation-duration: 0.75s;
   text-align: center;
   margin-top: 4.5rem;
+  color: black;
 }
 
 .menuclassenter {
@@ -209,7 +218,7 @@ img {
   width: 100%;
   top: 0;
   overflow-x: hidden;
-  margin: 0rem;
+  margin: 0;
   animation-direction: normal;
   animation-duration: 0.75s;
   text-align: center;
@@ -267,7 +276,7 @@ img {
   .header__responsivemenu--wrapper > * {
     margin: 0.8rem;
   }
-  .header__responsivemenu--wrapper:hover > *:hover {
+  .header__responsivemenu--wrapper a:hover {
     color: white;
   }
   .header__responsivemenu--item {
@@ -279,7 +288,7 @@ img {
   }
 }
 .section {
-  scroll-margin-top: 10rem;
+  scroll-margin-top: 10;
 }
 
 @media screen and (min-width: 769px) {
@@ -463,7 +472,7 @@ h3 {
   flex-direction: column;
   align-items: center;
   width: 100%;
-  height: 60rem;
+  height: 60;
   overflow: auto;
   position: relative;
 }
@@ -473,7 +482,7 @@ h3 {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(2, 1fr);
-    height: 40rem;
+    height: 40;
   }
 }
 .Legacy_Video {
@@ -491,11 +500,11 @@ h3 {
 
 @keyframes musicfadein {
   0% {
-    left: -10rem;
+    left: -10;
     opacity: 0;
   }
   100% {
-    left: 20rem;
+    left: 20;
     opacity: 100;
   }
 }
@@ -539,7 +548,7 @@ h3 {
 .Footer__Button {
   height: 2rem;
   width: 2rem;
-  padding: 0rem;
+  padding: 0;
 }
 .Footer__Button:hover {
   color: white;
