@@ -1,0 +1,26 @@
+{
+  "name": "mozart",
+  "version": "1.0.0",
+  "main": "mozart.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanaFreitas/Mozart.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanaFreitas/Mozart/issues"
+  },
+  "homepage": "https://github.com/DanaFreitas/Mozart#readme",
+  "keywords": [],
+  "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "jsdom": "^22.1.0"
+  },
+  "description": ""
+}

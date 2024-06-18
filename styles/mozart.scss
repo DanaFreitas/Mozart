@@ -11,7 +11,64 @@ Footer
 
 /*Body*/
 
-*{ margin:0; padding: 0; box-sizing: border-box; }
+
+
+/*
+
+{ 
+
+
+
+
+  html, body, div, span, applet, object, iframe,
+  h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+  a, abbr, acronym, address, big, cite, code,
+  del, dfn, em, img, ins, kbd, q, s, samp,
+  small, strike, strong, sub, sup, tt, var,
+  b, u, i, center,
+  dl, dt, dd, ol, ul, li,
+  fieldset, form, label, legend,
+  table, caption, tbody, tfoot, thead, tr, th, td,
+  article, aside, canvas, details, embed, 
+  figure, figcaption, footer, header, hgroup, 
+  menu, nav, output, ruby, section, summary,
+  time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+  font: inherit;
+    vertical-align: baseline;
+  }
+ //  HTML5 display-role reset for older browsers 
+  article, aside, details, figcaption, figure, 
+  footer, header, hgroup, menu, nav, section {
+    display: block;
+  }
+ body {
+    line-height: 1;
+  }
+  ol, ul {
+    list-style: none;
+  }
+  blockquote, q {
+    quotes: none;
+  }
+  blockquote:before, blockquote:after,
+  q:before, q:after {
+    content: '';
+    content: none;
+  }
+  table {
+   border-collapse: collapse;
+   border-spacing: 0;
+  }
+ 
+}
+*/
+
+*{margin:0; padding: 0; box-sizing: border-box; }
+
 
 body {background-color: grey;}
 
@@ -202,7 +259,21 @@ img {width:100%}
 
 iframe {width:90%;  margin:.5rem; height:auto}
 
+
 .Iframe__Container {display: flex; flex-direction: column; align-items:center;}
+
+
+@media screen and (min-width: 769px) {
+
+  .Iframe__Container {display: flex; flex-direction: column; align-items:center;
+  aspect-ratio: 16 / 9;
+  }
+}
+
+
+
+
+
 
 .Legacy_Video {
   animation-name: musicfadein;
@@ -248,7 +319,8 @@ svg {display:block; margin:auto;
 .Contact__Image--Grave {z-index: 3;display:relative; width: 100%;}
 
 
-.__Grave--CrossWrapper {width:100%; padding-top: 56.216216216%;}
+.__Grave--CrossWrapper {width:100%; padding-top: 56.216216216%;
+}
 
 
 
@@ -312,7 +384,9 @@ svg {display:block; margin:auto;
   animation-duration: 3s;
   animation-fill-mode: forwards;
   background-color:black;
-  position:absolute; width:100%; height:100%; z-index: 2; display:block; margin:auto;
+  position:absolute; width:100%; height:100%; z-index: 2; 
+  display:block; 
+  margin:auto;
   @include Graveanimate()  
 }
 
@@ -322,7 +396,7 @@ svg {display:block; margin:auto;
   
   0% {
     opacity:1; background-color: black;
-    display:block;
+    //display:block;
   }
   
 50% {
