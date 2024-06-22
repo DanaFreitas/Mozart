@@ -312,3 +312,26 @@ pointer course, pointer fine
 
 > combinator 
 :focus
+
+6/21
+
+Issue. The image is centered, except qwhen its a set value
+the black isnt centered correctly
+
+6/22
+the wrapper is responsive until around 1300ish
+text align center isnt helping as much as hoped.
+
+I colored in the background wrapper parent for both parts. It is responsively growing wider, but not taller
+
+mobile
+the container is at 100% width
+the black background covers the entirety of it and the container
+the image has padding to make it smaller than the container
+
+
+its at about 1400 pixels that things start to desyncronize
+
+get rid of padding for the image and that fixes the difference between it and the background
+turns out there IS a divergence if I stretch enough
+

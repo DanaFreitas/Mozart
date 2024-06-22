@@ -425,32 +425,72 @@ h3 {
 /* Grave */
 
 .grave__Grave--Wrapper {
-  top: 0;
-  left: 0;
   position: relative;
-  font-size: 1rem;
-  padding:1rem;
+  //font-size: 1rem;
+//  padding:1rem;
+  text-align: center;
+  //background-color: red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+
+
+
 
 
 
 
 .grave__Image--Grave {
-  z-index: 3;
-  display: relative;
-  width: 100%;
-  
+
+   //position: relative;
+  // width: 100%;
+  text-align: center;
+  margin: 0 auto;   
+ //margin-inline: auto;
+  width: min(100%, 1200px); 
+ }
+ 
+
+
+.grave__Grave--CrossWrapper {
+  //width: 100%;
+  width: min(100%, 1200px);
+
+  //padding-top: 56.216216216%;
+  text-align: center;
+
+  //top: 0;
+  //left: 0;
+  background-color: black;
+  position: absolute;
+  height: 100%;
+  z-index: 2;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ -webkit-display: flex;
+ -moz-display: flex;
+ -ms--display: flex;
 }
 
 @media screen and (min-width:1025px){
-   .grave__Grave--CrossWrapper
-   {width:80%;}
+ 
   
    .grave__Grave--Wrapper {
-    padding:6rem;
+    //padding:6rem;
    }
 
 }
+
+
+
+
+
+
+
 
 
 @mixin BeforeandAfter {
@@ -479,7 +519,7 @@ h3 {
 
   //for the head
   &::after {
-    height: 8vw;
+    height: 8em;
     width: 11vw;
     border-radius: 70% 30% 70% 30%;
     bottom: 63%;
@@ -488,13 +528,14 @@ h3 {
 }
 
 .grave__Grave--Note {
-  transform-origin: center;
-  position: relative;
-  height: 5vw;
-  width: 20vw;
-  @include BeforeandAfter;
-  padding-bottom: 65%;
-  min-width:0;
+  
+    transform-origin: center;
+    position: relative;
+    height: 5vw;
+    width: 20vw;
+    @include BeforeandAfter;
+    padding-bottom: 65%;
+    min-width:0;
 }
 
 .grave__Grave--Note + .grave__Grave--Note {
@@ -503,27 +544,9 @@ h3 {
 
 
 
-.grave__Grave--CrossWrapper {
-  width: 100%;
-  padding-top: 56.216216216%;
-  top: 0;
-  left: 0;
-  background-color: black;
-  position: absolute;
-  height: 100%;
-  z-index: 2;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
- -webkit-display: flex;
- -moz-display: flex;
- -ms--display: flex;
-}
-
 .grave__Grave--Animate {
   animation-name: gravereveal;
-  animation-duration: 3s;
+  animation-duration: 300000s;
   animation-fill-mode: forwards;
 
 }
@@ -534,12 +557,16 @@ h3 {
   0% {
     opacity: 1;
     background-color: black;
+   // background-color: white;
     display: block;
   }
 
-  50% {
-    opacity: 0.9;
-  }
+
+
+
+   50% {
+     opacity: 0.9;
+   }
 
   100% {
     opacity: 0;
