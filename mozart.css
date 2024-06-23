@@ -402,10 +402,10 @@ h3 {
 .grave__Grave--Note {
   transform-origin: center;
   position: relative;
-  height: 5vw;
-  width: 20vw;
-  padding-bottom: 65%;
+  height: 50%;
+  width: 30%;
   min-width: 0;
+  background-color: black;
 }
 .grave__Grave--Note::before, .grave__Grave--Note::after {
   content: "";
@@ -414,23 +414,17 @@ h3 {
   background-color: white;
 }
 .grave__Grave--Note::before {
-  height: 30vw;
-  width: 1.5vw;
-  top: -15.609375%;
-  left: 50%;
+  height: 95%;
+  width: 3%;
   border-radius: 0% 0% 40% 0%;
-}
-@media screen and (min-width: 1025px) {
-  .grave__Grave--Note::before {
-    top: calc(-29% + 1.790625vw);
-  }
+  bottom: 9%;
 }
 .grave__Grave--Note::after {
-  height: 8em;
-  width: 11vw;
-  border-radius: 70% 30% 70% 30%;
-  bottom: 63%;
-  left: 1%;
+  height: 30%;
+  width: 40%;
+  border-radius: 50% 50% 50% 50%;
+  left: 15%;
+  top: 70%;
 }
 
 .grave__Grave--Note + .grave__Grave--Note {
@@ -439,7 +433,7 @@ h3 {
 
 .grave__Grave--Animate {
   animation-name: gravereveal;
-  animation-duration: 300000s;
+  animation-duration: 3s;
   animation-fill-mode: forwards;
 }
 
@@ -447,7 +441,6 @@ h3 {
   0% {
     opacity: 1;
     background-color: black;
-    display: block;
   }
   50% {
     opacity: 0.9;

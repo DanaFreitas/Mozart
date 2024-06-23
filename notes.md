@@ -335,3 +335,5 @@ its at about 1400 pixels that things start to desyncronize
 get rid of padding for the image and that fixes the difference between it and the background
 turns out there IS a divergence if I stretch enough
 
+figured out the notes. however, need to adjust parental sizes
+...I had zoomed in. need to tweak the shapes of the notes

@@ -20,7 +20,10 @@ Footer
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+
+
 }
+
 
 html {
   font-size: calc(15px + 0.390625vw);
@@ -426,10 +429,7 @@ h3 {
 
 .grave__Grave--Wrapper {
   position: relative;
-  //font-size: 1rem;
-//  padding:1rem;
   text-align: center;
-  //background-color: red;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -443,26 +443,16 @@ h3 {
 
 
 .grave__Image--Grave {
-
-   //position: relative;
-  // width: 100%;
   text-align: center;
   margin: 0 auto;   
- //margin-inline: auto;
   width: min(100%, 1200px); 
  }
  
 
 
 .grave__Grave--CrossWrapper {
-  //width: 100%;
   width: min(100%, 1200px);
-
-  //padding-top: 56.216216216%;
   text-align: center;
-
-  //top: 0;
-  //left: 0;
   background-color: black;
   position: absolute;
   height: 100%;
@@ -475,18 +465,6 @@ h3 {
  -moz-display: flex;
  -ms--display: flex;
 }
-
-@media screen and (min-width:1025px){
- 
-  
-   .grave__Grave--Wrapper {
-    //padding:6rem;
-   }
-
-}
-
-
-
 
 
 
@@ -504,26 +482,21 @@ h3 {
 
   //for the stem
   &::before {
-    height: 30vw;
-    width: 1.5vw;
-    top: -16% + 0.390625%;
-    left: 50%;
-    border-radius: 0% 0% 40% 0%;
+   height:95%;
+   width:3%;
+
+   border-radius: 0% 0% 40% 0%;
+bottom:9%;
   }
 
-  @media screen and (min-width: 1025px) {
-    &::before {
-      top: calc(-29% + 1.790625vw);
-    }
-  }
 
   //for the head
   &::after {
-    height: 8em;
-    width: 11vw;
-    border-radius: 70% 30% 70% 30%;
-    bottom: 63%;
-    left: 1%;
+    height:30%;
+    width:40%;
+    border-radius: 50% 50% 50% 50%;
+    left: 15%;
+    top: 70%;
   }
 }
 
@@ -531,11 +504,11 @@ h3 {
   
     transform-origin: center;
     position: relative;
-    height: 5vw;
-    width: 20vw;
-    @include BeforeandAfter;
-    padding-bottom: 65%;
+   @include BeforeandAfter;
+   height:50%;
+   width:30%; 
     min-width:0;
+    background-color: black;
 }
 
 .grave__Grave--Note + .grave__Grave--Note {
@@ -546,7 +519,7 @@ h3 {
 
 .grave__Grave--Animate {
   animation-name: gravereveal;
-  animation-duration: 300000s;
+  animation-duration: 3s;
   animation-fill-mode: forwards;
 
 }
@@ -557,8 +530,7 @@ h3 {
   0% {
     opacity: 1;
     background-color: black;
-   // background-color: white;
-    display: block;
+   
   }
 
 
